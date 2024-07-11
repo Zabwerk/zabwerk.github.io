@@ -4,46 +4,5 @@
     "avatarUrl":"https://avatars.githubusercontent.com/u/114138194?s=400&u=5ea2b8fb103c4e97123a0105f7beb23c3fa2f022&v=4",
     "GMEEK_VERSION":"last",
     "startSite":"10/07/2024",
-    [
-	{
-		"name": "首页",
-		"url": "./"
-	},
-	{
-		"name": "机器学习",
-		"url": "issue_per_label.html?label=AI"
-	},
-	{
-		"name": "小项目",
-		"url": "issue_per_label.html?label=Project"
-	},
-	{
-		"name": "RM比赛",
-		"url": "issue_per_label.html?label=RM"
-	},
-	{
-		"name": "ROS学习",
-		"url": "issue_per_label.html?label=ROS"
-	},
-	{
-		"name": "小工具",
-		"url": "issue_per_label.html?label=tools"
-	},
-	{
-		"name": "网页开发",
-		"url": "issue_per_label.html?label=web"
-	},
-	{
-		"name": "其他",
-		"url": "issue_per_label.html?label=other"
-	},
-	{
-		"name": "灵感想法",
-		"url": "https://imuncle.github.io/timeline"
-	},
-	{
-		"name": "关于我",
-		"url": "content.html?id=41"
-	}
-]
+    
 }
