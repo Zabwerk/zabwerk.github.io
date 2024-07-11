@@ -3,8 +3,7 @@
     "subTitle":"Hi!这里是Zabwerk，会不定期分享个人的各种奇怪idea",
     "avatarUrl":"https://avatars.githubusercontent.com/u/114138194?s=400&u=a367b35a4dc1b1268349307aaf68fbf2adda860c&v=4",
     "singlePage":["about"],
-    //"iconList":{"图标文本":"打开图标网站，选择一款16像素的图标复制SVG，然后将复制结果`<path d="代码"></path></svg>`中间的代码替换到此处即可},
-    //"exlink":{"图标文本":"替换成自己的外部链接"},`
+    
     "GMEEK_VERSION":"last",
     "startSite":"07/10/2024",
     "menu":{
