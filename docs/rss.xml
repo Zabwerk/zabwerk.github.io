@@ -1,4 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Zabwerk的元空间</title><link>https://zabwerk.github.io</link><description>Hi!这里是Zabwerk，会不定期分享个人的各种奇怪idea</description><copyright>Zabwerk的元空间</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/114138194?s=400&amp;u=a367b35a4dc1b1268349307aaf68fbf2adda860c&amp;v=4</url><title>avatar</title><link>https://zabwerk.github.io</link></image><lastBuildDate>Thu, 11 Jul 2024 08:03:40 +0000</lastBuildDate><managingEditor>Zabwerk的元空间</managingEditor><ttl>60</ttl><webMaster>Zabwerk的元空间</webMaster><item><title>zabwerk的测试</title><link>https://zabwerk.github.io/post/zabwerk-de-ce-shi.html</link><description>[TOC]&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Zabwerk的元空间</title><link>https://zabwerk.github.io</link><description>Hi!这里是Zabwerk，会不定期分享个人的各种奇怪idea</description><copyright>Zabwerk的元空间</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/114138194?s=400&amp;u=a367b35a4dc1b1268349307aaf68fbf2adda860c&amp;v=4</url><title>avatar</title><link>https://zabwerk.github.io</link></image><lastBuildDate>Thu, 11 Jul 2024 08:19:03 +0000</lastBuildDate><managingEditor>Zabwerk的元空间</managingEditor><ttl>60</ttl><webMaster>Zabwerk的元空间</webMaster><item><title>zabwerk的测试</title><link>https://zabwerk.github.io/post/zabwerk-de-ce-shi.html</link><description>&#13;
+- [2024/7/11 No.1](#2024711-no1)&#13;
+- [2024/7/11 No.2](#2024711-no2)&#13;
+  - [1 A](#1-a)&#13;
+    - [1.1 Aa](#11-aa)&#13;
+    - [1.2 Ab](#12-ab)&#13;
+  - [2 B](#2-b)&#13;
+    - [2.1 Ba](#21-ba)&#13;
+    - [2.2 Bb](#22-bb)&#13;
+    - [2.3 Bc](#23-bc)&#13;
+  - [3 C](#3-c)&#13;
+  - [4 D](#4-d)&#13;
+    - [4.1 Da](#41-da)&#13;
+    - [4.2 Db](#42-db)&#13;
+  - [5 E](#5-e)&#13;
+&#13;
+&#13;
 # 2024/7/11 No.1&#13;
 这里是Zabwerk，一个地信专业的想自己做个自己博客的全新小白的独白，之后也会在这里记录一下奇奇怪怪的想法，以及不定期的更新网页。</description><guid isPermaLink="true">https://zabwerk.github.io/post/zabwerk-de-ce-shi.html</guid><pubDate>Wed, 10 Jul 2024 07:43:49 +0000</pubDate></item></channel></rss>
