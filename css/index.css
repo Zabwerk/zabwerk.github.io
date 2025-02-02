@@ -36,7 +36,7 @@ a {
 .post-view__article .article__content h5,
 .post-view__article .article__content h6,
 .post-view__article .article__content p {
-  margin: 1em 0;
+  margin: 1.5em 0;
 }
 .post-view__article .article__content h1,
 .post-view__article .article__content h2 {
@@ -61,8 +61,8 @@ a {
 .post-view__article .article__content ol,
 .post-view__article .article__content table,
 .post-view__article .article__content code {
-  font-size: 1.4rem;
-  line-height: 2.2rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
 }
 .post-view__article .article__content small {
   font-size: 1rem;
@@ -180,10 +180,19 @@ a {
     font-size: 10px;
   }
 }
+@font-face {
+/* 为字体指定一个名称，后续可以在 font-family 中使用 */
+  font-family: 'MyLocalFont';
+/* 指向本地字体文件的路径，这里可以根据实际情况修改 */
+  src: url("F:/blog/themes/paper/fonts/FSGB2312.ttf") format('ttf'), /* 可选：指定字体的粗细，这里设置为正常粗细 */;
+  font-weight: normal;
+/* 可选：指定字体的样式，这里设置为正常样式 */
+  font-style: normal;
+}
 .head {
-  padding: 8rem 0;
+  padding: 6rem 0;
   text-align: center;
-  font-family: 'Abril Fatface', cursive, 'Alata', 'Noto Sans TC';
+  font-family: 'Comic Sans MS', 'SimHei';
   position: relative;
 }
 .head__inner {
@@ -237,8 +246,8 @@ a {
 }
 .posts-item--pintop::before {
   content: '';
-  width: 70%;
-  height: 70%;
+  width: 80%;
+  height: 80%;
   position: absolute;
   top: 0;
   right: 0;
@@ -364,8 +373,8 @@ a {
   height: calc(100% - 4rem);
 }
 .sidebar h2 {
-  font-size: 2.2rem;
-  line-height: 3rem;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
   display: inline-block;
   padding: 0 0.2em;
   box-shadow: inset 0 -0.8em 0 #ccc;
@@ -376,7 +385,8 @@ a {
 .sidebar__link,
 .sidebar__archives,
 .sidebar__categories,
-.sidebar__tags {
+.sidebar__tags,
+.sidebar__friends {
   padding: 0 0 0 1em;
   border-left: 1px solid #333;
   margin: 1.6rem 0 1.6rem 1rem;
@@ -384,7 +394,8 @@ a {
 .sidebar__link a,
 .sidebar__archives a,
 .sidebar__categories a,
-.sidebar__tags a {
+.sidebar__tags a,
+.sidebar__friends a {
   box-shadow: inset 0 -0.1em 0 #333;
   transition: all 0.3s cubic-bezier(0.71, 0, 0, 0.99);
   text-decoration: none;
@@ -392,7 +403,8 @@ a {
 .sidebar__link a:hover,
 .sidebar__archives a:hover,
 .sidebar__categories a:hover,
-.sidebar__tags a:hover {
+.sidebar__tags a:hover,
+.sidebar__friends a:hover {
   box-shadow: inset 0 -0.8em 0 #6ba8a9;
 }
 .sidebar__tags li {
@@ -439,6 +451,19 @@ a {
   }
   .sidebar__button--expend {
     background-position: center 0;
+  }
+  .site-uv,
+  .site-pv,
+  .post-view-count {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: #929292;
+  }
+  .site-uv i.fa,
+  .site-pv i.fa,
+  .post-view-count i.fa {
+    margin-right: 0.5rem;
+    color: #6ba8a9;
   }
 }
 .paginator {
