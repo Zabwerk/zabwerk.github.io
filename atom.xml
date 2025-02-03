@@ -6,7 +6,7 @@
   <link href="https://example.com/atom.xml" rel="self"/>
   
   <link href="https://example.com/"/>
-  <updated>2025-02-01T04:57:37.281Z</updated>
+  <updated>2025-02-02T17:45:55.510Z</updated>
   <id>https://example.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【遥感处理-实验1】土壤侵蚀强度遥感估算实验</title>
+    <link href="https://example.com/2025/02/03/%E5%9C%9F%E5%A3%A4%E4%BE%B5%E8%9A%80%E5%BC%BA%E5%BA%A6%E4%BC%B0%E7%AE%97%E5%AE%9E%E9%AA%8C/"/>
+    <id>https://example.com/2025/02/03/%E5%9C%9F%E5%A3%A4%E4%BE%B5%E8%9A%80%E5%BC%BA%E5%BA%A6%E4%BC%B0%E7%AE%97%E5%AE%9E%E9%AA%8C/</id>
+    <published>2025-02-02T17:27:14.000Z</published>
+    <updated>2025-02-02T17:45:55.510Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;&lt;span id=&quot;一-实验名称&quot;&gt;一、实验名称&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;土壤侵蚀强度遥感估算实验&lt;/p&gt;
+&lt;h1&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="实验记录" scheme="https://example.com/categories/%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="遥感" scheme="https://example.com/tags/%E9%81%A5%E6%84%9F/"/>
+    
+    <category term="ENVI" scheme="https://example.com/tags/ENVI/"/>
+    
+    <category term="图像处理" scheme="https://example.com/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>【ArcGIS笔记1】将.shp矢量数据导入“两步路”</title>
