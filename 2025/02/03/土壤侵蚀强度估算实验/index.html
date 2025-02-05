@@ -51,14 +51,14 @@ window.addEventListener('DOMContentLoaded', () => {
 <li>在影像中根据不同的地物框选【Training Data】，此处将分为植被、裸地、水体、农田、建筑五类，具体分类情况如图1所示，选择完成后点击【Next】；</li>
 </ul>
 <div align="center">
-    <img src="https://i-blog.csdnimg.cn/direct/edafb77bb4f64b2f9b00e3e235656946.png" width="400">
+    <style>.bfbfzpiptomu{}</style>
     <p align="center">图1 土地利用分类样本</p>
 </div>
 
 
 <ul>
 <li>计算最大似然分类，并对结果进行平滑与聚合，即可生成土地利用分类结果（图2）。<div align="center">
-  <img src="https://i-blog.csdnimg.cn/direct/729f157788ae45748621a1c74e943042.png" width="400">
+  <style>.hwwtnecmeiio{}</style>
   <p align="center">图2 土地利用分类结果</p>
 </div>
 
@@ -72,7 +72,7 @@ window.addEventListener('DOMContentLoaded', () => {
 <ul>
 <li><p>计算完成后即可得到生成的NDVI结果（图3）</p>
 <div align="center">
-  <img src="https://i-blog.csdnimg.cn/direct/e28bd90281e44b0f9f6503f22d50cb52.png" width="400">
+  <style>.ergnspfqfeuj{}</style>
   <p align="center">图3 NDVI计算结果</p>
 </div>
 </li>
@@ -121,7 +121,7 @@ window.addEventListener('DOMContentLoaded', () => {
 </div>
 <ul>
 <li>将输出的结果导入至ArcMap中进行分级，分级规则参考文献分级：①<30%；②30%-45%；③45%-60%;④60%-75%；⑤>75%，成图结果如图4所示。<div align="center">
-  <img src="https://i-blog.csdnimg.cn/direct/7078ecec53aa432698505c2b5249d857.png" width="400">
+  <style>.vfopsyqfkwcf{}</style>
   <p align="center">图4 植被覆盖度分类结果</p>
 </div>
 
@@ -131,13 +131,13 @@ window.addEventListener('DOMContentLoaded', () => {
 <h2><span id="3-计算坡度">3. 计算坡度</span></h2><ul>
 <li><p>将DEM影像导入到ArcGIS当中，选择工具【Spatial Analysis】中的【Slope】进行坡度分析。</p>
 <div align="center">
-  <img src="https://i-blog.csdnimg.cn/direct/dfa37dc05ab641b39b2e879664d16ae1.png" width="200">
+  <style>.cetmrutjpruh{}</style>
   <p align="center"> 图5 坡度分析</p>
 </div>
 
 <ul>
 <li>将分析结果进行分级，分级规则参考文献分级：①<5°；②5-8°；③8-15°;④15-25°；⑤25-35°；⑥>35°，成图结果如图6所示。<div align="center">
-<img src="https://i-blog.csdnimg.cn/direct/362cabcb0ad14be2b6ea7e4516883a7a.png" width="400">
+<style>.mvhckleaqetr{}</style>
 <p align="center">  图6 坡度等级图</p>
 </div>
 
@@ -148,13 +148,13 @@ window.addEventListener('DOMContentLoaded', () => {
 <h2><span id="4-叠加分析">4. 叠加分析</span></h2><ul>
 <li>参考文献中<sup>[1]</sup>的土壤侵蚀强度分级指标表（表2），综合上述三幅图像进行叠加分析。<br><div align="center">
    <p align="center">  表2 土壤侵蚀强度分级指标</p>
-  <img src="https://i-blog.csdnimg.cn/direct/e1e6aac4e7d5493f9fed3809392ade88.png" width="400">
+  <style>.tdngvefoejfp{}</style>
 </div><br>利用ArcMap的空间分析工具，将植被覆盖度、土地类型与坡度信息进行空间叠加。</li>
 </ul>
 <p>① 将三种处理后的图像按照表3的规则进行重分类：</p>
  <div align="center">
       <p align="center"> 表3 重分类规则</p>
-  <img src="https://i-blog.csdnimg.cn/direct/42eb7d9607db458ea0757c962dc5befd.png" width="400">
+  <style>.pfgvedyysykm{}</style>
 </div>
 
 
@@ -176,23 +176,23 @@ window.addEventListener('DOMContentLoaded', () => {
 <p>③ 经过计算可以得到63种不同植被覆盖度、土地类型与坡度的组合，具体数值如表4所示。</p>
  <div align="center">
       <p align="center"> 表4 63种组合对应栅格值</p>
-  <img src="https://i-blog.csdnimg.cn/direct/c0c154e11bdc4278a8dbe06b22887406.png" width="450">
+  <style>.jmncksbvcfvu{}</style>
 </div>
 ④ 统计不同组合的像元数，可以得到不同土壤侵蚀的情况（表5）。
 
  <div align="center">
       <p align="center"> 表5 不同侵蚀等级统计结果</p>
-  <img src="https://i-blog.csdnimg.cn/direct/7709fecf13194704b7130644251ef2f8.png" width="450">
+  <style>.rrvlgsppnhix{}</style>
 </div>
 
 <p>再将相同侵蚀强度的图斑进行合并，获得土壤侵蚀强度等级分布图（图7）。<br> <div align="center">
-  <img src="https://i-blog.csdnimg.cn/direct/c66778b4546d49ec8ec37db7b6612be2.png" width="450">
+  <style>.kqtbzqsoljkb{}</style>
   <p align="center"> 图7 土壤侵蚀强度分级图</p>
 </div></p>
 <ul>
 <li>根据分级图统计不同侵蚀强度的像元数（ 表6）<div align="center">
     <p align="center"> 表5 不同侵蚀等级统计结果</p>
-<img src="https://i-blog.csdnimg.cn/direct/7709fecf13194704b7130644251ef2f8.png" width="450">
+<style>.rtrmhtwzxhdc{}</style>
 </div>
 
 
