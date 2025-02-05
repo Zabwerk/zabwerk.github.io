@@ -40,169 +40,220 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 })</script><link rel="preload" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css"><link rel="preload" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha256-TThEtR+XalhWKkfF383YLOrI50NGNeIqrzS+q08afrY=" crossorigin="anonymous"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Zabwerk的元空间" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div class="mask-border"></div><div class="head"><div class="head__inner"><h1><a href="/">Zabwerk的元空间</a></h1><p></p></div></div><div class="paper-container"><div class="main"><div class="location-bar"><div class="line-1"><div class="horizontal-line" style="height: 3px"></div></div><div class="line-2"><div class="horizontal-line" style="height: 1px"></div></div><p class="text">【遥感处理-实验1】土壤侵蚀强度遥感估算实验</p><div class="switch-button"><input class="container_toggle" type="checkbox" id="switch" name="mode"><label for="switch">Toggle</label></div><div class="line-3"><div class="horizontal-line" style="height: 1px"></div></div></div><div class="main__2-col"><article class="post-view__article"><div class="article__infomation"><div class="posts-item"><h2 class="posts-item__title"><a href="">【遥感处理-实验1】土壤侵蚀强度遥感估算实验</a></h2><span class="post__date">2025-02-03</span><a href="/tags/%E9%81%A5%E6%84%9F/"><span class="post__tags">#遥感</span></a><a href="/tags/ENVI/"><span class="post__tags">#ENVI</span></a><a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"><span class="post__tags">#图像处理</span></a></div></div><div class="article__content"><h1><span id="一-实验名称">一、实验名称</span></h1><p>土壤侵蚀强度遥感估算实验</p>
-<h1><span id="二-实验目的">二、实验目的</span></h1><p>根据“基于遥感数据的流域土壤侵蚀强度快速估测方法”文献中的方法，对杭州市及周边区域土壤侵蚀强度进行遥感估算实验。</p>
-<h1><span id="三-实验内容">三、实验内容</span></h1><p>首先，利用遥感数据提取土地利用类型；<br>其次，利用植被指数模型提取植被覆盖度信息；<br>再次，利用数字高程模型生成坡度图；<br>最后，结合土壤侵蚀强度分级指标，将坡度图、土地类型图、植被覆盖度图空间叠加，判断和计算侵蚀强度等级，获得土壤侵蚀强度等级图。<br>最终在等级图上统计各个侵蚀等级的面积及面积百分比。</p>
-<h1><span id="四-实验过程">四、实验过程</span></h1><h2><span id="1-土地利用分类">1. 土地利用分类</span></h2><ul>
-<li>打开ENVI，导入影像文件LC81190392013344BJC00_MTL_ref-1；</li>
-<li>在工具栏中找到工具【Classification Workflow】进行土地利用分类操作；</li>
-<li>选中影像文件，点击【Next】；</li>
-<li>选中【Use Training Data】，点击【Next】；</li>
-<li>在影像中根据不同的地物框选【Training Data】，此处将分为植被、裸地、水体、农田、建筑五类，具体分类情况如图1所示，选择完成后点击【Next】；</li>
-</ul>
-<div align="center">
-    <style>.bfbfzpiptomu{}</style>
-    <p align="center">图1 土地利用分类样本</p>
-</div>
-
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div class="mask-border"></div><div class="head"><div class="head__inner"><h1><a href="/">Zabwerk的元空间</a></h1><p></p></div></div><div class="paper-container"><div class="main"><div class="location-bar"><div class="line-1"><div class="horizontal-line" style="height: 3px"></div></div><div class="line-2"><div class="horizontal-line" style="height: 1px"></div></div><p class="text">【遥感处理-实验1】土壤侵蚀强度遥感估算实验</p><div class="switch-button"><input class="container_toggle" type="checkbox" id="switch" name="mode"><label for="switch">Toggle</label></div><div class="line-3"><div class="horizontal-line" style="height: 1px"></div></div></div><div class="main__2-col"><article class="post-view__article"><div class="article__infomation"><div class="posts-item"><h2 class="posts-item__title"><a href="">【遥感处理-实验1】土壤侵蚀强度遥感估算实验</a></h2><span class="post__date">2025-02-03</span><a href="/tags/%E9%81%A5%E6%84%9F/"><span class="post__tags">#遥感</span></a><a href="/tags/ENVI/"><span class="post__tags">#ENVI</span></a><a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"><span class="post__tags">#图像处理</span></a></div></div><div class="article__content"><h1><span id="一-实验名称">
+一、实验名称
+</span></h1>
+<p>土壤侵蚀强度遥感估算实验</p>
+<h1><span id="二-实验目的">
+二、实验目的
+</span></h1>
+<p>根据“基于遥感数据的流域土壤侵蚀强度快速估测方法”文献中的方法，对杭州市及周边区域土壤侵蚀强度进行遥感估算实验。</p>
+<h1><span id="三-实验内容">
+三、实验内容
+</span></h1>
+<p>首先，利用遥感数据提取土地利用类型；<br>
+其次，利用植被指数模型提取植被覆盖度信息；<br>
+再次，利用数字高程模型生成坡度图；<br>
+最后，结合土壤侵蚀强度分级指标，将坡度图、土地类型图、植被覆盖度图空间叠加，判断和计算侵蚀强度等级，获得土壤侵蚀强度等级图。<br>
+最终在等级图上统计各个侵蚀等级的面积及面积百分比。</p>
+<h1><span id="四-实验过程">
+四、实验过程
+</span></h1>
+<h2><span id="土地利用分类">
+<ol type="1">
+<li>土地利用分类
+</li></ol></span></h2>
 
 <ul>
-<li>计算最大似然分类，并对结果进行平滑与聚合，即可生成土地利用分类结果（图2）。<div align="center">
-  <style>.hwwtnecmeiio{}</style>
-  <p align="center">图2 土地利用分类结果</p>
-</div>
-
-</li>
+<li>打开ENVI，导入影像文件LC81190392013344BJC00_MTL_ref-1；</li>
+<li>在工具栏中找到工具【Classification
+Workflow】进行土地利用分类操作；</li>
+<li>选中影像文件，点击【Next】；</li>
+<li>选中【Use Training Data】，点击【Next】；</li>
+<li>在影像中根据不同的地物框选【Training
+Data】，此处将分为植被、裸地、水体、农田、建筑五类，具体分类情况如图1所示，选择完成后点击【Next】；</li>
 </ul>
-<h2><span id="2-计算植被覆盖度">2. 计算植被覆盖度</span></h2><ul>
+<style>.yvqlqpsoewfx{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/03/%E5%9C%9F%E5%A3%A4%E4%BE%B5%E8%9A%80%E5%BC%BA%E5%BA%A6%E4%BC%B0%E7%AE%97%E5%AE%9E%E9%AA%8C/1.png" class="yvqlqpsoewfx">
+<p align="center">
+图1 土地利用分类样本
+</p>
+<ul>
+<li>计算最大似然分类，并对结果进行平滑与聚合，即可生成土地利用分类结果（图2）。</li>
+</ul>
+<style>.hjneylynrqfj{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/03/%E5%9C%9F%E5%A3%A4%E4%BE%B5%E8%9A%80%E5%BC%BA%E5%BA%A6%E4%BC%B0%E7%AE%97%E5%AE%9E%E9%AA%8C/2.png" class="hjneylynrqfj">
+<p align="center">
+图2 土地利用分类结果
+</p>
+<h2><span id="计算植被覆盖度">
+<ol start="2" type="1">
+<li>计算植被覆盖度
+</li></ol></span></h2>
+
+<ul>
 <li>在工具栏中找到【Band Math】并计算图像的NDVI值，其公式如下:</li>
 </ul>
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>N</mi><mi>D</mi><mi>V</mi><mi>I</mi><mo>=</mo><mfrac><mrow><mi>N</mi><mi>I</mi><mi>R</mi><mo>−</mo><mi>R</mi></mrow><mrow><mi>N</mi><mi>I</mi><mi>R</mi><mo>+</mo><mi>R</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">NDVI=\frac{NIR-R}{NIR+R}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.1297em;vertical-align:-0.7693em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span>
-<p>其中，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>I</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">NIR</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span>为近红外波段，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span>为红波段。</p>
+<p>其中，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>I</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">NIR</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span>为近红外波段，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span>为红波段。<br>
+- 计算完成后即可得到生成的NDVI结果（图3）</p>
+<style>.rukdthgoxkzm{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/03/%E5%9C%9F%E5%A3%A4%E4%BE%B5%E8%9A%80%E5%BC%BA%E5%BA%A6%E4%BC%B0%E7%AE%97%E5%AE%9E%E9%AA%8C/3.png" class="rukdthgoxkzm">
+<p align="center">
+图3 NDVI计算结果
+</p>
 <ul>
-<li><p>计算完成后即可得到生成的NDVI结果（图3）</p>
-<div align="center">
-  <style>.ergnspfqfeuj{}</style>
-  <p align="center">图3 NDVI计算结果</p>
-</div>
-</li>
-<li><p>右键点击NDVI结果，点击【Compute Statistics】统计NDVI值，根据公式（2）计算植被覆盖度。为了避免计算结果存在噪声，此处的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>D</mi><mi>V</mi><msub><mi>I</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub></mrow><annotation encoding="application/x-tex">NDVI_{max}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">ma</span><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>D</mi><mi>V</mi><msub><mi>I</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">NDVI_{min}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">min</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>选取累计百分比为近似5%和95%的DN值作为最小值和最大值（表1）。</p>
-<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>V</mi><mi>F</mi><mi>C</mi><mo>=</mo><mfrac><mrow><mi>N</mi><mi>D</mi><mi>V</mi><mi>I</mi><mo>−</mo><mi>N</mi><mi>D</mi><mi>V</mi><msub><mi>I</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub></mrow><mrow><mi>N</mi><mi>D</mi><mi>V</mi><msub><mi>I</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>−</mo><mi>N</mi><mi>D</mi><mi>V</mi><msub><mi>I</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">VFC=\frac{NDVI-NDVI_{min}}{NDVI_{max}-NDVI_{min}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord mathnormal" style="margin-right:0.07153em;">FC</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.1963em;vertical-align:-0.836em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">ma</span><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">min</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">min</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.836em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span>
-</li>
+<li>右键点击NDVI结果，点击【Compute
+Statistics】统计NDVI值，根据公式（2）计算植被覆盖度。为了避免计算结果存在噪声，此处的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>D</mi><mi>V</mi><msub><mi>I</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub></mrow><annotation encoding="application/x-tex">NDVI_{max}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">ma</span><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>D</mi><mi>V</mi><msub><mi>I</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">NDVI_{min}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">min</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>选取累计百分比为近似5%和95%的DN值作为最小值和最大值（表1）。</li>
+<li><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>V</mi><mi>F</mi><mi>C</mi><mo>=</mo><mfrac><mrow><mi>N</mi><mi>D</mi><mi>V</mi><mi>I</mi><mo>−</mo><mi>N</mi><mi>D</mi><mi>V</mi><msub><mi>I</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub></mrow><mrow><mi>N</mi><mi>D</mi><mi>V</mi><msub><mi>I</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>−</mo><mi>N</mi><mi>D</mi><mi>V</mi><msub><mi>I</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">VFC=\frac{NDVI-NDVI_{min}}{NDVI_{max}-NDVI_{min}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord mathnormal" style="margin-right:0.07153em;">FC</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.1963em;vertical-align:-0.836em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">ma</span><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">min</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">min</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.836em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></li>
 </ul>
-<p align="center">表1 累计百分比</p>
-
-<div class="table-container">
+<p align="center">
+表1 累计百分比
+</p>
+<table style="margin: auto;">
+<tr>
+<th>
+DN值
+</th>
+<th>
+累计百分比
+</th>
+</tr>
+<tr>
+<td>
+-0.0248
+</td>
+<td>
+<center>
+4.9578
+</center>
+</td>
+</tr>
+<tr>
+<td>
+0.5967
+</td>
+<td>
+<center>
+95.0795
+</center>
+</td>
+</tr>
+</table>
+<ul>
+<li>在【Band
+Math】工具中输入公式，此处为了去除异常值，设计波段计算公式如下:</li>
+</ul>
 <table>
+<colgroup>
+<col style="width: 100%">
+</colgroup>
 <thead>
 <tr>
-<th>DN值</th>
-<th><center>累计百分比/%</center></th>
+<th>(b1 lt -0.0248)*0+(b1 gt 0.5967)*1+(b1 ge -0.0248 and b1 le
+0.5967)*((b1+0.0248)/(0.5967+0.0248))</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>-0.0248</td>
-<td><center>4.9578</center></td>
-</tr>
-<tr>
-<td><center>0.5967</center></td>
-<td><center>95.0795</center></td>
-</tr>
 </tbody>
 </table>
-</div>
 <ul>
-<li>在【Band Math】工具中输入公式，此处为了去除异常值，设计波段计算公式如下:</li>
+<li>将输出的结果导入至ArcMap中进行分级，分级规则参考文献分级：①&lt;30%；②30%-45%；③45%-60%;④60%-75%；⑤&gt;75%，成图结果如图4所示。</li>
 </ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>(b1 lt -0.0248)*0+(b1 gt 0.5967)*1+(b1 ge -0.0248 and b1 le 0.5967)*((b1+0.0248)/(0.5967+0.0248))</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li>将输出的结果导入至ArcMap中进行分级，分级规则参考文献分级：①<30%；②30%-45%；③45%-60%;④60%-75%；⑤>75%，成图结果如图4所示。<div align="center">
-  <style>.vfopsyqfkwcf{}</style>
-  <p align="center">图4 植被覆盖度分类结果</p>
-</div>
-
-
-</30%；②30%-45%；③45%-60%;④60%-75%；⑤></li>
-</ul>
-<h2><span id="3-计算坡度">3. 计算坡度</span></h2><ul>
-<li><p>将DEM影像导入到ArcGIS当中，选择工具【Spatial Analysis】中的【Slope】进行坡度分析。</p>
-<div align="center">
-  <style>.cetmrutjpruh{}</style>
-  <p align="center"> 图5 坡度分析</p>
-</div>
+<style>.umprgqtwcukv{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/03/%E5%9C%9F%E5%A3%A4%E4%BE%B5%E8%9A%80%E5%BC%BA%E5%BA%A6%E4%BC%B0%E7%AE%97%E5%AE%9E%E9%AA%8C/4.png" class="umprgqtwcukv">
+<p align="center">
+图4 植被覆盖度分类结果
+</p>
+<h2><span id="计算坡度">
+<ol start="3" type="1">
+<li>计算坡度
+</li></ol></span></h2>
 
 <ul>
-<li>将分析结果进行分级，分级规则参考文献分级：①<5°；②5-8°；③8-15°;④15-25°；⑤25-35°；⑥>35°，成图结果如图6所示。<div align="center">
-<style>.mvhckleaqetr{}</style>
-<p align="center">  图6 坡度等级图</p>
-</div>
+<li>将DEM影像导入到ArcGIS当中，选择工具【Spatial
+Analysis】中的【Slope】进行坡度分析。</li>
+</ul>
+<style>.thigsqqwogpa{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/03/%E5%9C%9F%E5%A3%A4%E4%BE%B5%E8%9A%80%E5%BC%BA%E5%BA%A6%E4%BC%B0%E7%AE%97%E5%AE%9E%E9%AA%8C/5.png" class="thigsqqwogpa">
+<p align="center">
+图5 坡度分析
+</p>
+<ul>
+<li>将分析结果进行分级，分级规则参考文献分级：①&lt;5°；②5-8°；③8-15°;④15-25°；⑤25-35°；⑥&gt;35°，成图结果如图6所示。</li>
+</ul>
+<style>.egramqupufwy{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/03/%E5%9C%9F%E5%A3%A4%E4%BE%B5%E8%9A%80%E5%BC%BA%E5%BA%A6%E4%BC%B0%E7%AE%97%E5%AE%9E%E9%AA%8C/6.png" class="egramqupufwy">
+<p align="center">
+图6 坡度等级图
+</p>
+<h2><span id="叠加分析">
+<ol start="4" type="1">
+<li>叠加分析
+</li></ol></span></h2>
 
-</5°；②5-8°；③8-15°;④15-25°；⑤25-35°；⑥></li>
+<ul>
+<li>参考文献中<sup>[1]</sup>的土壤侵蚀强度分级指标表（表2），综合上述三幅图像进行叠加分析。</li>
 </ul>
-</li>
-</ul>
-<h2><span id="4-叠加分析">4. 叠加分析</span></h2><ul>
-<li>参考文献中<sup>[1]</sup>的土壤侵蚀强度分级指标表（表2），综合上述三幅图像进行叠加分析。<br><div align="center">
-   <p align="center">  表2 土壤侵蚀强度分级指标</p>
-  <style>.tdngvefoejfp{}</style>
-</div><br>利用ArcMap的空间分析工具，将植被覆盖度、土地类型与坡度信息进行空间叠加。</li>
-</ul>
+<p align="center">
+表2 土壤侵蚀强度分级指标
+</p>
+<style>.tsvrhwgespmu{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/03/%E5%9C%9F%E5%A3%A4%E4%BE%B5%E8%9A%80%E5%BC%BA%E5%BA%A6%E4%BC%B0%E7%AE%97%E5%AE%9E%E9%AA%8C/7.png" class="tsvrhwgespmu">
+<p>利用ArcMap的空间分析工具，将植被覆盖度、土地类型与坡度信息进行空间叠加。</p>
 <p>① 将三种处理后的图像按照表3的规则进行重分类：</p>
- <div align="center">
-      <p align="center"> 表3 重分类规则</p>
-  <style>.pfgvedyysykm{}</style>
-</div>
-
-
-<p>② 利用ArcMap中的【Raster Calculator】工具对三种重分类的结果进行叠加统计，按照如下公式：</p>
-<div class="table-container">
-<table>
-<thead>
+<p align="center">
+表3 重分类规则
+</p>
+<style>.jfcfdkypcirv{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/03/%E5%9C%9F%E5%A3%A4%E4%BE%B5%E8%9A%80%E5%BC%BA%E5%BA%A6%E4%BC%B0%E7%AE%97%E5%AE%9E%E9%AA%8C/8.png" class="jfcfdkypcirv">
+<p>② 利用ArcMap中的【Raster
+Calculator】工具对三种重分类的结果进行叠加统计，按照如下公式：</p>
+<div style="text-align:center;">
+<table style="margin: auto; border-collapse: collapse;">
 <tr>
-<th>(“土地分类” == 0) * “植被分类” + “坡度分类”</th>
+<th style="border: 1px solid black; padding: 8px;">
+("土地分类" == 0) * "植被分类" + "坡度分类"<br>
+
+</th>
 </tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
 </table>
 </div>
-<p>③ 经过计算可以得到63种不同植被覆盖度、土地类型与坡度的组合，具体数值如表4所示。</p>
- <div align="center">
-      <p align="center"> 表4 63种组合对应栅格值</p>
-  <style>.jmncksbvcfvu{}</style>
-</div>
-④ 统计不同组合的像元数，可以得到不同土壤侵蚀的情况（表5）。
-
- <div align="center">
-      <p align="center"> 表5 不同侵蚀等级统计结果</p>
-  <style>.rrvlgsppnhix{}</style>
-</div>
-
-<p>再将相同侵蚀强度的图斑进行合并，获得土壤侵蚀强度等级分布图（图7）。<br> <div align="center">
-  <style>.kqtbzqsoljkb{}</style>
-  <p align="center"> 图7 土壤侵蚀强度分级图</p>
-</div></p>
+<p>③
+经过计算可以得到63种不同植被覆盖度、土地类型与坡度的组合，具体数值如表4所示。</p>
+<p align="center">
+表4 63种组合对应栅格值
+</p>
+<style>.cxqpvwvwvgnb{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/03/%E5%9C%9F%E5%A3%A4%E4%BE%B5%E8%9A%80%E5%BC%BA%E5%BA%A6%E4%BC%B0%E7%AE%97%E5%AE%9E%E9%AA%8C/9.png" class="cxqpvwvwvgnb">
+<p>④ 统计不同组合的像元数，可以得到不同土壤侵蚀的情况（表5）。</p>
+<p align="center">
+表5 不同侵蚀等级统计结果
+</p>
+<style>.pkvnieydkryb{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/03/%E5%9C%9F%E5%A3%A4%E4%BE%B5%E8%9A%80%E5%BC%BA%E5%BA%A6%E4%BC%B0%E7%AE%97%E5%AE%9E%E9%AA%8C/10.png" class="pkvnieydkryb">
+<p>再将相同侵蚀强度的图斑进行合并，获得土壤侵蚀强度等级分布图（图7）。</p>
+<style>.goexrowrovto{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/03/%E5%9C%9F%E5%A3%A4%E4%BE%B5%E8%9A%80%E5%BC%BA%E5%BA%A6%E4%BC%B0%E7%AE%97%E5%AE%9E%E9%AA%8C/11.png" class="goexrowrovto">
+<p align="center">
+图7 土壤侵蚀强度分级图
+</p>
 <ul>
-<li>根据分级图统计不同侵蚀强度的像元数（ 表6）<div align="center">
-    <p align="center"> 表5 不同侵蚀等级统计结果</p>
-<style>.rtrmhtwzxhdc{}</style>
-</div>
-
-
-
-
-
-
-</li>
+<li>根据分级图统计不同侵蚀强度的像元数（表6）</li>
 </ul>
-<h1><span id="五-结论">五、结论</span></h1><p>根据表4与图7的分布可以看出，微度侵蚀区域约占杭州市面积的82.60%，主要分布在杭州市城区及高建筑、耕地、裸地分布区。轻度所占比例为8.70%，中度侵蚀所占比例为5.79%，强度侵蚀、极强度侵蚀和剧烈侵蚀面积总和低于3%，主要分布在山区坡面上，主要原因可能是区域内受到自然灾害因素的侵蚀。</p>
+<p align="center">
+表6 土壤侵蚀强度统计结果
+</p>
+<style>.cxnjdcyadtuv{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/03/%E5%9C%9F%E5%A3%A4%E4%BE%B5%E8%9A%80%E5%BC%BA%E5%BA%A6%E4%BC%B0%E7%AE%97%E5%AE%9E%E9%AA%8C/12.png" class="cxnjdcyadtuv">
+<h1><span id="五-结论">
+五、结论
+</span></h1>
+<p>根据表4与图7的分布可以看出，微度侵蚀区域约占杭州市面积的82.60%，主要分布在杭州市城区及高建筑、耕地、裸地分布区。轻度所占比例为8.70%，中度侵蚀所占比例为5.79%，强度侵蚀、极强度侵蚀和剧烈侵蚀面积总和低于3%，主要分布在山区坡面上，主要原因可能是区域内受到自然灾害因素的侵蚀。</p>
 <hr>
-<p>参考文献与资料：<br>[1]. 谭炳香,李增元,王彦辉,等.基于遥感数据的流域土壤侵蚀强度快速估测方法[J].遥感技术与应用,2005,(02):215-220.<br>[2]. <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Uc_14ObiYKKafQrtKqFjvg">Masami. ENVI提取NDVI与植被覆盖度估算[OL]. 微信公众号·一点规划</a></p>
+<p>参考文献与资料：<br>
+[1].
+谭炳香,李增元,王彦辉,等.基于遥感数据的流域土壤侵蚀强度快速估测方法[J].遥感技术与应用,2005,(02):215-220.<br>
+[2]. <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Uc_14ObiYKKafQrtKqFjvg">Masami.
+ENVI提取NDVI与植被覆盖度估算[OL]. 微信公众号·一点规划</a></p>
 </div></article><div class="post-view__sidebar"><div class="sidebar"><div class="tocbot"><h2>Toc</h2><div class="toc__content"></div></div><h2>Links</h2><div class="sidebar__link"><ul><li><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/iidzwb">知乎</a></li><li><a href="mailto:zabwerk@outlook.com">Mail</a></li><li><a target="_blank" rel="noopener" href="https://space.bilibili.com/85563266?spm_id_from=333.1007.0.0">Bilibili</a></li></ul></div><h2>Archives</h2><div class="sidebar__archives"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/">2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a></li></ul></div><h2>Categories</h2><div class="sidebar__categories"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95/">实验记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">经验总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/">随便写写</a></li></ul></div><h2>Tags</h2><div class="sidebar__tags"><ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ENVI/" rel="tag">ENVI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIS/" rel="tag">GIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" rel="tag">图像处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%AF%BB/" rel="tag">图寻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E7%BB%98/" rel="tag">测绘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%84%E5%88%99%E7%B1%BB%E6%80%AA%E8%B0%88/" rel="tag">规则类怪谈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%81%A5%E6%84%9F/" rel="tag">遥感</a></li></ul></div><!-- 站点访问量--><div class="site-uv"><i class="fa fa-user"> </i><span>本站访客数：</span><span id="busuanzi_value_site_uv"> </span><span>人</span></div><!-- 页面浏览量--><div class="site-pv"><i class="fa fa-eye"> </i><span>本站总访问量：</span><span id="busuanzi_value_site_pv"> </span><span>次</span></div></div></div></div><div class="horizontal-line" style="height: 1px"></div><div class="main__bottom"><div class="pre-next"><a class="pre-button">没有更多</a><a class="next-button" href="/2025/02/01/%E3%80%90ArcGIS%E7%AC%94%E8%AE%B01%E3%80%91%E5%B0%86-shp%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E2%80%9C%E4%B8%A4%E6%AD%A5%E8%B7%AF%E2%80%9D/">【ArcGIS笔记1】将.shp矢量数据导入“两步路”</a></div></div></div><div class="post-view-count"><span>本文阅读量：</span><span id="post-view-count"></span><span>次</span></div></div><div class="footer"><span>©️2019-2025 Designed By&nbsp;<strong><a target="_blank" rel="noopener" href="https://github.com/random-yang">RandomYang</a></strong> Powered By&nbsp;</span><strong><a target="_blank" rel="noopener" href="https://hexo.io">hexo</a></strong><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div class="darkmode-mask" id="darkmode-mask"></div><div class="sidebar__button"></div></body></html>

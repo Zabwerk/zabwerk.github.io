@@ -453,15 +453,13 @@ a {
     background-position: center 0;
   }
   .site-uv,
-  .site-pv,
-  .post-view-count {
+  .site-pv {
     margin: 1rem 0;
     font-size: 0.9rem;
     color: #929292;
   }
   .site-uv i.fa,
-  .site-pv i.fa,
-  .post-view-count i.fa {
+  .site-pv i.fa {
     margin-right: 0.5rem;
     color: #6ba8a9;
   }

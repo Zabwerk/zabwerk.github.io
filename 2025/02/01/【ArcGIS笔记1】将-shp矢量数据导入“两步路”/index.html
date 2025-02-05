@@ -40,49 +40,63 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 })</script><link rel="preload" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css"><link rel="preload" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha256-TThEtR+XalhWKkfF383YLOrI50NGNeIqrzS+q08afrY=" crossorigin="anonymous"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Zabwerk的元空间" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div class="mask-border"></div><div class="head"><div class="head__inner"><h1><a href="/">Zabwerk的元空间</a></h1><p></p></div></div><div class="paper-container"><div class="main"><div class="location-bar"><div class="line-1"><div class="horizontal-line" style="height: 3px"></div></div><div class="line-2"><div class="horizontal-line" style="height: 1px"></div></div><p class="text">【ArcGIS笔记1】将.shp矢量数据导入“两步路”</p><div class="switch-button"><input class="container_toggle" type="checkbox" id="switch" name="mode"><label for="switch">Toggle</label></div><div class="line-3"><div class="horizontal-line" style="height: 1px"></div></div></div><div class="main__2-col"><article class="post-view__article"><div class="article__infomation"><div class="posts-item"><h2 class="posts-item__title"><a href="">【ArcGIS笔记1】将.shp矢量数据导入“两步路”</a></h2><span class="post__date">2025-02-01</span><a href="/tags/GIS/"><span class="post__tags">#GIS</span></a></div></div><div class="article__content"><h1><span id="0-前言">0 前言</span></h1>
-
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div class="mask-border"></div><div class="head"><div class="head__inner"><h1><a href="/">Zabwerk的元空间</a></h1><p></p></div></div><div class="paper-container"><div class="main"><div class="location-bar"><div class="line-1"><div class="horizontal-line" style="height: 3px"></div></div><div class="line-2"><div class="horizontal-line" style="height: 1px"></div></div><p class="text">【ArcGIS笔记1】将.shp矢量数据导入“两步路”</p><div class="switch-button"><input class="container_toggle" type="checkbox" id="switch" name="mode"><label for="switch">Toggle</label></div><div class="line-3"><div class="horizontal-line" style="height: 1px"></div></div></div><div class="main__2-col"><article class="post-view__article"><div class="article__infomation"><div class="posts-item"><h2 class="posts-item__title"><a href="">【ArcGIS笔记1】将.shp矢量数据导入“两步路”</a></h2><span class="post__date">2025-02-01</span><a href="/tags/GIS/"><span class="post__tags">#GIS</span></a></div></div><div class="article__content"><h1><span id="0-前言">
+0 前言
+</span></h1>
 <p>在进行外业实践中，常常需要利用“两步路”等软件进行路线或研究区域转换，需要将.shp转换为“两步路”软件兼容的格式(.kmz)。本篇文章以记录转换操作。</p>
-<h1><span id="1-kmz格式文件">1 kmz格式文件</span></h1>
+<h1><span id="1-kmz格式文件">
+1 kmz格式文件
+</span></h1>
+<p>KMZ文件是 <strong>压缩过的KML文件</strong> 。KMZ
+是压缩包，在ArcMap中，适用于kml的工具一般同时可以应用在kmz格式数据上。在测绘领域，kmz格式一般是谷歌地图发布的，用于外业测量范围的描绘，坐标为WGS84<sup>[<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46192906/article/details/124109701">1</a>]</sup>。可以通过空间数据编辑软件对.shp文件进行转换（本文以ArcMap为例）。</p>
+<h1><span id="2-导入shp文件">
+2 导入shp文件
+</span></h1>
+将shp文件导入至图层中（图1）<br>
 
-<p>KMZ文件是 <strong>压缩过的KML文件</strong> 。KMZ 是压缩包，在ArcMap中，适用于kml的工具一般同时可以应用在kmz格式数据上。在测绘领域，kmz格式一般是谷歌地图发布的，用于外业测量范围的描绘，坐标为WGS84<sup>[<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46192906/article/details/124109701">1</a>]</sup>。可以通过空间数据编辑软件对.shp文件进行转换（本文以ArcMap为例）。</p>
-<h1><span id="2-导入shp文件">2 导入shp文件</span></h1>
-
-<p>将shp文件导入至图层中（图1）</p>
-<p><style>.htdvufkrfqhi{display: block; margin: 0 auto;}</style><img src="/2025/02/01/%E3%80%90ArcGIS%E7%AC%94%E8%AE%B01%E3%80%91%E5%B0%86-shp%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E2%80%9C%E4%B8%A4%E6%AD%A5%E8%B7%AF%E2%80%9D/1.png" class="htdvufkrfqhi"></p>
-<p align="center">图1 导入shp文件</p>
-
-<h1><span id="3-格式转换">3 格式转换</span></h1>
-
-<p>在工具栏中依次点击【Conversion Tools】→【To KML】→【Layer To KML】（图2）。</p>
-<p><style>.nxwbqtcixukw{display: block; margin: 0 auto;}</style><img src="/2025/02/01/%E3%80%90ArcGIS%E7%AC%94%E8%AE%B01%E3%80%91%E5%B0%86-shp%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E2%80%9C%E4%B8%A4%E6%AD%A5%E8%B7%AF%E2%80%9D/2.png" class="nxwbqtcixukw"></p>
-<p align="center">图2 转换KML工具</p>
-
+<style>.vhstwloutfli{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/01/%E3%80%90ArcGIS%E7%AC%94%E8%AE%B01%E3%80%91%E5%B0%86-shp%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E2%80%9C%E4%B8%A4%E6%AD%A5%E8%B7%AF%E2%80%9D/1.png" class="vhstwloutfli">
+<p align="center">
+图1 导入shp文件
+</p>
+<h1><span id="3-格式转换">
+3 格式转换
+</span></h1>
+<p>在工具栏中依次点击【Conversion Tools】→【To KML】→【Layer To
+KML】（图2）。</p>
+<style>.wvnpxpyprwty{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/01/%E3%80%90ArcGIS%E7%AC%94%E8%AE%B01%E3%80%91%E5%B0%86-shp%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E2%80%9C%E4%B8%A4%E6%AD%A5%E8%B7%AF%E2%80%9D/2.png" class="wvnpxpyprwty">
+<p align="center">
+图2 转换KML工具
+</p>
 <p>选择所需要转换的数据，保存到指定路径（图3）</p>
-<p><style>.jrzpjghekgct{display: block; margin: 0 auto;}</style><img src="/2025/02/01/%E3%80%90ArcGIS%E7%AC%94%E8%AE%B01%E3%80%91%E5%B0%86-shp%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E2%80%9C%E4%B8%A4%E6%AD%A5%E8%B7%AF%E2%80%9D/3.png" class="jrzpjghekgct"></p>
-<p align="center">图3 Layer To KML界面</p>
-
-
+<style>.xnznimekswtm{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/01/%E3%80%90ArcGIS%E7%AC%94%E8%AE%B01%E3%80%91%E5%B0%86-shp%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E2%80%9C%E4%B8%A4%E6%AD%A5%E8%B7%AF%E2%80%9D/3.png" class="xnznimekswtm">
+<p align="center">
+图3 Layer To KML界面
+</p>
 <p>转换完成后即可在对应的路径中找到所转换的文件（图4）</p>
-<p><style>.xewhvlsvpnej{display: block; margin: 0 auto;}</style><img src="/2025/02/01/%E3%80%90ArcGIS%E7%AC%94%E8%AE%B01%E3%80%91%E5%B0%86-shp%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E2%80%9C%E4%B8%A4%E6%AD%A5%E8%B7%AF%E2%80%9D/4.png" class="xewhvlsvpnej"></p>
-<p align="center">图4 转换完成的kmz文件</p>
-
-
-<h1><span id="4-导入至两步路软件">4 导入至“两步路”软件</span></h1>
-
-
-
+<style>.khpxygderlpm{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/01/%E3%80%90ArcGIS%E7%AC%94%E8%AE%B01%E3%80%91%E5%B0%86-shp%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E2%80%9C%E4%B8%A4%E6%AD%A5%E8%B7%AF%E2%80%9D/4.png" class="khpxygderlpm">
+<p align="center">
+图4 转换完成的kmz文件
+</p>
+<h1><span id="4-导入至两步路软件">
+4 导入至“两步路”软件
+</span></h1>
 <p>将.kmz文件导入至移动端设备，用”其他应用打开”该文件，选择“两步路户外助手”（图5）</p>
-<p><style>.pcpjvwockkvt{display: block; margin: 0 auto;}</style><img src="/2025/02/01/%E3%80%90ArcGIS%E7%AC%94%E8%AE%B01%E3%80%91%E5%B0%86-shp%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E2%80%9C%E4%B8%A4%E6%AD%A5%E8%B7%AF%E2%80%9D/5.jpg" class="pcpjvwockkvt"></p>
-<p align="center">图5 用“两步路”打开文件</p>
-
-
+<style>.dkesqjvobcpb{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/01/%E3%80%90ArcGIS%E7%AC%94%E8%AE%B01%E3%80%91%E5%B0%86-shp%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E2%80%9C%E4%B8%A4%E6%AD%A5%E8%B7%AF%E2%80%9D/5.jpg" class="dkesqjvobcpb">
+<p align="center">
+图5 用“两步路”打开文件
+</p>
 <p>即可成功导入至“两步路”中（图6）</p>
-<p><style>.qicxvlwbkcte{display: block; margin: 0 auto;}</style><img src="/2025/02/01/%E3%80%90ArcGIS%E7%AC%94%E8%AE%B01%E3%80%91%E5%B0%86-shp%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E2%80%9C%E4%B8%A4%E6%AD%A5%E8%B7%AF%E2%80%9D/6.jpg" class="qicxvlwbkcte"></p>
-<p align="center">图6 预览效果</p>
-
-
-
+<style>.oizcwunrodda{display: block; margin: 0 auto;}</style>
+<img src="/2025/02/01/%E3%80%90ArcGIS%E7%AC%94%E8%AE%B01%E3%80%91%E5%B0%86-shp%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E2%80%9C%E4%B8%A4%E6%AD%A5%E8%B7%AF%E2%80%9D/6.jpg" class="oizcwunrodda">
+<p align="center">
+图6 预览效果
+</p>
 <hr>
-<p>参考资料：<br>[1].<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46192906/article/details/124109701">【板栗糖GIS】kmz数据是什么，如何打开，普通数据如何转换成kmz格式</a></p>
+<p>参考资料：<br>
+[1].<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46192906/article/details/124109701">【板栗糖GIS】kmz数据是什么，如何打开，普通数据如何转换成kmz格式</a></p>
 </div></article><div class="post-view__sidebar"><div class="sidebar"><div class="tocbot"><h2>Toc</h2><div class="toc__content"></div></div><h2>Links</h2><div class="sidebar__link"><ul><li><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/iidzwb">知乎</a></li><li><a href="mailto:zabwerk@outlook.com">Mail</a></li><li><a target="_blank" rel="noopener" href="https://space.bilibili.com/85563266?spm_id_from=333.1007.0.0">Bilibili</a></li></ul></div><h2>Archives</h2><div class="sidebar__archives"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/">2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a></li></ul></div><h2>Categories</h2><div class="sidebar__categories"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95/">实验记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">经验总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/">随便写写</a></li></ul></div><h2>Tags</h2><div class="sidebar__tags"><ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ENVI/" rel="tag">ENVI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIS/" rel="tag">GIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" rel="tag">图像处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E5%AF%BB/" rel="tag">图寻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E7%BB%98/" rel="tag">测绘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%84%E5%88%99%E7%B1%BB%E6%80%AA%E8%B0%88/" rel="tag">规则类怪谈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%81%A5%E6%84%9F/" rel="tag">遥感</a></li></ul></div><!-- 站点访问量--><div class="site-uv"><i class="fa fa-user"> </i><span>本站访客数：</span><span id="busuanzi_value_site_uv"> </span><span>人</span></div><!-- 页面浏览量--><div class="site-pv"><i class="fa fa-eye"> </i><span>本站总访问量：</span><span id="busuanzi_value_site_pv"> </span><span>次</span></div></div></div></div><div class="horizontal-line" style="height: 1px"></div><div class="main__bottom"><div class="pre-next"><a class="pre-button" href="/2025/02/03/%E5%9C%9F%E5%A3%A4%E4%BE%B5%E8%9A%80%E5%BC%BA%E5%BA%A6%E4%BC%B0%E7%AE%97%E5%AE%9E%E9%AA%8C/">【遥感处理-实验1】土壤侵蚀强度遥感估算实验</a><a class="next-button" href="/2024/10/14/%E5%9B%BE%E5%AF%BB-%E4%B8%AD%E5%9B%BD%E5%8C%BA%E5%9F%9F%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89-%E7%94%B5%E8%AF%9D%E5%8C%BA%E5%8F%B7/">图寻_中国区域笔记（1）_固定电话区号</a></div></div></div><div class="post-view-count"><span>本文阅读量：</span><span id="post-view-count"></span><span>次</span></div></div><div class="footer"><span>©️2019-2025 Designed By&nbsp;<strong><a target="_blank" rel="noopener" href="https://github.com/random-yang">RandomYang</a></strong> Powered By&nbsp;</span><strong><a target="_blank" rel="noopener" href="https://hexo.io">hexo</a></strong><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div class="darkmode-mask" id="darkmode-mask"></div><div class="sidebar__button"></div></body></html>
