@@ -1,0 +1,13 @@
+/* 首页顶部背景切成 5 条等宽莫兰迪色带 */
+#page-header.full_page {
+    background: linear-gradient(
+            to right,
+            #b8a08d 0%,   #b8a08d 20%,
+            #a89286 20%,  #a89286 40%,
+            #8f7d74 40%,  #8f7d74 60%,
+            #756761 60%,  #756761 80%,
+            #5d514d 80%,  #5d514d 100%
+    );
+    /* 让渐变铺满整个视口宽度，高度随主题 */
+    background-size: cover;
+}

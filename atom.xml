@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Zabwerk的元空间</title>
+  
+  
+  <link href="https://example.com/atom.xml" rel="self"/>
+  
+  <link href="https://example.com/"/>
+  <updated>2025-11-29T16:15:39.618Z</updated>
+  <id>https://example.com/</id>
+  
+  <author>
+    <name>Zabwerk</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>虚拟数字测图竞赛个人经验总结</title>
+    <link href="https://example.com/2024/09/24/%E8%99%9A%E6%8B%9F%E6%95%B0%E5%AD%97%E6%B5%8B%E5%9B%BE%E7%AB%9E%E8%B5%9B%E4%B8%AA%E4%BA%BA%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
+    <id>https://example.com/2024/09/24/%E8%99%9A%E6%8B%9F%E6%95%B0%E5%AD%97%E6%B5%8B%E5%9B%BE%E7%AB%9E%E8%B5%9B%E4%B8%AA%E4%BA%BA%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/</id>
+    <published>2024-09-24T05:46:05.000Z</published>
+    <updated>2025-11-29T16:15:39.618Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;&lt;span id=&quot;0-前言&quot;&gt;
+0</summary>
+        
+      
+    
+    
+    
+    <category term="经验总结" scheme="https://example.com/categories/%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
+    
+    
+    <category term="测绘" scheme="https://example.com/tags/%E6%B5%8B%E7%BB%98/"/>
+    
+  </entry>
+  
+</feed>
