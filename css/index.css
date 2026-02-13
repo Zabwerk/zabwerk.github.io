@@ -2878,6 +2878,7 @@ figure.highlight pre .javascript .function {
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  cursor: pointer;
   border-radius: 6px;
 }
 #aside-content #card-toc .toc-content .toc-link:hover {
@@ -2886,6 +2887,9 @@ figure.highlight pre .javascript .function {
 #aside-content #card-toc .toc-content .toc-link.active {
   background: #00c4b6;
   color: #fff;
+}
+#aside-content #card-toc .toc-content .toc-number {
+  display: none;
 }
 #aside-content .sticky_layout:only-child > :first-child {
   margin-top: 0;
@@ -3269,6 +3273,13 @@ figure.highlight pre .javascript .function {
   background-attachment: scroll;
   background-position: bottom;
   background-size: cover;
+}
+#footer:before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--mark-bg);
+  content: '';
 }
 #footer-wrap {
   position: relative;

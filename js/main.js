@@ -465,6 +465,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const isToc = GLOBAL_CONFIG_SITE.isToc
     const isAnchor = GLOBAL_CONFIG.isAnchor
     const $article = document.getElementById('article-container')
+    
+    console.log('scrollFnToDo called - isToc:', isToc, 'isAnchor:', isAnchor, '$article:', !!$article)
 
     if (!($article && (isToc || isAnchor))) return
 
@@ -478,18 +480,102 @@ document.addEventListener('DOMContentLoaded', () => {
       isExpand = $cardToc.classList.contains('is-expand')
 
       // toc元素點擊
-      const tocItemClickFn = e => {
-        const target = e.target.closest('.toc-link')
-        if (!target) return
-
+      const tocItemClickFn = function(e) {
         e.preventDefault()
-        btf.scrollToDest(btf.getEleTop(document.getElementById(decodeURI(target.getAttribute('href')).replace('#', ''))), 300)
+        
+        // 使用 e.currentTarget 获取当前绑定的元素
+        const href = e.currentTarget.getAttribute('href')
+        let targetId = null
+        
+        if (href) {
+          targetId = decodeURI(href).replace('#', '')
+        } else {
+          // 如果 href 为 null，尝试从 toc-text 生成 targetId
+          const tocText = e.currentTarget.querySelector('.toc-text')
+          if (tocText) {
+            const text = tocText.textContent.trim()
+            // 生成 slug（保留中文，与 hexo-renderer-marked 的 slug 生成逻辑一致）
+            targetId = text
+              .replace(/\n/g, '')          // 去掉换行符
+              .replace(/[\(\)（）]/g, '')  // 去掉括号
+              .replace(/[、,，]/g, '-')     // 顿号和逗号替换为连字符
+              .replace(/\./g, '')          // 去掉点号
+              .replace(/\s+/g, '-')        // 空格替换为连字符
+              .replace(/-+/g, '-')         // 多个连字符替换为一个
+              .replace(/^-|-$/g, '')       // 移除开头和结尾的连字符
+          }
+        }
+        
+        if (!targetId) return
+        
+        const targetEle = document.getElementById(targetId)
+        
+        if (targetEle) {
+          // 使用 btf.scrollToDest 方法
+          btf.scrollToDest(btf.getEleTop(targetEle), 500)
+        }
+        
         if (window.innerWidth < 900) {
           $cardTocLayout.classList.remove('open')
         }
       }
 
-      btf.addEventListenerPjax($cardToc, 'click', tocItemClickFn)
+      // 直接绑定到每个 toc-link 元素
+      if ($tocLink.length > 0) {
+        $tocLink.forEach(link => {
+          link.addEventListener('click', tocItemClickFn)
+        })
+      }
+
+      // toc元素懸停展開
+      const tocItemHoverFn = function(e) {
+        const parentLi = this.closest('li')
+        if (!parentLi) return
+
+        // 檢查是否是一級標題
+        if (parentLi.parentElement.classList.contains('toc')) {
+          // 展開所有二級和三級標題
+          const tocChild = parentLi.querySelector(':scope > .toc-child')
+          if (tocChild) {
+            tocChild.style.display = 'block'
+            // 展開二級標題下的三級標題
+            const level2Items = tocChild.querySelectorAll(':scope > .toc-item')
+            level2Items.forEach(item => {
+              const child = item.querySelector(':scope > .toc-child')
+              if (child) {
+                child.style.display = 'block'
+              }
+            })
+          }
+        }
+      }
+
+      // toc元素離開折疊
+      const tocItemLeaveFn = function(e) {
+        const parentLi = this.closest('li')
+        if (!parentLi) return
+
+        // 檢查是否是一級標題
+        if (parentLi.parentElement.classList.contains('toc')) {
+          // 檢查是否當前激活的項目，或者其子項目中是否有激活的項
+          const hasActiveChild = parentLi.querySelector('.toc-item.active') !== null
+          if (!parentLi.classList.contains('active') && !hasActiveChild) {
+            // 折疊子項
+            const tocChild = parentLi.querySelector(':scope > .toc-child')
+            if (tocChild) {
+              tocChild.style.display = 'none'
+            }
+          }
+        }
+      }
+
+      // 直接绑定到每个 toc-link 元素
+      if ($tocLink.length > 0) {
+        $tocLink.forEach(link => {
+          link.addEventListener('mouseenter', tocItemHoverFn)
+          link.addEventListener('mouseleave', tocItemLeaveFn)
+        })
+      }
 
       autoScrollToc = item => {
         const sidebarHeight = $cardToc.clientHeight
@@ -513,42 +599,144 @@ document.addEventListener('DOMContentLoaded', () => {
     let detectItem = ''
 
     const findHeadPosition = top => {
-      if (top === 0) return false
+      console.log('findHeadPosition called, top:', top)
+      if (top === 0) {
+        console.log('top is 0, returning')
+        return false
+      }
 
       let currentId = ''
       let currentIndex = ''
+      let currentEle = null
 
       for (let i = 0; i < $articleList.length; i++) {
         const ele = $articleList[i]
         if (top > btf.getEleTop(ele) - 80) {
-          const id = ele.id
-          currentId = id ? '#' + encodeURI(id) : ''
+          // 查找标题元素的id，如果没有则查找子span的id
+          let id = ele.id
+          if (!id) {
+            const span = ele.querySelector('span[id]')
+            if (span) {
+              id = span.id
+            }
+          }
+          currentId = id ? '#' + id : ''
           currentIndex = i
+          currentEle = ele
+          if (i < 3) console.log('Heading', i, 'id:', id, 'text:', ele.textContent.substring(0, 20))
         } else {
           break
         }
       }
 
-      if (detectItem === currentIndex) return
+      console.log('currentId:', currentId, 'currentIndex:', currentIndex, 'detectItem:', detectItem)
+
+      if (detectItem === currentIndex) {
+        console.log('detectItem === currentIndex, returning')
+        return
+      }
 
       if (isAnchor) btf.updateAnchor(currentId)
 
       detectItem = currentIndex
 
       if (isToc) {
+        // 清除所有active状态
         $cardToc.querySelectorAll('.active').forEach(i => i.classList.remove('active'))
 
         if (currentId) {
-          const currentActive = $tocLink[currentIndex]
-          currentActive.classList.add('active')
+          // 通过ID查找对应的TOC链接
+          const targetId = currentId.replace('#', '')
+          console.log('Scroll - targetId:', targetId)
+          let currentActive = null
+          
+          // 遍历所有TOC链接，查找匹配的项
+          console.log('Total TOC links:', $tocLink.length, 'targetId:', targetId)
+          $tocLink.forEach((link, index) => {
+            const href = link.getAttribute('href')
+            if (href) {
+              const linkId = href.replace('#', '')
+              if (linkId === targetId) {
+                currentActive = link
+                console.log('Found match by href at index:', index)
+              }
+            } else {
+              // 如果href为null，从toc-text生成ID进行比较
+              const tocText = link.querySelector('.toc-text')
+              if (tocText) {
+                const text = tocText.textContent.trim()
+                // 处理各种特殊字符，与hexo-renderer-marked的slug生成逻辑一致
+                const generatedId = text
+                  .replace(/\n/g, '')          // 去掉换行符
+                  .replace(/[\(\)（）]/g, '')  // 去掉括号
+                  .replace(/[、,，]/g, '-')     // 顿号和逗号替换为连字符
+                  .replace(/\./g, '')          // 去掉点号
+                  .replace(/\s+/g, '-')        // 空格替换为连字符
+                  .replace(/-+/g, '-')         // 多个连字符替换为一个
+                  .replace(/^-|-$/g, '')       // 移除开头和结尾的连字符
+                // 只显示可能匹配的链接
+                const isMatch = generatedId === targetId
+                if (isMatch || targetId.includes('433') && text.includes('4.3.3')) {
+                  console.log('Checking link', index, 'text:', JSON.stringify(text), 'generatedId:', generatedId, 'isMatch:', isMatch)
+                }
+                if (isMatch) {
+                  currentActive = link
+                  console.log('Found match by text at index:', index)
+                }
+              }
+            }
+          })
+          
+          if (currentActive) {
+            console.log('Adding active class to:', currentActive)
+            currentActive.classList.add('active')
 
-          setTimeout(() => autoScrollToc(currentActive), 0)
+            setTimeout(() => autoScrollToc(currentActive), 0)
 
-          if (!isExpand) {
-            let parent = currentActive.parentNode
-            while (!parent.matches('.toc')) {
-              if (parent.matches('li')) parent.classList.add('active')
-              parent = parent.parentNode
+            if (!isExpand) {
+              // 获取当前激活项的层级
+              const currentLi = currentActive.closest('li')
+              const currentLevel = parseInt(currentLi.className.match(/toc-level-(\d)/)?.[1] || '1')
+              
+              // 展开当前项及其所有父级
+              let parent = currentActive.parentNode
+              while (!parent.matches('.toc')) {
+                if (parent.matches('li')) {
+                  parent.classList.add('active')
+                  // 如果是父级，展开其子项
+                  const tocChild = parent.querySelector(':scope > .toc-child')
+                  if (tocChild) {
+                    tocChild.style.display = 'block'
+                  }
+                }
+                parent = parent.parentNode
+              }
+              
+              // 根据当前层级展开子项
+              if (currentLevel === 1) {
+                // 一级标题：展开二级标题
+                const level2Items = currentLi.querySelectorAll(':scope > .toc-child > .toc-item.toc-level-2')
+                level2Items.forEach(item => {
+                  item.classList.add('active')
+                  const child = item.querySelector(':scope > .toc-child')
+                  if (child) child.style.display = 'block'
+                })
+              } else if (currentLevel === 2) {
+                // 二级标题：展开三级标题
+                const level3Items = currentLi.querySelectorAll(':scope > .toc-child > .toc-item.toc-level-3')
+                level3Items.forEach(item => {
+                  item.classList.add('active')
+                })
+              }
+              
+              // 折叠其他一级标题的子项
+              const allLevel1Items = $cardToc.querySelectorAll('.toc-item.toc-level-1')
+              allLevel1Items.forEach(item => {
+                if (!item.classList.contains('active')) {
+                  const child = item.querySelector(':scope > .toc-child')
+                  if (child) child.style.display = 'none'
+                }
+              })
             }
           }
         }
@@ -557,6 +745,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // main of scroll
     const tocScrollFn = btf.throttle(() => {
+      console.log('tocScrollFn called')
       const currentTop = window.scrollY || document.documentElement.scrollTop
       if (isToc && GLOBAL_CONFIG.percent.toc) {
         $tocPercentage.textContent = btf.getScrollPercent(currentTop, $article)
@@ -564,6 +753,7 @@ document.addEventListener('DOMContentLoaded', () => {
       findHeadPosition(currentTop)
     }, 100)
 
+    console.log('Adding scroll event listener')
     btf.addEventListenerPjax(window, 'scroll', tocScrollFn, { passive: true })
   }
 
