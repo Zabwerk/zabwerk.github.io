@@ -1113,4 +1113,14 @@ document.addEventListener('DOMContentLoaded', () => {
       fn()
     })
   })
+
+  /**
+   * 微信公众号二维码展开/折叠
+   */
+  window.toggleWechatQR = () => {
+    const qrContainer = document.querySelector('.wechat-qr-container')
+    if (qrContainer) {
+      qrContainer.classList.toggle('show')
+    }
+  }
 })
