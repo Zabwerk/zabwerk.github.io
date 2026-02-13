@@ -527,15 +527,12 @@ document.addEventListener('DOMContentLoaded', () => {
         })
       }
 
-      // toc元素懸停展開
+      // toc元素懸停展開（绑定到 li 元素）
       const tocItemHoverFn = function(e) {
-        const parentLi = this.closest('li')
-        if (!parentLi) return
-
         // 檢查是否是一級標題
-        if (parentLi.parentElement.classList.contains('toc')) {
+        if (this.parentElement.classList.contains('toc')) {
           // 展開所有二級和三級標題
-          const tocChild = parentLi.querySelector(':scope > .toc-child')
+          const tocChild = this.querySelector(':scope > .toc-child')
           if (tocChild) {
             tocChild.style.display = 'block'
             // 展開二級標題下的三級標題
@@ -550,18 +547,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // toc元素離開折疊
+      // toc元素離開折疊（绑定到 li 元素）
       const tocItemLeaveFn = function(e) {
-        const parentLi = this.closest('li')
-        if (!parentLi) return
-
         // 檢查是否是一級標題
-        if (parentLi.parentElement.classList.contains('toc')) {
+        if (this.parentElement.classList.contains('toc')) {
           // 檢查是否當前激活的項目，或者其子項目中是否有激活的項
-          const hasActiveChild = parentLi.querySelector('.toc-item.active') !== null
-          if (!parentLi.classList.contains('active') && !hasActiveChild) {
+          const hasActiveChild = this.querySelector('.toc-item.active') !== null
+          if (!this.classList.contains('active') && !hasActiveChild) {
             // 折疊子項
-            const tocChild = parentLi.querySelector(':scope > .toc-child')
+            const tocChild = this.querySelector(':scope > .toc-child')
             if (tocChild) {
               tocChild.style.display = 'none'
             }
@@ -569,11 +563,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // 直接绑定到每个 toc-link 元素
-      if ($tocLink.length > 0) {
-        $tocLink.forEach(link => {
-          link.addEventListener('mouseenter', tocItemHoverFn)
-          link.addEventListener('mouseleave', tocItemLeaveFn)
+      // 绑定到每个一级 toc-item 元素（li 元素）
+      const $tocLevel1Items = $cardToc.querySelectorAll('.toc-item.toc-level-1')
+      if ($tocLevel1Items.length > 0) {
+        $tocLevel1Items.forEach(item => {
+          item.addEventListener('mouseenter', tocItemHoverFn)
+          item.addEventListener('mouseleave', tocItemLeaveFn)
         })
       }
 
@@ -655,7 +650,8 @@ document.addEventListener('DOMContentLoaded', () => {
           $tocLink.forEach((link, index) => {
             const href = link.getAttribute('href')
             if (href) {
-              const linkId = href.replace('#', '')
+              // 解码 href 中的 URL 编码，以便与 targetId（中文）进行比较
+              const linkId = decodeURIComponent(href.replace('#', ''))
               if (linkId === targetId) {
                 currentActive = link
                 console.log('Found match by href at index:', index)
