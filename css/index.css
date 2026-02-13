@@ -1649,7 +1649,7 @@ figure.highlight pre .javascript .function {
 .container pre,
 .container code {
   font-size: var(--global-font-size);
-  font-family: consolas, Menlo, monospace, 'PingFang SC', 'Microsoft JhengHei', sans-serif !important;
+  font-family: consolas, Menlo, monospace, 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
   border-radius: 6px;
 }
 .container code {
@@ -1951,18 +1951,15 @@ figure.highlight pre .javascript .function {
   padding: 0 16px;
 }
 #article-container {
-  border: 2px solid #f00 !important;
-  min-height: 200px !important;
+  min-height: 200px;
 }
 #article-container .category-lists {
   padding: 20px;
-  border: 2px solid #00f !important;
 }
 #article-container .category-lists .category-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  border: 2px solid #008000 !important;
 }
 #article-container .category-lists .category-list .category-list-item {
   margin: 15px 0;
@@ -1976,7 +1973,6 @@ figure.highlight pre .javascript .function {
   -o-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  border: 2px solid #ff0 !important;
 }
 #article-container .category-lists .category-list .category-list-item:hover {
   -webkit-box-shadow: var(--card-hover-box-shadow);
@@ -1999,7 +1995,6 @@ figure.highlight pre .javascript .function {
   list-style: none;
   padding-left: 20px;
   margin-top: 10px;
-  border: 2px solid #ffa500 !important;
 }
 #article-container .category-lists .category-list .category-list-child .category-list-item {
   background: transparent;
@@ -2626,12 +2621,13 @@ figure.highlight pre .javascript .function {
   transition: all 0.3s ease;
 }
 #aside-content .wechat-qr-container.show {
-  max-height: 300px;
+  max-height: 500px;
   margin-top: 14px;
 }
 #aside-content .wechat-qr-container .wechat-qr-img {
   width: 100%;
-  max-width: 200px;
+  max-width: 280px;
+  height: auto;
   border-radius: 8px;
   -webkit-box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -3361,7 +3357,11 @@ figure.highlight pre .javascript .function {
 #page-header {
   position: relative;
   width: 100%;
-  background-color: #49b1f5;
+  background: -webkit-linear-gradient(left, #b8a08d 0% 20%, #a89286 20% 40%, #8f7d74 40% 60%, #756761 60% 80%, #5d514d 80% 100%);
+  background: -moz-linear-gradient(left, #b8a08d 0% 20%, #a89286 20% 40%, #8f7d74 40% 60%, #756761 60% 80%, #5d514d 80% 100%);
+  background: -o-linear-gradient(left, #b8a08d 0% 20%, #a89286 20% 40%, #8f7d74 40% 60%, #756761 60% 80%, #5d514d 80% 100%);
+  background: -ms-linear-gradient(left, #b8a08d 0% 20%, #a89286 20% 40%, #8f7d74 40% 60%, #756761 60% 80%, #5d514d 80% 100%);
+  background: linear-gradient(to right, #b8a08d 0% 20%, #a89286 20% 40%, #8f7d74 40% 60%, #756761 60% 80%, #5d514d 80% 100%);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
