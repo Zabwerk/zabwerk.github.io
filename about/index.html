@@ -1,0 +1,843 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>关于我 | Zabwerk的元空间</title><meta name="author" content="Zabwerk"><meta name="copyright" content="Zabwerk"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="Zabwerk     地理信息科学专业 &#x2F; 遥感与测绘技术爱好者     杭州师范大学地理信息科学专业本科生，专业排名 top 8%。专注于遥感影像处理、空间数据分析和数字测图技术。曾获全国大学生测绘学科创新创业智能大赛特等奖、一等奖，具有丰富的项目实践经验和竞赛指导经验。                     2次         国家级竞赛获">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于我">
+<meta property="og:url" content="https://zabwerk.github.io/about/index.html">
+<meta property="og:site_name" content="Zabwerk的元空间">
+<meta property="og:description" content="Zabwerk     地理信息科学专业 &#x2F; 遥感与测绘技术爱好者     杭州师范大学地理信息科学专业本科生，专业排名 top 8%。专注于遥感影像处理、空间数据分析和数字测图技术。曾获全国大学生测绘学科创新创业智能大赛特等奖、一等奖，具有丰富的项目实践经验和竞赛指导经验。                     2次         国家级竞赛获">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zabwerk.github.io/img/xunzhen.jpg">
+<meta property="article:published_time" content="2026-02-14T14:45:59.000Z">
+<meta property="article:modified_time" content="2026-02-14T16:41:32.892Z">
+<meta property="article:author" content="Zabwerk">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zabwerk.github.io/img/xunzhen.jpg"><link rel="shortcut icon" href="/img/xunzhen.jpg"><link rel="canonical" href="https://zabwerk.github.io/about/index.html"><link rel="preconnect"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '关于我',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/css/morandi.css"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Zabwerk的元空间" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/xunzhen.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div></div></div></div><div class="page type-about" id="body-wrap"><header class="not-home-page" id="page-header" style="background: linear-gradient(to right,;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Zabwerk的元空间</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">关于我</h1></div></header><main class="layout hide-aside" id="content-inner"><div id="page"><div class="container" id="article-container">
+
+<div class="about-page">
+
+<!-- 个人简介区域 -->
+<div class="profile-section">
+  <div class="profile-avatar">
+    <img src="/img/avatar.png" alt="头像" onerror="this.src='/img/friend_404.gif'">
+  </div>
+  <div class="profile-info">
+    <h1 class="profile-name"><span id="zabwerk">Zabwerk</span></h1>
+    <p class="profile-title">地理信息科学专业 / 遥感与测绘技术爱好者</p>
+    <p class="profile-desc">杭州师范大学地理信息科学专业本科生，专业排名 top 8%。专注于遥感影像处理、空间数据分析和数字测图技术。曾获全国大学生测绘学科创新创业智能大赛特等奖、一等奖，具有丰富的项目实践经验和竞赛指导经验。</p>
+    <div class="profile-stats">
+      <div class="stat-item">
+        <span class="stat-number">2次</span>
+        <span class="stat-label">国家级竞赛获奖</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">10+</span>
+        <span class="stat-label">项目经验</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">3.77</span>
+        <span class="stat-label">专业绩点</span>
+      </div>
+    </div>
+    <div class="profile-contact-info">
+      <p><i class="fas fa-envelope"></i> zabwerk@yeah.net | <i class="fas fa-map-marker-alt"></i> 浙江杭州</p>
+      <p><i class="fab fa-weixin"></i> 微信：kuroiwakrewbaz</p>
+    </div>
+  </div>
+</div>
+
+<!-- 教育背景 -->
+<div class="section">
+  <h2 class="section-title"><span id="教育背景"><i class="fas fa-graduation-cap"></i> 教育背景</span></h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">2022.09 - 2026.06</div>
+      <div class="timeline-content">
+        <h3><span id="地理信息科学">地理信息科学</span></h3>
+        <p>杭州师范大学 | 本科</p>
+        <p>信息科学与技术学院 | 绩点: 3.77/5（专业 top 8%）</p>
+        
+        <div class="award-section">
+          <h4><span id="获奖情况"><i class="fas fa-trophy"></i> 获奖情况</span></h4>
+          <ul class="award-list">
+            <li><span class="award-level national">国家级</span>2024年全国大学生测绘学科创新创业智能大赛测绘技能竞赛——虚拟数字测图赛项 全国特等奖</li>
+            <li><span class="award-level national">国家级</span>2023年全国大学生测绘学科创新创业智能大赛测绘技能竞赛——虚拟数字测图赛项 全国一等奖</li>
+            <li><span class="award-level national">国家级</span>2023年创研杯全国大学生英语翻译竞赛 全国三等奖</li>
+            <li><span class="award-level provincial">省级</span>2024年全国大学生英语翻译能力竞赛 省级一等奖</li>
+            <li><span class="award-level school">校级</span>2023年单项奖学金-学业优秀奖</li>
+          </ul>
+        </div>
+        
+        <!-- 专业技能 -->
+        <div class="skill-section">
+          <h4><span id="专业技能"><i class="fas fa-tools"></i> 专业技能</span></h4>
+          <div class="skill-text">
+            <p><strong>化学教学：</strong>InDraw（熟练掌握化学实验仪器、有机化学结构式等化学方面作图）| LaTeX（熟练使用LaTeX语言书写化学方程式）</p>
+            <p><strong>GIS软件：</strong>ArcGIS（熟练绘制专题地图）| ENVI（遥感影像处理）| SouthMap（数字测图）</p>
+            <p><strong>办公与数据分析：</strong>WPS（熟练使用Word进行教学文档排版、试卷排版）| Excel（常见函数进行成绩统计分析）| PPT（教学备课、课件制作）| Origin（数据可视化与科研绘图）</p>
+            <p><strong>编程与开发：</strong>C语言（NCRE二级）| Python（基础数据处理）| JavaScript（个人博客开发）| HTML/CSS（网页布局与样式）| Pug（模板引擎）| Stylus（CSS预处理器）| WebGIS开发（基础）| <strong>搭建个人网页</strong>（基于Hexo + Butterfly主题，集成MathJax公式渲染、Supabase投票系统等功能）</p>
+          </div>
+        </div>
+        
+        <!-- 证书与语言 -->
+        <div class="cert-section">
+          <h4><span id="证书与语言"><i class="fas fa-certificate"></i> 证书与语言</span></h4>
+          <div class="cert-tags">
+            <span class="cert-tag"><i class="fas fa-car"></i> 机动车C1驾驶证（4年驾龄）</span>
+            <span class="cert-tag"><i class="fas fa-code"></i> NCRE（C语言）</span>
+            <span class="cert-tag"><i class="fas fa-language"></i> 普通话（母语）</span>
+            <span class="cert-tag"><i class="fas fa-globe"></i> 英语（CET-6）</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 工作经历 -->
+<div class="section">
+  <h2 class="section-title"><span id="工作经历"><i class="fas fa-briefcase"></i> 工作经历</span></h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">2024.11 - 2025.12</div>
+      <div class="timeline-content">
+        <h3><span id="地图制图助理">地图制图助理</span></h3>
+        <p>杭州师范大学生命与环境科学学院 | 浙江杭州</p>
+        <ul>
+          <li>为浙江省重要湿地监测、鄱阳湖水系表底层物种分布、呼伦湖湿地生物多样性调研等多个项目提供空间制图技术支持</li>
+          <li>完成覆盖闲林水库的研究区底图制备，利用ArcMap、ENVI软件与Landsat8/9遥感数据完成遥感影像大气校正、融合、镶嵌、裁剪等预处理，实现地物分类精度达94%</li>
+          <li>规划并实施龙港市海塘安澜工程项目总长约60公里的最优采样路线，通过无人机采集厘米级分辨率正射影像30余张并计算样区种群密度</li>
+          <li>设计并制作了包含多重图层的专题地图10余幅，已应用于项目结题报告</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 项目经历 -->
+<div class="section">
+  <h2 class="section-title"><span id="项目经历"><i class="fas fa-project-diagram"></i> 项目经历</span></h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">2023.07 - 2025.07</div>
+      <div class="timeline-content">
+        <h3><span id="全国大学生测绘学科创新创业智能大赛数字测图赛项">全国大学生测绘学科创新创业智能大赛——数字测图赛项</span></h3>
+        <p>参赛者/指导顾问 | 浙江杭州</p>
+        <ul>
+          <li><strong>核心成就：</strong>于2023年、2024年连续参赛，凭借在虚拟数字测图赛项中的出色表现，先后斩获全国一等奖、特等奖</li>
+          <li><strong>能力延伸：</strong>赛后凭借扎实的技术功底与竞赛经验，受邀为杭州师范大学、中铁十八局集团有限公司技工学校等多个参赛团队提供线上线下技术与策略指导，协助其提升竞赛水平</li>
+          <li><strong>知识输出：</strong>将参赛经验系统总结，在CSDN与Bilibili平台制作发布系列图文、视频教程，总曝光量超过10,000次，获得上千点赞与收藏，建立了个人技术影响力</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 研究经历 -->
+<div class="section">
+  <h2 class="section-title"><span id="研究经历"><i class="fas fa-flask"></i> 研究经历</span></h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">2024.11 - 2025.11</div>
+      <div class="timeline-content">
+        <h3><span id="工业园区地下水污染传播机理建模分析与环境监测优化">工业园区地下水污染传播机理建模分析与环境监测优化</span></h3>
+        <p>项目负责人 | 浙江杭州</p>
+        <ul>
+          <li>以<strong>第一作者</strong>身份在《杭州师范大学学报（自然科学版）》投稿论文《基于KCN与IDW联合方法的地下水污染分布特征探究》并拟录用。本研究针对浙江省某典型化工园区，创新性地开发了一种融合Kriging卷积神经网络（KCN）与反距离加权插值（IDW）的联合插值方法（KCN_IDW），用于高精度模拟地下水污染物的空间分布。通过监测关键污染指标氨氮和化学需氧量（COD），验证了KCN_IDW方法在预测精度与空间可视化效果上的显著优势。交叉验证结果表明其关键性能指标上均显著优于传统插值方法。该研究为化工园区地下水污染风险管控提供了有效的技术支撑</li>
+          <li>以<strong>第二作者</strong>身份在《杭州师范大学学报（自然科学版）》投稿论文《人工神经网络在地下水水质预测方面的应用综述》并拟录用，目前在定稿阶段</li>
+          <li>以<strong>第一发明人</strong>的身份发表实用新型专利《一种地下水环境监测设备》</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 教学经验 -->
+<div class="section">
+  <h2 class="section-title"><span id="教学经验"><i class="fas fa-chalkboard-teacher"></i> 教学经验</span></h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">2025.01 - 至今</div>
+      <div class="timeline-content">
+        <h3><span id="高中学生-小何-男生-高中化学-浙江杭州">高中学生 小何 <span class="student-info">男生 | 高中化学 | 浙江杭州</span></span></h3>
+        <ul>
+          <li>担任高二化学学科家庭教师，指导学生进行选择性必修二、三的内容学习，系统性梳理结构化学中易错知识点和重难点，有机化学中官能团的基本性质与反应</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-date">2024.11 - 至今</div>
+      <div class="timeline-content">
+        <h3><span id="高中学生-小于-女生-高中化学-浙江杭州">高中学生 小于 <span class="student-info">女生 | 高中化学 | 浙江杭州</span></span></h3>
+        <ul>
+          <li>2024年11月起担任学期内高中化学学科家庭一对一辅导教师，授课范围为高中化学选修一、二、三，学期内针对电化学原理、原子与分子结构、溶液离子平衡、化学反应速率进行复习与笔记梳理</li>
+          <li>2026年1月浙江省高考<b>首考化学单科成绩赋分80分，远超预期分数20分</b>，获学生与家长一致好评</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-date">2025.02 - 2025.06</div>
+      <div class="timeline-content">
+        <h3><span id="高中学生-小欧-男生-高三化学-江西赣州">高中学生 小欧 <span class="student-info">男生 | 高三化学 | 江西赣州</span></span></h3>
+        <ul>
+          <li>负责高三化学总复习线上指导，重点突破选择题提速策略、有机合成大题及电化学专题</li>
+          <li><strong>教学成果：</strong>教学期间，学生选择题正确率从35.71%提升至57.12%；有机化学合成大题稳定满分（15分）；2025年江西省<strong>高考化学赋分76分，超预期目标6分</strong></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-date">2024.08 - 2025.06</div>
+      <div class="timeline-content">
+        <h3><span id="高中学生-小秦-男生-高中化学-广西桂林">高中学生 小秦 <span class="student-info">男生 | 高中化学 | 广西桂林</span></span></h3>
+        <ul>
+          <li>担任高三化学一对一辅导教师，系统指导学生完成一轮复习及高考冲刺，重点突破电化学、阿伏伽德罗常数等核心考点，优化解题技巧与笔记方法</li>
+          <li><strong>教学成果：</strong>2024年9月月考85分（较7月提升16分），班级排名提升12名至第8位；2025年四省联考83分，班级第5名（年级前10%）；广西壮族自治区<strong>高考化学赋分78分，超预期目标3分</strong></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-date">2023.08 - 2025.06</div>
+      <div class="timeline-content">
+        <h3><span id="高中学生-小李-男生-高中化学-广西桂林">高中学生 小李 <span class="student-info">男生 | 高中化学 | 广西桂林</span></span></h3>
+        <ul>
+          <li>持续三年跟踪辅导，从高一基础巩固到高三高考冲刺全程指导</li>
+          <li><strong>教学重点：</strong>
+            <ul>
+              <li>高一：基础强化（40分→69分）</li>
+              <li>高二：知识体系构建（稳定班级前40%，成绩提升至75分）</li>
+              <li>高三：专题突破（有机合成/工艺流程/实验设计大题技巧）</li>
+            </ul>
+          </li>
+          <li><strong>教学成果：</strong>2024年四省联考75分（班级28名/年级前32%），<strong>高考化学赋分79分，超预期19分</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 联系方式 -->
+<div class="section contact-section">
+  <h2 class="section-title"><span id="联系方式"><i class="fas fa-envelope"></i> 联系方式</span></h2>
+  <div class="contact-container">
+    <div class="contact-grid">
+      <a href="mailto:zabwerk@yeah.net" class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <span>zabwerk@yeah.net</span>
+      </a>
+      <a href="https://github.com/yourusername" target="_blank" class="contact-item">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      <a href="javascript:void(0);" class="contact-item wechat-btn" onclick="toggleWechatQRAbout()">
+        <i class="fab fa-weixin"></i>
+        <span>微信公众号</span>
+      </a>
+    </div>
+    <div class="wechat-qr-about" id="wechatQRAbout">
+      <img src="/img/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E6%A0%87%E5%87%86%E8%89%B2%E7%89%88.png" alt="微信公众号二维码">
+    </div>
+  </div>
+</div>
+
+</div>
+
+<style>
+.about-page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 个人简介区域 */
+.profile-section {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 24px;
+}
+
+[data-theme="dark"] .profile-section {
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.profile-avatar img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--theme-color);
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 2.5em;
+  margin: 0 0 10px 0;
+  color: var(--font-color);
+}
+
+.profile-title {
+  font-size: 1.2em;
+  color: var(--theme-color);
+  margin-bottom: 15px;
+}
+
+.profile-desc {
+  color: var(--font-color);
+  opacity: 0.8;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 40px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2em;
+  font-weight: 600;
+  color: var(--theme-color);
+}
+
+.stat-label {
+  font-size: 0.9em;
+  color: var(--font-color);
+  opacity: 0.7;
+}
+
+/* 通用区域样式 */
+.section {
+  margin-bottom: 20px;
+  padding: 24px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .section {
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.section-title {
+  font-size: 1.3em;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--theme-color);
+  color: var(--font-color);
+}
+
+.section-title i {
+  margin-right: 10px;
+  color: var(--theme-color);
+}
+
+/* 时间线样式 */
+.timeline {
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 16px;
+  padding-left: 16px;
+  border-left: 3px solid var(--theme-color);
+}
+
+.timeline-date {
+  min-width: 120px;
+  font-weight: 600;
+  color: var(--theme-color);
+}
+
+.timeline-content h3 {
+  margin: 0 0 8px 0;
+  color: var(--font-color);
+  font-size: 1.1em;
+}
+
+.timeline-content h3 .student-info {
+  font-size: 0.85em;
+  font-weight: 400;
+  color: var(--font-color);
+  opacity: 0.7;
+  margin-left: 8px;
+}
+
+.timeline-content ul ul {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.timeline-content p {
+  margin: 0 0 5px 0;
+  color: var(--font-color);
+  opacity: 0.8;
+}
+
+.timeline-content ul {
+  margin: 10px 0 0 0;
+  padding-left: 20px;
+}
+
+.timeline-content li {
+  margin-bottom: 5px;
+  color: var(--font-color);
+  opacity: 0.8;
+}
+
+/* 技能文本样式 */
+.skill-text {
+  color: var(--font-color);
+  line-height: 1.8;
+}
+
+.skill-text p {
+  margin: 8px 0;
+  font-size: 0.95em;
+}
+
+.skill-text strong {
+  color: var(--theme-color);
+  font-weight: 600;
+}
+
+/* 技能标签样式 */
+.skill-tags,
+.cert-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag,
+.cert-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #6495ED;
+  border-radius: 20px;
+  font-size: 0.9em;
+  color: #FFFFF0;
+  border: 1px solid #6495ED;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover,
+.cert-tag:hover {
+  background: #5a85d8;
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] .skill-tag,
+[data-theme="dark"] .cert-tag {
+  background: #7C8A8C;
+  color: #FFFFF0;
+  border-color: #7C8A8C;
+}
+
+[data-theme="dark"] .skill-tag:hover,
+[data-theme="dark"] .cert-tag:hover {
+  background: #6a7678;
+}
+
+.cert-tag i,
+.skill-tag i {
+  color: #FFFFF0;
+}
+
+/* 联系方式样式 */
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #6495ED;
+  border-radius: 20px;
+  color: #FFFFF0;
+  text-decoration: none;
+  border: 1px solid #6495ED;
+  transition: all 0.3s ease;
+  font-size: 0.9em;
+}
+
+.contact-item:hover {
+  background: #5a85d8;
+  color: #FFFFF0 !important;
+  transform: translateY(-2px);
+}
+
+.contact-item span {
+  color: #FFFFF0;
+}
+
+.contact-item:hover span {
+  color: #FFFFF0;
+}
+
+[data-theme="dark"] .contact-item {
+  background: #7C8A8C;
+  color: #FFFFF0;
+  border-color: #7C8A8C;
+}
+
+[data-theme="dark"] .contact-item:hover {
+  background: #6a7678;
+}
+
+.contact-item i {
+  font-size: 1em;
+  color: #FFFFF0;
+}
+
+/* 获奖情况样式 */
+.award-section,
+.cert-section,
+.skill-section {
+  margin-top: 12px;
+}
+
+.award-section h4,
+.cert-section h4,
+.skill-section h4 {
+  font-size: 1em;
+  margin-bottom: 12px;
+  color: var(--font-color);
+}
+
+.award-section h4 i,
+.cert-section h4 i,
+.skill-section h4 i {
+  margin-right: 8px;
+  color: var(--theme-color);
+}
+
+.award-list,
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.award-list li,
+.cert-list li {
+  margin-bottom: 8px;
+  padding-left: 0;
+  line-height: 1.6;
+}
+
+.award-level {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-weight: 600;
+  margin-right: 8px;
+  color: #fff;
+}
+
+.award-level.national {
+  background: #e74c3c;
+}
+
+.award-level.provincial {
+  background: #f39c12;
+}
+
+.award-level.school {
+  background: #3498db;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .profile-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .profile-stats {
+    justify-content: center;
+  }
+  
+  .timeline-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .contact-grid {
+    justify-content: center;
+  }
+}
+
+/* 微信公众号二维码样式 */
+.contact-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.wechat-qr-about {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.wechat-qr-about.show {
+  width: 150px;
+  height: auto;
+  opacity: 1;
+}
+
+.wechat-qr-about img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .wechat-qr-about.show {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .wechat-qr-about img {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+</style>
+
+<script>
+function toggleWechatQRAbout() {
+  const qrContainer = document.getElementById('wechatQRAbout');
+  qrContainer.classList.toggle('show');
+}
+
+// 点击其他地方关闭二维码
+document.addEventListener('click', function(e) {
+  const qrContainer = document.getElementById('wechatQRAbout');
+  const wechatBtn = document.querySelector('.wechat-btn');
+  if (qrContainer && wechatBtn && !qrContainer.contains(e.target) && !wechatBtn.contains(e.target)) {
+    qrContainer.classList.remove('show');
+  }
+});
+</script>
+
+
+</div></div></main><footer id="footer" style="background: linear-gradient(to right,;"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By Zabwerk</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/post-poll.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        loader: {
+          load: ['[tex]/mhchem'],
+          paths: {
+            'mathjax-mhchem-font-extension': '/pluginsSrc/@mathjax/mathjax-mhchem-font-extension'
+          }
+        },
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+          packages: {'[+]': ['mhchem']}
+        },
+        chtml: {
+          scale: 1.1,
+          fontURL: '/pluginsSrc/@mathjax/mathjax-newcm-font/chtml/woff2'
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = '/pluginsSrc/mathjax/es5/tex-mml-chtml.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
