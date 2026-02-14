@@ -5,6 +5,48 @@
   // 选项颜色
   const optionColors = ['#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c', '#e67e22', '#34495e'];
 
+  // 渲染 LaTeX 公式
+  const renderMathInPoll = (container) => {
+    // 检查是否有 KaTeX
+    if (typeof katex !== 'undefined') {
+      container.querySelectorAll('.math.inline').forEach(el => {
+        const tex = el.textContent;
+        try {
+          katex.render(tex, el, {
+            throwOnError: false,
+            displayMode: false
+          });
+        } catch (e) {
+          console.error('KaTeX render error:', e);
+        }
+      });
+      container.querySelectorAll('.math.display').forEach(el => {
+        const tex = el.textContent;
+        try {
+          katex.render(tex, el, {
+            throwOnError: false,
+            displayMode: true
+          });
+        } catch (e) {
+          console.error('KaTeX render error:', e);
+        }
+      });
+    }
+    // 检查是否有 MathJax
+    else if (typeof MathJax !== 'undefined') {
+      if (MathJax.typesetPromise) {
+        // 等待 MathJax 就绪后渲染
+        MathJax.startup.promise.then(() => {
+          MathJax.typesetPromise([container]).catch((err) => {
+            console.error('MathJax typeset error:', err);
+          });
+        });
+      } else if (MathJax.Hub) {
+        MathJax.Hub.Queue(['Typeset', MathJax.Hub, container]);
+      }
+    }
+  };
+
   // 初始化文章投票
   const initPostPolls = () => {
     const pollContainers = document.querySelectorAll('.post-poll-container');
@@ -15,6 +57,9 @@
 
       const pollId = pollOptions.dataset.pollId;
       if (!pollId) return;
+
+      // 渲染 LaTeX
+      renderMathInPoll(container);
 
       // 从 localStorage 读取投票数据
       const storageKey = `post_poll_${pollId}`;
@@ -112,6 +157,15 @@
 
     resultContainer.innerHTML = resultHTML;
     resultContainer.classList.add('show');
+
+    // 显示投票后的文字内容
+    const resultTextContainer = container.querySelector('.post-poll-result-text');
+    if (resultTextContainer) {
+      resultTextContainer.style.display = 'block';
+      resultTextContainer.classList.add('show');
+      // 渲染 LaTeX
+      renderMathInPoll(resultTextContainer);
+    }
   };
 
   // 初始化

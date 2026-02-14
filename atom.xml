@@ -6,7 +6,7 @@
   <link href="https://example.com/atom.xml" rel="self"/>
   
   <link href="https://example.com/"/>
-  <updated>2026-02-14T01:27:14.236Z</updated>
+  <updated>2026-02-14T03:46:04.801Z</updated>
   <id>https://example.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>化学原创题1</title>
+    <link href="https://example.com/2026/02/14/%E5%8C%96%E5%AD%A6%E5%8E%9F%E5%88%9B%E9%A2%981/"/>
+    <id>https://example.com/2026/02/14/%E5%8C%96%E5%AD%A6%E5%8E%9F%E5%88%9B%E9%A2%981/</id>
+    <published>2026-02-14T01:33:52.000Z</published>
+    <updated>2026-02-14T03:46:04.801Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Velpatasvir（&lt;span class=&quot;math</summary>
+        
+      
+    
+    
+    
+    <category term="化学" scheme="https://example.com/categories/%E5%8C%96%E5%AD%A6/"/>
+    
+    <category term="初中化学" scheme="https://example.com/categories/%E5%8C%96%E5%AD%A6/%E5%88%9D%E4%B8%AD%E5%8C%96%E5%AD%A6/"/>
+    
+    
+    <category term="化学" scheme="https://example.com/tags/%E5%8C%96%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>文献阅读笔记 | 1.基于可见光波段无人机遥感的植被信息提取</title>
     <link href="https://example.com/2026/02/13/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-1-%E5%9F%BA%E4%BA%8E%E5%8F%AF%E8%A7%81%E5%85%89%E6%B3%A2%E6%AE%B5%E6%97%A0%E4%BA%BA%E6%9C%BA%E9%81%A5%E6%84%9F%E7%9A%84%E6%A4%8D%E8%A2%AB%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/"/>
     <id>https://example.com/2026/02/13/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-1-%E5%9F%BA%E4%BA%8E%E5%8F%AF%E8%A7%81%E5%85%89%E6%B3%A2%E6%AE%B5%E6%97%A0%E4%BA%BA%E6%9C%BA%E9%81%A5%E6%84%9F%E7%9A%84%E6%A4%8D%E8%A2%AB%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/</id>
     <published>2026-02-13T02:45:16.000Z</published>
-    <updated>2026-02-14T01:27:14.236Z</updated>
+    <updated>2026-02-14T03:21:37.378Z</updated>
     
     
       

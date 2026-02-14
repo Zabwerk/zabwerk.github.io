@@ -2396,6 +2396,9 @@ figure.highlight pre .javascript .function {
   -webkit-box-shadow: var(--card-box-shadow);
   box-shadow: var(--card-box-shadow);
 }
+.post-poll-container mjx-container {
+  font-size: 1em !important;
+}
 .post-poll-container .post-poll-question {
   display: -webkit-box;
   display: -moz-box;
@@ -2417,6 +2420,9 @@ figure.highlight pre .javascript .function {
 .post-poll-container .post-poll-question i {
   margin-right: 10px;
   color: var(--theme-color);
+}
+.post-poll-container .post-poll-question mjx-container {
+  font-size: 1em !important;
 }
 .post-poll-container .post-poll-options .post-poll-option {
   display: -webkit-box;
@@ -2484,11 +2490,13 @@ figure.highlight pre .javascript .function {
   margin-right: 14px;
   border-radius: 50%;
   background: var(--theme-color);
-  color: #fff;
+  color: var(--font-color);
   font-weight: 600;
   font-size: 0.95em;
   -webkit-flex-shrink: 0;
   flex-shrink: 0;
+  border: 2px solid var(--theme-color);
+  text-shadow: none;
 }
 .post-poll-container .post-poll-options .post-poll-option .poll-text {
   -webkit-box-flex: 1;
@@ -2501,12 +2509,16 @@ figure.highlight pre .javascript .function {
   font-weight: 500;
   font-size: 1.05em;
 }
+.post-poll-container .post-poll-options .post-poll-option .poll-text mjx-container {
+  font-size: 1em !important;
+}
 .post-poll-container .post-poll-options .post-poll-option .poll-count {
   font-size: 0.9em;
   color: var(--card-meta);
   margin-left: 12px;
   -webkit-flex-shrink: 0;
   flex-shrink: 0;
+  display: none;
 }
 .post-poll-container .post-poll-result {
   margin-top: 24px;
@@ -2724,6 +2736,38 @@ figure.highlight pre .javascript .function {
     -ms-transform: translateY(0);
     transform: translateY(0);
   }
+}
+.post-poll-container .post-poll-result-text {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--card-bg);
+  display: none;
+  -webkit-animation: slideDown 0.5s ease;
+  -moz-animation: slideDown 0.5s ease;
+  -o-animation: slideDown 0.5s ease;
+  -ms-animation: slideDown 0.5s ease;
+  animation: slideDown 0.5s ease;
+  font-size: 1.05em;
+  line-height: 1.8;
+  color: var(--font-color);
+}
+.post-poll-container .post-poll-result-text.show {
+  display: block;
+}
+.post-poll-container .post-poll-result-text p {
+  margin: 0 0 12px 0;
+}
+.post-poll-container .post-poll-result-text p:last-child {
+  margin-bottom: 0;
+}
+.post-poll-container .post-poll-result-text .mathjax-inline,
+.post-poll-container .post-poll-result-text .math.inline,
+.post-poll-container .post-poll-result-text mjx-container {
+  font-size: 1em !important;
+}
+.post-poll-container .post-poll-result-text mjx-container[jax="CHTML"] {
+  font-size: 1em !important;
 }
 .tag-cloud-list a {
   display: inline-block;
@@ -4215,6 +4259,9 @@ figure.highlight pre .javascript .function {
 .container iframe {
   margin: 0 0 20px;
 }
+.container mjx-container {
+  font-size: 1em !important;
+}
 .container kbd {
   margin: 0 3px;
   padding: 3px 5px;
@@ -4712,6 +4759,36 @@ figure.highlight pre .javascript .function {
 #gitalk-container .gt-meta {
   margin: 0 0 0.8em;
   padding: 6px 0 16px;
+}
+.katex-display {
+  overflow: auto hidden;
+  padding: 5px;
+}
+.katex-display .katex-show {
+  display: block;
+}
+.katex {
+  display: none;
+}
+.katex.katex-show {
+  display: inline;
+}
+mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 4px;
+  max-width: 100%;
+}
+mjx-container[display] {
+  display: block !important;
+  min-width: auto !important;
+}
+mjx-container:not([display]) {
+  display: inline-grid !important;
+}
+mjx-assistive-mml {
+  right: 0;
+  bottom: 0;
 }
 .aplayer {
   color: #4c4948;
