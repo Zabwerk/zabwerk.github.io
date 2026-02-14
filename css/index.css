@@ -2399,6 +2399,17 @@ figure.highlight pre .javascript .function {
 .post-poll-container mjx-container {
   font-size: 1em !important;
 }
+.post-poll-container mjx-container,
+.post-poll-container mjx-math,
+.post-poll-container mjx-mi,
+.post-poll-container mjx-c,
+.post-poll-container mjx-script {
+  border: none !important;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
 .post-poll-container .post-poll-question {
   display: -webkit-box;
   display: -moz-box;
@@ -2611,6 +2622,8 @@ figure.highlight pre .javascript .function {
 }
 .post-poll-container .post-poll-result .result-item .result-bar {
   width: 100%;
+  height: 0%;
+  min-height: 0;
   border-radius: 6px 6px 0 0;
   -webkit-transition: height 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
   -moz-transition: height 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -4261,6 +4274,17 @@ figure.highlight pre .javascript .function {
 }
 .container mjx-container {
   font-size: 1em !important;
+}
+.container mjx-container,
+.container mjx-math,
+.container mjx-mi,
+.container mjx-c,
+.container mjx-script {
+  border: none !important;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
 }
 .container kbd {
   margin: 0 3px;

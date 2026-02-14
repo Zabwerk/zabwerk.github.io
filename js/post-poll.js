@@ -1,45 +1,55 @@
-// 文章投票功能
+// 文章投票功能 - 集成 Supabase
 (function() {
   'use strict';
+
+  // Supabase 配置
+  const SUPABASE_URL = 'https://uiaovtdpkqrdajbwqcgm.supabase.co';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVpYW92dGRwa3FyZGFqYndxY2dtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEwMzc3NTMsImV4cCI6MjA4NjYxMzc1M30.b4qwi_0aYHMd8ISIv7nu3NGBko7d5zvxcywRjCILaYc';
 
   // 选项颜色
   const optionColors = ['#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c', '#e67e22', '#34495e'];
 
+  // Supabase 客户端
+  let supabaseClient = null;
+
+  // 初始化 Supabase
+  const initSupabase = async () => {
+    if (supabaseClient) return supabaseClient;
+    
+    // 动态加载 Supabase 客户端
+    if (typeof supabase === 'undefined') {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+    
+    supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    return supabaseClient;
+  };
+
   // 渲染 LaTeX 公式
   const renderMathInPoll = (container) => {
-    // 检查是否有 KaTeX
     if (typeof katex !== 'undefined') {
       container.querySelectorAll('.math.inline').forEach(el => {
         const tex = el.textContent;
         try {
-          katex.render(tex, el, {
-            throwOnError: false,
-            displayMode: false
-          });
-        } catch (e) {
-          console.error('KaTeX render error:', e);
-        }
+          katex.render(tex, el, { throwOnError: false, displayMode: false });
+        } catch (e) { console.error('KaTeX render error:', e); }
       });
       container.querySelectorAll('.math.display').forEach(el => {
         const tex = el.textContent;
         try {
-          katex.render(tex, el, {
-            throwOnError: false,
-            displayMode: true
-          });
-        } catch (e) {
-          console.error('KaTeX render error:', e);
-        }
+          katex.render(tex, el, { throwOnError: false, displayMode: true });
+        } catch (e) { console.error('KaTeX render error:', e); }
       });
-    }
-    // 检查是否有 MathJax
-    else if (typeof MathJax !== 'undefined') {
+    } else if (typeof MathJax !== 'undefined') {
       if (MathJax.typesetPromise) {
-        // 等待 MathJax 就绪后渲染
         MathJax.startup.promise.then(() => {
-          MathJax.typesetPromise([container]).catch((err) => {
-            console.error('MathJax typeset error:', err);
-          });
+          MathJax.typesetPromise([container]).catch(err => console.error('MathJax typeset error:', err));
         });
       } else if (MathJax.Hub) {
         MathJax.Hub.Queue(['Typeset', MathJax.Hub, container]);
@@ -47,11 +57,53 @@
     }
   };
 
+  // 从 Supabase 获取投票数据
+  const fetchPollData = async (pollId) => {
+    try {
+      const client = await initSupabase();
+      const { data, error } = await client
+        .from('polls')
+        .select('option_id')
+        .eq('poll_id', pollId);
+      
+      if (error) throw error;
+      
+      // 统计数据
+      const votes = {};
+      let total = 0;
+      data.forEach(row => {
+        votes[row.option_id] = (votes[row.option_id] || 0) + 1;
+        total++;
+      });
+      
+      return { votes, total };
+    } catch (err) {
+      console.error('Fetch poll data error:', err);
+      return { votes: {}, total: 0 };
+    }
+  };
+
+  // 提交投票到 Supabase
+  const submitVote = async (pollId, optionId) => {
+    try {
+      const client = await initSupabase();
+      const { error } = await client
+        .from('polls')
+        .insert([{ poll_id: pollId, option_id: optionId }]);
+      
+      if (error) throw error;
+      return true;
+    } catch (err) {
+      console.error('Submit vote error:', err);
+      return false;
+    }
+  };
+
   // 初始化文章投票
-  const initPostPolls = () => {
+  const initPostPolls = async () => {
     const pollContainers = document.querySelectorAll('.post-poll-container');
     
-    pollContainers.forEach(container => {
+    pollContainers.forEach(async container => {
       const pollOptions = container.querySelector('.post-poll-options');
       if (!pollOptions) return;
 
@@ -61,10 +113,13 @@
       // 渲染 LaTeX
       renderMathInPoll(container);
 
-      // 从 localStorage 读取投票数据
-      const storageKey = `post_poll_${pollId}`;
-      const savedData = localStorage.getItem(storageKey);
-      let pollData = savedData ? JSON.parse(savedData) : { votes: {}, total: 0, userVote: null };
+      // 检查用户是否已投票
+      const storageKey = `post_poll_voted_${pollId}`;
+      const hasVoted = localStorage.getItem(storageKey);
+
+      // 获取投票数据
+      let pollData = await fetchPollData(pollId);
+      pollData.userVote = hasVoted;
 
       const options = pollOptions.querySelectorAll('.post-poll-option');
       
@@ -74,49 +129,46 @@
         const color = optionColors[index % optionColors.length];
         option.dataset.color = color;
 
-        // 更新显示
-        updateOptionDisplay(option, pollData);
+        // 如果已投票，禁用点击
+        if (hasVoted) {
+          option.classList.add('voted');
+          option.style.pointerEvents = 'none';
+          option.style.cursor = 'not-allowed';
+          return;
+        }
 
         // 点击事件
-        option.addEventListener('click', () => {
-          if (pollData.userVote) return;
+        option.addEventListener('click', async () => {
+          // 提交投票
+          const success = await submitVote(pollId, optionId);
+          if (!success) {
+            alert('答题失败，请重试');
+            return;
+          }
 
-          // 记录投票
-          pollData.votes[optionId] = (pollData.votes[optionId] || 0) + 1;
-          pollData.total++;
-          pollData.userVote = optionId;
+          // 标记已投票
+          localStorage.setItem(storageKey, optionId);
 
-          // 保存
-          localStorage.setItem(storageKey, JSON.stringify(pollData));
-
-          // 更新显示
+          // 禁用所有选项
           options.forEach(opt => {
-            updateOptionDisplay(opt, pollData);
             opt.classList.add('voted');
+            opt.style.pointerEvents = 'none';
+            opt.style.cursor = 'not-allowed';
           });
 
-          // 显示结果
-          showResult(container, pollData, options);
+          // 显示成功提示
+          alert('答题成功！');
+
+          // 刷新页面
+          window.location.reload();
         });
       });
 
       // 如果已投票，显示结果
-      if (pollData.userVote) {
-        options.forEach(opt => opt.classList.add('voted'));
+      if (hasVoted) {
         showResult(container, pollData, options);
       }
     });
-  };
-
-  // 更新选项显示
-  const updateOptionDisplay = (option, pollData) => {
-    const optionId = option.dataset.option;
-    const votes = pollData.votes[optionId] || 0;
-    
-    const countSpan = option.querySelector('.poll-count');
-    if (countSpan) {
-      countSpan.textContent = `${votes} 票`;
-    }
   };
 
   // 显示投票结果
@@ -126,7 +178,7 @@
 
     const total = pollData.total || 0;
 
-    let resultHTML = '<div class="result-title">📊 投票结果</div><div class="result-bars">';
+    let resultHTML = '<div class="result-title">📊 答题情况</div><div class="result-bars">';
 
     options.forEach((option, index) => {
       const optionId = option.dataset.option;
@@ -144,7 +196,7 @@
           </div>
           <div class="result-info">
             <span class="result-label">${label}</span>
-            <span class="result-votes">${votes}票</span>
+            <span class="result-votes">${votes}人</span>
             <span class="result-percent">${percentage.toFixed(1)}%</span>
           </div>
         </div>
@@ -152,7 +204,7 @@
     });
 
     resultHTML += '</div>';
-    resultHTML += `<div class="result-total">共 ${total} 人参与投票</div>`;
+    resultHTML += `<div class="result-total">共 ${total} 人参与答题</div>`;
 
     resultContainer.innerHTML = resultHTML;
     resultContainer.classList.add('show');
@@ -162,7 +214,6 @@
     if (resultTextContainer) {
       resultTextContainer.style.display = 'block';
       resultTextContainer.classList.add('show');
-      // 渲染 LaTeX
       renderMathInPoll(resultTextContainer);
     }
   };
