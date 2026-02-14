@@ -3,11 +3,11 @@
   <title>Zabwerk的元空间</title>
   
   
-  <link href="https://example.com/atom.xml" rel="self"/>
+  <link href="https://zabwerk.github.io/atom.xml" rel="self"/>
   
-  <link href="https://example.com/"/>
-  <updated>2026-02-14T03:46:04.801Z</updated>
-  <id>https://example.com/</id>
+  <link href="https://zabwerk.github.io/"/>
+  <updated>2026-02-14T07:33:05.940Z</updated>
+  <id>https://zabwerk.github.io/</id>
   
   <author>
     <name>Zabwerk</name>
@@ -18,35 +18,35 @@
   
   <entry>
     <title>化学原创题1</title>
-    <link href="https://example.com/2026/02/14/%E5%8C%96%E5%AD%A6%E5%8E%9F%E5%88%9B%E9%A2%981/"/>
-    <id>https://example.com/2026/02/14/%E5%8C%96%E5%AD%A6%E5%8E%9F%E5%88%9B%E9%A2%981/</id>
+    <link href="https://zabwerk.github.io/2026/02/14/%E5%8C%96%E5%AD%A6%E5%8E%9F%E5%88%9B%E9%A2%981/"/>
+    <id>https://zabwerk.github.io/2026/02/14/%E5%8C%96%E5%AD%A6%E5%8E%9F%E5%88%9B%E9%A2%981/</id>
     <published>2026-02-14T01:33:52.000Z</published>
-    <updated>2026-02-14T03:46:04.801Z</updated>
+    <updated>2026-02-14T07:33:05.940Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Velpatasvir（&lt;span class=&quot;math</summary>
+    <summary type="html">&lt;p&gt;Velpatasvir（$C_{48}H_{51}O_8N_8$）是一种弱碱性抗病毒药物，用于治疗丙型肝炎，是一种质子泵抑制剂，用于治疗胃溃疡、十二指肠溃疡、应激性溃疡反流性食管炎等疾病。荷兰Radboud大学医学中心的Minouvan</summary>
         
       
     
     
     
-    <category term="化学" scheme="https://example.com/categories/%E5%8C%96%E5%AD%A6/"/>
+    <category term="化学" scheme="https://zabwerk.github.io/categories/%E5%8C%96%E5%AD%A6/"/>
     
-    <category term="初中化学" scheme="https://example.com/categories/%E5%8C%96%E5%AD%A6/%E5%88%9D%E4%B8%AD%E5%8C%96%E5%AD%A6/"/>
+    <category term="初中化学" scheme="https://zabwerk.github.io/categories/%E5%8C%96%E5%AD%A6/%E5%88%9D%E4%B8%AD%E5%8C%96%E5%AD%A6/"/>
     
     
-    <category term="化学" scheme="https://example.com/tags/%E5%8C%96%E5%AD%A6/"/>
+    <category term="化学" scheme="https://zabwerk.github.io/tags/%E5%8C%96%E5%AD%A6/"/>
     
   </entry>
   
   <entry>
     <title>文献阅读笔记 | 1.基于可见光波段无人机遥感的植被信息提取</title>
-    <link href="https://example.com/2026/02/13/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-1-%E5%9F%BA%E4%BA%8E%E5%8F%AF%E8%A7%81%E5%85%89%E6%B3%A2%E6%AE%B5%E6%97%A0%E4%BA%BA%E6%9C%BA%E9%81%A5%E6%84%9F%E7%9A%84%E6%A4%8D%E8%A2%AB%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/"/>
-    <id>https://example.com/2026/02/13/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-1-%E5%9F%BA%E4%BA%8E%E5%8F%AF%E8%A7%81%E5%85%89%E6%B3%A2%E6%AE%B5%E6%97%A0%E4%BA%BA%E6%9C%BA%E9%81%A5%E6%84%9F%E7%9A%84%E6%A4%8D%E8%A2%AB%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/</id>
+    <link href="https://zabwerk.github.io/2026/02/13/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-1-%E5%9F%BA%E4%BA%8E%E5%8F%AF%E8%A7%81%E5%85%89%E6%B3%A2%E6%AE%B5%E6%97%A0%E4%BA%BA%E6%9C%BA%E9%81%A5%E6%84%9F%E7%9A%84%E6%A4%8D%E8%A2%AB%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/"/>
+    <id>https://zabwerk.github.io/2026/02/13/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-1-%E5%9F%BA%E4%BA%8E%E5%8F%AF%E8%A7%81%E5%85%89%E6%B3%A2%E6%AE%B5%E6%97%A0%E4%BA%BA%E6%9C%BA%E9%81%A5%E6%84%9F%E7%9A%84%E6%A4%8D%E8%A2%AB%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/</id>
     <published>2026-02-13T02:45:16.000Z</published>
     <updated>2026-02-14T03:21:37.378Z</updated>
     
@@ -55,27 +55,25 @@
       
         
         
-    <summary type="html">&lt;div class=&quot;note flat&quot;&gt;&lt;p&gt;&lt;strong&gt;引用&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
-汪小钦, 王苗苗, 王绍强, 等. 基于可见光波段无人机遥感的植被信息提取[J].
-农业工程学报, 2015, 31(5): 152-157, 159,</summary>
+    <summary type="html">&lt;div class=&quot;note flat&quot;&gt;&lt;p&gt;  &lt;strong&gt;引用&lt;/strong&gt;&lt;br&gt;&lt;br&gt;汪小钦, 王苗苗, 王绍强, 等. 基于可见光波段无人机遥感的植被信息提取[J]. 农业工程学报, 2015, 31(5): 152-157, 159,</summary>
         
       
     
     
     
-    <category term="阅读笔记" scheme="https://example.com/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
+    <category term="阅读笔记" scheme="https://zabwerk.github.io/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="论文" scheme="https://example.com/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87/"/>
+    <category term="论文" scheme="https://zabwerk.github.io/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87/"/>
     
     
-    <category term="地物提取" scheme="https://example.com/tags/%E5%9C%B0%E7%89%A9%E6%8F%90%E5%8F%96/"/>
+    <category term="地物提取" scheme="https://zabwerk.github.io/tags/%E5%9C%B0%E7%89%A9%E6%8F%90%E5%8F%96/"/>
     
   </entry>
   
   <entry>
     <title>虚拟数字测图竞赛个人经验总结</title>
-    <link href="https://example.com/2024/09/24/%E8%99%9A%E6%8B%9F%E6%95%B0%E5%AD%97%E6%B5%8B%E5%9B%BE%E7%AB%9E%E8%B5%9B%E4%B8%AA%E4%BA%BA%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
-    <id>https://example.com/2024/09/24/%E8%99%9A%E6%8B%9F%E6%95%B0%E5%AD%97%E6%B5%8B%E5%9B%BE%E7%AB%9E%E8%B5%9B%E4%B8%AA%E4%BA%BA%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/</id>
+    <link href="https://zabwerk.github.io/2024/09/24/%E8%99%9A%E6%8B%9F%E6%95%B0%E5%AD%97%E6%B5%8B%E5%9B%BE%E7%AB%9E%E8%B5%9B%E4%B8%AA%E4%BA%BA%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
+    <id>https://zabwerk.github.io/2024/09/24/%E8%99%9A%E6%8B%9F%E6%95%B0%E5%AD%97%E6%B5%8B%E5%9B%BE%E7%AB%9E%E8%B5%9B%E4%B8%AA%E4%BA%BA%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/</id>
     <published>2024-09-24T05:46:05.000Z</published>
     <updated>2026-02-13T03:30:04.410Z</updated>
     
@@ -84,16 +82,17 @@
       
         
         
-    <summary type="html">&lt;h1&gt;&lt;span id=&quot;0-前言&quot;&gt;0</summary>
+    <summary type="html">&lt;h1&gt;&lt;span id=&quot;0-前言&quot;&gt;0 前言&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;从大一开始就参加了这项比赛，目前已经已有两年赛龄了，写下这篇一方面是记录自己这两年来参与这项比赛的经验与经历，另一方面也能够希望这篇总结能为大家提供一定的参考价值🤔。&lt;/p&gt;
+&lt;h1&gt;&lt;span</summary>
         
       
     
     
     
-    <category term="技术" scheme="https://example.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://zabwerk.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="测绘" scheme="https://example.com/tags/%E6%B5%8B%E7%BB%98/"/>
+    <category term="测绘" scheme="https://zabwerk.github.io/tags/%E6%B5%8B%E7%BB%98/"/>
     
   </entry>
   

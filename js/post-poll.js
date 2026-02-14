@@ -125,15 +125,14 @@
     if (!resultContainer) return;
 
     const total = pollData.total || 0;
-    const maxVotes = Math.max(...Array.from(options).map(opt => pollData.votes[opt.dataset.option] || 0));
 
     let resultHTML = '<div class="result-title">📊 投票结果</div><div class="result-bars">';
 
     options.forEach((option, index) => {
       const optionId = option.dataset.option;
       const votes = pollData.votes[optionId] || 0;
-      const percentage = total > 0 ? ((votes / total) * 100).toFixed(1) : 0;
-      const barHeight = maxVotes > 0 ? (votes / maxVotes * 100) : 0;
+      const percentage = total > 0 ? ((votes / total) * 100) : 0;
+      const barHeight = percentage;
       const label = String.fromCharCode(65 + index);
       const color = option.dataset.color;
       const isSelected = pollData.userVote === optionId;
@@ -146,7 +145,7 @@
           <div class="result-info">
             <span class="result-label">${label}</span>
             <span class="result-votes">${votes}票</span>
-            <span class="result-percent">${percentage}%</span>
+            <span class="result-percent">${percentage.toFixed(1)}%</span>
           </div>
         </div>
       `;
