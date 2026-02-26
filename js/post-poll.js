@@ -2,11 +2,8 @@
 (function() {
   'use strict';
 
-  // API 基础 URL（需要替换为你部署的 Vercel API 地址）
-  // 本地开发时使用 localhost
-  const API_BASE_URL = window.location.origin.includes('localhost')
-    ? 'http://localhost:3000/api/poll'
-    : 'https://blog-poll-api.vercel.app/api/poll';
+  // API 基础 URL - MongoDB Atlas 投票服务
+  const API_BASE_URL = 'https://blog-poll-api.vercel.app/api/poll';
 
   // 选项颜色
   const optionColors = ['#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c', '#e67e22', '#34495e'];
@@ -149,17 +146,13 @@
           pollData.userVote = optionId;
           showResult(container, pollData, options);
 
-          // 隐藏投票选项，显示结果
-          pollOptions.style.display = 'none';
-
           // 显示成功提示
           alert('投票成功！');
         });
       });
 
-      // 如果已投票，显示结果并隐藏选项
+      // 如果已投票，显示结果（保留投票选项）
       if (hasVoted) {
-        pollOptions.style.display = 'none';
         showResult(container, pollData, options);
       }
     });
@@ -202,12 +195,10 @@
 
     resultContainer.innerHTML = resultHTML;
     resultContainer.classList.add('show');
-    resultContainer.style.display = 'block';
 
     // 显示投票后的文字内容
     const resultTextContainer = container.querySelector('.post-poll-result-text');
     if (resultTextContainer) {
-      resultTextContainer.style.display = 'block';
       resultTextContainer.classList.add('show');
       renderMathInPoll(resultTextContainer);
     }

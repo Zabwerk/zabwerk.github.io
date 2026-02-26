@@ -2536,15 +2536,25 @@ figure.highlight pre .javascript .function {
   padding: 20px;
   border-radius: 10px;
   background: var(--card-bg);
-  display: none;
-  -webkit-animation: slideDown 0.5s ease;
-  -moz-animation: slideDown 0.5s ease;
-  -o-animation: slideDown 0.5s ease;
-  -ms-animation: slideDown 0.5s ease;
-  animation: slideDown 0.5s ease;
+  max-height: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 .post-poll-container .post-poll-result.show {
-  display: block;
+  max-height: 500px;
+  padding: 20px;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
 }
 .post-poll-container .post-poll-result .result-title {
   text-align: center;
@@ -2662,111 +2672,33 @@ figure.highlight pre .javascript .function {
   font-size: 0.95em;
   color: var(--card-meta);
 }
-@-moz-keyframes slideDown {
-  from {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    -webkit-transform: translateY(-10px);
-    -moz-transform: translateY(-10px);
-    -o-transform: translateY(-10px);
-    -ms-transform: translateY(-10px);
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -o-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-@-webkit-keyframes slideDown {
-  from {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    -webkit-transform: translateY(-10px);
-    -moz-transform: translateY(-10px);
-    -o-transform: translateY(-10px);
-    -ms-transform: translateY(-10px);
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -o-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-@-o-keyframes slideDown {
-  from {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    -webkit-transform: translateY(-10px);
-    -moz-transform: translateY(-10px);
-    -o-transform: translateY(-10px);
-    -ms-transform: translateY(-10px);
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -o-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    -webkit-transform: translateY(-10px);
-    -moz-transform: translateY(-10px);
-    -o-transform: translateY(-10px);
-    -ms-transform: translateY(-10px);
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -o-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
 .post-poll-container .post-poll-result-text {
   margin-top: 24px;
   padding: 20px;
   border-radius: 10px;
   background: var(--card-bg);
-  display: none;
-  -webkit-animation: slideDown 0.5s ease;
-  -moz-animation: slideDown 0.5s ease;
-  -o-animation: slideDown 0.5s ease;
-  -ms-animation: slideDown 0.5s ease;
-  animation: slideDown 0.5s ease;
+  max-height: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   font-size: 1.05em;
   line-height: 1.8;
   color: var(--font-color);
 }
 .post-poll-container .post-poll-result-text.show {
-  display: block;
+  max-height: 1000px;
+  padding: 20px;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
 }
 .post-poll-container .post-poll-result-text p {
   margin: 0 0 12px 0;
