@@ -6,7 +6,7 @@
   <link href="https://zabwerk.github.io/atom.xml" rel="self"/>
   
   <link href="https://zabwerk.github.io/"/>
-  <updated>2026-05-09T12:32:39.161Z</updated>
+  <updated>2026-02-25T07:29:51.887Z</updated>
   <id>https://zabwerk.github.io/</id>
   
   <author>
@@ -15,41 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>🌊中国近海海上风电机数据集 (2015-2025)</title>
-    <link href="https://zabwerk.github.io/2026/05/09/%E4%B8%AD%E5%9B%BD%E8%BF%91%E6%B5%B7%E6%B5%B7%E4%B8%8A%E9%A3%8E%E7%94%B5%E6%9C%BA%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
-    <id>https://zabwerk.github.io/2026/05/09/%E4%B8%AD%E5%9B%BD%E8%BF%91%E6%B5%B7%E6%B5%B7%E4%B8%8A%E9%A3%8E%E7%94%B5%E6%9C%BA%E6%95%B0%E6%8D%AE%E9%9B%86/</id>
-    <published>2026-05-09T02:00:00.000Z</published>
-    <updated>2026-05-09T12:32:39.161Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1&gt;&lt;span id=&quot;中国近海海上风电机数据集2015-2025&quot;&gt;🌊中国近海海上风电机数据集
-(2015-2025)&lt;/span&gt;&lt;/h1&gt;
-&lt;h3&gt;&lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="数据资源" scheme="https://zabwerk.github.io/categories/%E6%95%B0%E6%8D%AE%E8%B5%84%E6%BA%90/"/>
-    
-    
-    <category term="数据集" scheme="https://zabwerk.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
-    
-    <category term="海洋遥感" scheme="https://zabwerk.github.io/tags/%E6%B5%B7%E6%B4%8B%E9%81%A5%E6%84%9F/"/>
-    
-    <category term="GEE" scheme="https://zabwerk.github.io/tags/GEE/"/>
-    
-    <category term="Sentinel-1" scheme="https://zabwerk.github.io/tags/Sentinel-1/"/>
-    
-    <category term="海上风电" scheme="https://zabwerk.github.io/tags/%E6%B5%B7%E4%B8%8A%E9%A3%8E%E7%94%B5/"/>
-    
-  </entry>
   
   <entry>
     <title>化学原创题-4</title>
@@ -63,7 +28,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;玻璃酸钠是一种广泛应用于眼科手术、关节炎治疗和护肤品中的生物材料。其结构单元之一为&lt;span class=&quot;math inline&quot;&gt;&#92;(D&#92;)&lt;/span&gt;-葡萄糖醛酸（一种羧酸），另一种为&lt;span class=&quot;math</summary>
+    <summary type="html">&lt;p&gt;玻璃酸钠是一种广泛应用于眼科手术、关节炎治疗和护肤品中的生物材料。其结构单元之一为$D$-葡萄糖醛酸（一种羧酸），另一种为$N$-乙酰基-$D$-氨基葡萄糖(或$N$-乙酰基-$D$-葡萄糖胺，一种酰胺）。其钠盐形式水溶液具有优异的保湿性和黏弹性，三者的结构式如下图所示。下</summary>
         
       
     
@@ -90,7 +55,8 @@
       
         
         
-    <summary type="html">&lt;p&gt;定义阿伏伽德罗常数为&lt;span class=&quot;math</summary>
+    <summary type="html">&lt;p&gt;定义阿伏伽德罗常数为$N_A$，下列说法正确的是__________&lt;/p&gt;
+</summary>
         
       
     
@@ -117,7 +83,8 @@
       
         
         
-    <summary type="html">&lt;p&gt;火箭推进器中装有液态肼（&lt;span class=&quot;math inline&quot;&gt;&#92;(N_2H_4&#92;)&lt;/span&gt;）和过氧化氢（&lt;span class=&quot;math</summary>
+    <summary type="html">&lt;p&gt;火箭推进器中装有液态肼（$N_2H_4$）和过氧化氢（$H_2O_2$），当火箭升空时，两者混合能够发生多种反应放出大量热量，其中下列物质中可能为两者混合时某一反应的生成物的是__________.&lt;/p&gt;
+</summary>
         
       
     
@@ -144,7 +111,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;Velpatasvir（&lt;span class=&quot;math</summary>
+    <summary type="html">&lt;p&gt;Velpatasvir（$C_{48}H_{51}O_8N_8$）是一种弱碱性抗病毒药物，用于治疗丙型肝炎，是一种质子泵抑制剂，用于治疗胃溃疡、十二指肠溃疡、应激性溃疡反流性食管炎等疾病。荷兰Radboud大学医学中心的Minouvan</summary>
         
       
     
@@ -171,9 +138,7 @@
       
         
         
-    <summary type="html">&lt;div class=&quot;note flat&quot;&gt;&lt;p&gt;&lt;strong&gt;引用&lt;/strong&gt;&lt;br&gt;&lt;br&gt;
-汪小钦, 王苗苗, 王绍强, 等. 基于可见光波段无人机遥感的植被信息提取[J].
-农业工程学报, 2015, 31(5): 152-157, 159,</summary>
+    <summary type="html">&lt;div class=&quot;note flat&quot;&gt;&lt;p&gt;  &lt;strong&gt;引用&lt;/strong&gt;&lt;br&gt;&lt;br&gt;汪小钦, 王苗苗, 王绍强, 等. 基于可见光波段无人机遥感的植被信息提取[J]. 农业工程学报, 2015, 31(5): 152-157, 159,</summary>
         
       
     
@@ -200,7 +165,8 @@
       
         
         
-    <summary type="html">&lt;h1&gt;&lt;span id=&quot;0-前言&quot;&gt;0</summary>
+    <summary type="html">&lt;h1&gt;&lt;span id=&quot;0-前言&quot;&gt;0 前言&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;从大一开始就参加了这项比赛，目前已经已有两年赛龄了，写下这篇一方面是记录自己这两年来参与这项比赛的经验与经历，另一方面也能够希望这篇总结能为大家提供一定的参考价值🤔。&lt;/p&gt;
+&lt;h1&gt;&lt;span</summary>
         
       
     

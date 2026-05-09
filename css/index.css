@@ -1479,6 +1479,10 @@ a {
 a:hover {
   color: #49b1f5;
 }
+#aside-content .author-info-name {
+  pointer-events: none;
+  cursor: default;
+}
 .text-center {
   text-align: center;
 }
