@@ -6,7 +6,7 @@
   <link href="https://zabwerk.github.io/atom.xml" rel="self"/>
   
   <link href="https://zabwerk.github.io/"/>
-  <updated>2026-02-25T07:29:51.887Z</updated>
+  <updated>2026-05-09T13:15:26.277Z</updated>
   <id>https://zabwerk.github.io/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>🌊中国近海海上风电机数据集 (2015-2025)</title>
+    <link href="https://zabwerk.github.io/2026/05/09/%E4%B8%AD%E5%9B%BD%E8%BF%91%E6%B5%B7%E6%B5%B7%E4%B8%8A%E9%A3%8E%E7%94%B5%E6%9C%BA%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
+    <id>https://zabwerk.github.io/2026/05/09/%E4%B8%AD%E5%9B%BD%E8%BF%91%E6%B5%B7%E6%B5%B7%E4%B8%8A%E9%A3%8E%E7%94%B5%E6%9C%BA%E6%95%B0%E6%8D%AE%E9%9B%86/</id>
+    <published>2026-05-09T02:00:00.000Z</published>
+    <updated>2026-05-09T13:15:26.277Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;&lt;span id=&quot;中国近海海上风电机数据集2015-2025&quot;&gt;🌊中国近海海上风电机数据集
+(2015-2025)&lt;/span&gt;&lt;/h1&gt;
+&lt;h3&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="数据资源" scheme="https://zabwerk.github.io/categories/%E6%95%B0%E6%8D%AE%E8%B5%84%E6%BA%90/"/>
+    
+    
+    <category term="数据集" scheme="https://zabwerk.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
+    
+    <category term="海洋遥感" scheme="https://zabwerk.github.io/tags/%E6%B5%B7%E6%B4%8B%E9%81%A5%E6%84%9F/"/>
+    
+    <category term="GEE" scheme="https://zabwerk.github.io/tags/GEE/"/>
+    
+    <category term="Sentinel-1" scheme="https://zabwerk.github.io/tags/Sentinel-1/"/>
+    
+    <category term="海上风电" scheme="https://zabwerk.github.io/tags/%E6%B5%B7%E4%B8%8A%E9%A3%8E%E7%94%B5/"/>
+    
+  </entry>
   
   <entry>
     <title>化学原创题-4</title>
