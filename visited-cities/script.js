@@ -279,6 +279,9 @@ window.onload = function () {
     });
     
     document.getElementById('backBtn').addEventListener('click', goBack);
+    document.getElementById('homeBtn').addEventListener('click', function() {
+        window.location.href = '/';
+    });
     
     renderProvinceMap();
 };
