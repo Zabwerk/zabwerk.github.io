@@ -7,10 +7,9 @@ html {
     font-family: sans-serif;
 }
 
-/* ===== 图例：横向排列 ===== */
 #legend {
     position: absolute;
-    top: 20px;
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -35,16 +34,48 @@ html {
     cursor: default;
 }
 
-/* ===== 地图容器 ===== */
+#backBtn {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    z-index: 10;
+    display: flex;
+    width: 136px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #3598db;
+    color: white;
+    border: none;
+    border-radius: 12px;
+}
+
+#backBtn:hover {
+    background-color: #2980b9;
+}
+
+#currentLocation {
+    position: absolute;
+    top: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
 #map {
     position: relative;
-    margin: 80px auto 0;
+    margin: 120px auto 0;
     width: 1500px;
     height: 1200px;
     background-color: rgb(255, 255, 255);
 }
 
-/* ===== 点击提示 ===== */
 #tooltip {
     display: none;
     position: fixed;
