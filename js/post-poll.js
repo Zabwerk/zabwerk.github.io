@@ -1,12 +1,35 @@
-// 文章投票功能 - MongoDB Atlas 在线统计
+// 文章投票功能 - 集成 Supabase
 (function() {
   'use strict';
 
-  // API 基础 URL - MongoDB Atlas 投票服务
-  const API_BASE_URL = 'https://blog-poll-api.vercel.app/api/poll';
+  // Supabase 配置
+  const SUPABASE_URL = 'https://uiaovtdpkqrdajbwqcgm.supabase.co';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVpYW92dGRwa3FyZGFqYndxY2dtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEwMzc3NTMsImV4cCI6MjA4NjYxMzc1M30.b4qwi_0aYHMd8ISIv7nu3NGBko7d5zvxcywRjCILaYc';
 
   // 选项颜色
   const optionColors = ['#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c', '#e67e22', '#34495e'];
+
+  // Supabase 客户端
+  let supabaseClient = null;
+
+  // 初始化 Supabase
+  const initSupabase = async () => {
+    if (supabaseClient) return supabaseClient;
+    
+    // 动态加载 Supabase 客户端
+    if (typeof supabase === 'undefined') {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+    
+    supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    return supabaseClient;
+  };
 
   // 渲染 LaTeX 公式
   const renderMathInPoll = (container) => {
@@ -34,54 +57,52 @@
     }
   };
 
-  // 从 API 获取投票数据
+  // 从 Supabase 获取投票数据
   const fetchPollData = async (pollId) => {
     try {
-      const response = await fetch(`${API_BASE_URL}?pollId=${encodeURIComponent(pollId)}`);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      return data;
+      const client = await initSupabase();
+      const { data, error } = await client
+        .from('polls')
+        .select('option_id')
+        .eq('poll_id', pollId);
+      
+      if (error) throw error;
+      
+      // 统计数据
+      const votes = {};
+      let total = 0;
+      data.forEach(row => {
+        votes[row.option_id] = (votes[row.option_id] || 0) + 1;
+        total++;
+      });
+      
+      return { votes, total };
     } catch (err) {
-      console.error('获取投票数据失败:', err);
-      // 如果 API 失败，返回空数据
+      console.error('Fetch poll data error:', err);
       return { votes: {}, total: 0 };
     }
   };
 
-  // 提交投票到 API
+  // 提交投票到 Supabase
   const submitVote = async (pollId, optionId) => {
     try {
-      console.log('正在提交投票:', { pollId, optionId });
-
-      const response = await fetch(`${API_BASE_URL}?pollId=${encodeURIComponent(pollId)}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ optionId }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      console.log('投票提交成功:', data);
-      return { success: true, data: data.data };
+      const client = await initSupabase();
+      const { error } = await client
+        .from('polls')
+        .insert([{ poll_id: pollId, option_id: optionId }]);
+      
+      if (error) throw error;
+      return true;
     } catch (err) {
-      console.error('提交投票失败:', err);
-      alert('投票失败: ' + (err.message || '请检查网络连接'));
-      return { success: false };
+      console.error('Submit vote error:', err);
+      return false;
     }
   };
 
   // 初始化文章投票
   const initPostPolls = async () => {
     const pollContainers = document.querySelectorAll('.post-poll-container');
-
+    
     pollContainers.forEach(async container => {
       const pollOptions = container.querySelector('.post-poll-options');
       if (!pollOptions) return;
@@ -101,14 +122,14 @@
       pollData.userVote = hasVoted;
 
       const options = pollOptions.querySelectorAll('.post-poll-option');
-
+      
       // 设置选项颜色并绑定事件
       options.forEach((option, index) => {
         const optionId = option.dataset.option;
         const color = optionColors[index % optionColors.length];
         option.dataset.color = color;
 
-        // 如果已投票，禁用点击并显示结果
+        // 如果已投票，禁用点击
         if (hasVoted) {
           option.classList.add('voted');
           option.style.pointerEvents = 'none';
@@ -118,16 +139,10 @@
 
         // 点击事件
         option.addEventListener('click', async () => {
-          // 禁用按钮防止重复点击
-          option.style.pointerEvents = 'none';
-          option.style.opacity = '0.6';
-
           // 提交投票
-          const result = await submitVote(pollId, optionId);
-          if (!result.success) {
-            // 恢复按钮状态
-            option.style.pointerEvents = '';
-            option.style.opacity = '';
+          const success = await submitVote(pollId, optionId);
+          if (!success) {
+            alert('答题失败，请重试');
             return;
           }
 
@@ -141,17 +156,15 @@
             opt.style.cursor = 'not-allowed';
           });
 
-          // 更新投票数据并显示结果
-          pollData = result.data || await fetchPollData(pollId);
-          pollData.userVote = optionId;
-          showResult(container, pollData, options);
-
           // 显示成功提示
-          alert('投票成功！');
+          alert('答题成功！');
+
+          // 刷新页面
+          window.location.reload();
         });
       });
 
-      // 如果已投票，显示结果（保留投票选项）
+      // 如果已投票，显示结果
       if (hasVoted) {
         showResult(container, pollData, options);
       }
@@ -165,13 +178,13 @@
 
     const total = pollData.total || 0;
 
-    let resultHTML = '<div class="result-title">📊 投票结果</div><div class="result-bars">';
+    let resultHTML = '<div class="result-title">📊 答题情况</div><div class="result-bars">';
 
     options.forEach((option, index) => {
       const optionId = option.dataset.option;
       const votes = pollData.votes[optionId] || 0;
       const percentage = total > 0 ? ((votes / total) * 100) : 0;
-      const barHeight = Math.max(percentage, 5); // 最小高度 5% 以便显示
+      const barHeight = percentage;
       const label = String.fromCharCode(65 + index);
       const color = option.dataset.color;
       const isSelected = pollData.userVote === optionId;
@@ -191,7 +204,7 @@
     });
 
     resultHTML += '</div>';
-    resultHTML += `<div class="result-total">共 ${total} 人参与投票</div>`;
+    resultHTML += `<div class="result-total">共 ${total} 人参与答题</div>`;
 
     resultContainer.innerHTML = resultHTML;
     resultContainer.classList.add('show');
@@ -199,6 +212,7 @@
     // 显示投票后的文字内容
     const resultTextContainer = container.querySelector('.post-poll-result-text');
     if (resultTextContainer) {
+      resultTextContainer.style.display = 'block';
       resultTextContainer.classList.add('show');
       renderMathInPoll(resultTextContainer);
     }

@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+html {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+/* ===== 图例：横向排列 ===== */
+#legend {
+    position: absolute;
+    top: 50px;
+    right: 40%;
+    z-index: 10;
+    border: solid 1px;
+    border-radius: 3px;
+    font-size: small;
+}
+
+#legend tbody {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+
+#legend tr {
+    display: flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    cursor: default;
+}
+
+/* ===== 地图容器 ===== */
+#map {
+    position: relative;
+    top: 50px;
+    width: 200px;
+    height: 2048px;
+    background-color: rgb(255, 255, 255);
+}
+
+/* ===== 点击提示 ===== */
+#tooltip {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+th, td {
+    padding: 0.2em;
+}
