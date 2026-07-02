@@ -67,6 +67,12 @@ function renderProvinceMap() {
     };
 
     var tooltip = document.getElementById('tooltip');
+    
+    var scaleX = 1450 / 1500;
+    var scaleY = 755 / 1200;
+    var scale = Math.min(scaleX, scaleY);
+    var offsetX = (1450 - 1500 * scale) / 2;
+    var offsetY = (755 - 1200 * scale) / 2;
 
     for (var key in provinceMap) {
         var province = provinceMap[key];
@@ -75,6 +81,7 @@ function renderProvinceMap() {
         var graph = map.path(province.path);
         graph.attr(baseAttr);
         graph.attr({fill: color[level]});
+        graph.transform('S' + scale + ',' + scale + ',' + offsetX + ',' + offsetY);
         
         (function (g, name, lv) {
             var baseT = g.transform() || '';
@@ -133,15 +140,12 @@ function geoToPath(coordinates, transform) {
     function processCoordinates(coords) {
         if (coords.length > 0 && typeof coords[0][0] === 'number') {
             paths.push(processRing(coords));
-        } else if (coords.length > 0 && Array.isArray(coords[0][0])) {
+        } else if (coords.length > 0 && typeof coords[0][0][0] === 'number') {
+            processPolygon(coords);
+        } else if (coords.length > 0 && Array.isArray(coords[0][0][0])) {
+            // MultiPolygon: coordinates is an array of polygons
             coords.forEach(function(polygon) {
                 processPolygon(polygon);
-            });
-        } else if (coords.length > 0 && Array.isArray(coords[0][0][0])) {
-            coords.forEach(function(multiPolygon) {
-                multiPolygon.forEach(function(polygon) {
-                    processPolygon(polygon);
-                });
             });
         }
     }
@@ -200,8 +204,8 @@ function renderCityMap(provinceName) {
             var padding = 80;
             var width = maxX - minX;
             var height = maxY - minY;
-            var canvasWidth = 1500;
-            var canvasHeight = 1200;
+            var canvasWidth = 1450;
+            var canvasHeight = 755;
             var scaleX = (canvasWidth - padding * 2) / width;
             var scaleY = (canvasHeight - padding * 2) / height;
             var scale = Math.min(scaleX, scaleY);
@@ -219,7 +223,10 @@ function renderCityMap(provinceName) {
             };
             
             data.features.forEach(function(feature) {
-                var cityName = feature.properties.name.replace(/市$/, '');
+                if (!feature.properties) {
+                    return;
+                }
+                var cityName = (feature.properties.name || feature.properties.NAME || '').replace(/市$/, '');
                 var level = visited[cityName] || 0;
                 var pathStr = geoToPath(feature.geometry.coordinates, transform);
                 
@@ -272,7 +279,7 @@ window.onload = function () {
     visited = buildVisited();
     saveVisited(visited);
 
-    map = new Raphael('map', 1500, 1200);
+    map = new Raphael('map', 1450, 755);
     
     Array.from(document.getElementsByClassName('select')).forEach(function (el) {
         el.style.backgroundColor = color[el.getAttribute('data-level')];
