@@ -1,0 +1,660 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>友链 | Zabwerk的元空间</title><meta name="author" content="Zabwerk"><meta name="copyright" content="Zabwerk"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="学习交流                                                                 👈 点击下方头像查看友链详情                                                                                             (function bootstrap (">
+<meta property="og:type" content="website">
+<meta property="og:title" content="友链">
+<meta property="og:url" content="https://zabwerk.github.io/links/index.html">
+<meta property="og:site_name" content="Zabwerk的元空间">
+<meta property="og:description" content="学习交流                                                                 👈 点击下方头像查看友链详情                                                                                             (function bootstrap (">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zabwerk.github.io/img/xunzhen-basket.jpg">
+<meta property="article:published_time" content="2026-08-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-09T09:48:20.220Z">
+<meta property="article:author" content="Zabwerk">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zabwerk.github.io/img/xunzhen-basket.jpg"><link rel="shortcut icon" href="/img/xunzhen-basket.jpg"><link rel="canonical" href="https://zabwerk.github.io/links/index.html"><link rel="preconnect"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '友链',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/css/morandi.css"><meta name="generator" content="Hexo 7.3.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="Zabwerk的元空间" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/xunzhen-basket.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/visited-cities/"><i class="fa-fw fas fa-map-marker-alt"></i><span> 城市打卡</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="page type-friends" id="body-wrap"><header class="not-home-page" id="page-header" style="background: linear-gradient(to right,;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Zabwerk的元空间</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/visited-cities/"><i class="fa-fw fas fa-map-marker-alt"></i><span> 城市打卡</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">友链</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><!--
+  友链 YAML 字段说明：
+  - class_name: 分组标题（可选）
+  - class_desc: 分组描述（可选）
+  - link_list:  站点列表
+    - name:   站点名称
+    - link:   站点链接
+    - avatar: 站点头像 / Logo 图片 URL
+    - descr:  站点简介
+-->
+
+<div class="flink"><div class="flink-name">学习交流</div>
+      <div class="flink-display" data-group="0">
+        <div class="flink-display-avatar"></div>
+        <div class="flink-display-meta">
+          <a class="flink-display-name" target="_blank"></a>
+          <div class="flink-display-desc"></div>
+        </div>
+        <div class="flink-display-empty">👈 点击下方头像查看友链详情</div>
+      </div><div class="flink-list compact">
+      <div class="flink-list-item"
+           data-group="0"
+           data-index="0"
+           data-name="Zabwerk的元空间"
+           data-link="https://zabwerk.github.io/"
+           data-avatar="/img/xunzhen-basket.jpg"
+           data-descr="心灵是个自主的地方。一念起，天堂变地狱；一念灭，地狱变天堂。"
+           data-fallback="/img/friend_404.gif">
+        <div class="flink-item-avatar">
+          <img class="no-lightbox flink-avatar-img"
+               src="/img/xunzhen-basket.jpg"
+               onerror='this.onerror=null;this.src="/img/friend_404.gif"'
+               alt="Zabwerk的元空间" />
+        </div>
+      </div>
+      <div class="flink-list-item"
+           data-group="0"
+           data-index="1"
+           data-name="@晚风"
+           data-link="https://gemmae.dev"
+           data-avatar="https://gemmae.dev/images/touxiang.png"
+           data-descr="每个优秀的人都有一段沉默的时光，那段时光是付出了很多努力，却得不到结果的日子，我们把它叫做扎根。"
+           data-fallback="/img/friend_404.gif">
+        <div class="flink-item-avatar">
+          <img class="no-lightbox flink-avatar-img"
+               src="https://gemmae.dev/images/touxiang.png"
+               onerror='this.onerror=null;this.src="/img/friend_404.gif"'
+               alt="@晚风" />
+        </div>
+      </div></div><script>(function bootstrap () {
+  // 幂等：同一 flink 容器只绑定一次
+  if (window.__flinkFlipMounted) return
+  window.__flinkFlipMounted = true
+
+  const state = new WeakMap() // state.get(flinkEl) -> { activeItem, activeAvatarEl, originRect }
+
+  function playFlip (el, fromRect, toRect, onEnd) {
+    const dx = fromRect.left - toRect.left
+    const dy = fromRect.top - toRect.top
+    const sx = fromRect.width / toRect.width
+    const sy = fromRect.height / toRect.height
+    el.style.transition = 'none'
+    el.style.transformOrigin = '0 0'
+    el.style.transform = `translate(${dx}px, ${dy}px) scale(${sx}, ${sy})`
+    el.style.willChange = 'transform'
+    // force reflow
+    // eslint-disable-next-line no-unused-expressions
+    el.offsetHeight
+    requestAnimationFrame(() => {
+      el.style.transition = 'transform .55s cubic-bezier(.22,1,.36,1)'
+      el.style.transform = ''
+      const done = () => {
+        el.removeEventListener('transitionend', done)
+        el.style.willChange = ''
+        onEnd && onEnd()
+      }
+      el.addEventListener('transitionend', done, { once: true })
+      // 保险兜底
+      setTimeout(done, 700)
+    })
+  }
+
+  function mount (flinkEl) {
+    if (state.has(flinkEl)) return
+    const st = { activeItem: null, activeAvatarEl: null, inFlight: null }
+    state.set(flinkEl, st)
+
+    // 点击列表里的某个头像项，或点击展示板内的头像（收起）
+    flinkEl.addEventListener('click', (e) => {
+      window.__flinkDebug = window.__flinkDebug || []
+      window.__flinkDebug.push('HANDLER_FIRED: target=' + e.target.tagName + '.' + (e.target.className || '').substring(0,30))
+      // 1) 点击展示板内的头像 → 收起当前激活项
+      if (e.target.closest('.flink-display-avatar')) {
+        window.__flinkDebug.push('DISPLAY_AVATAR_CLICK: activeItem=' + !!st.activeItem + ' inFlight=' + st.inFlight)
+        if (st.activeItem && !st.inFlight) {
+          e.preventDefault()
+          handleSelect(flinkEl, st, st.activeItem)
+        }
+        return
+      }
+      // 2) 点击列表里的某个头像项 → 激活/切换
+      const item = e.target.closest('.flink-list-item')
+      if (!item || !flinkEl.contains(item)) return
+      e.preventDefault()
+      handleSelect(flinkEl, st, item)
+    })
+  }
+
+  function handleSelect (flinkEl, st, item) {
+    window.__flinkDebug = window.__flinkDebug || []
+    window.__flinkDebug.push('HANDLE_SELECT: inFlight=' + st.inFlight + ' activeItem===' + (st.activeItem === item))
+    if (st.inFlight) return
+    const display = flinkEl.querySelector('.flink-display')
+    const displayAvatarSlot = display.querySelector('.flink-display-avatar')
+    const displayName = display.querySelector('.flink-display-name')
+    const displayDesc = display.querySelector('.flink-display-desc')
+    const displayEmpty = display.querySelector('.flink-display-empty')
+
+    // 1) 如果点击的是当前已激活的那一个 → 收起（空状态）
+    // 注意：此时头像已在展示板内，item 内无 img，必须在 avatar 查找之前判断
+    if (st.activeItem === item) {
+      window.__flinkDebug.push('COLLAPSE branch entered')
+      st.inFlight = 'collapse'
+      const activeImg = displayAvatarSlot.querySelector('.flink-avatar-img')
+      const originSlot = st.activeItem.querySelector('.flink-item-avatar')
+      if (activeImg && originSlot) {
+        const imgRect = activeImg.getBoundingClientRect()
+        originSlot.appendChild(activeImg)
+        const afterRect = activeImg.getBoundingClientRect()
+        playFlip(activeImg, imgRect, afterRect, () => {
+          displayName.textContent = ''
+          displayName.removeAttribute('href')
+          displayDesc.textContent = ''
+          display.classList.remove('is-active')
+          displayEmpty && displayEmpty.classList.remove('is-hidden')
+          st.activeItem = null
+          st.inFlight = null
+        })
+      } else {
+        st.inFlight = null
+      }
+      return
+    }
+
+    // 后续逻辑需要从 item 内找头像（未激活项的头像仍在列表中）
+    const avatar = item.querySelector('.flink-avatar-img')
+    if (!avatar) return
+
+    // 2) 如果已有激活项 → 先收回，再切换
+    const switchAfter = () => doActivate()
+    if (st.activeItem) {
+      st.inFlight = 'switch'
+      const activeImg = displayAvatarSlot.querySelector('.flink-avatar-img')
+      const prevOrigin = st.activeItem.querySelector('.flink-item-avatar')
+      if (activeImg && prevOrigin) {
+        const beforeRect = activeImg.getBoundingClientRect()
+        prevOrigin.appendChild(activeImg)
+        const afterRect = activeImg.getBoundingClientRect()
+        playFlip(activeImg, beforeRect, afterRect, () => {
+          st.activeItem = null
+          st.inFlight = null
+          switchAfter()
+        })
+        return
+      } else {
+        displayAvatarSlot.innerHTML = ''
+        st.activeItem = null
+      }
+    }
+
+    doActivate()
+
+    function doActivate () {
+      st.inFlight = 'expand'
+      st.activeItem = item // 立即设置，以便动画期间也能收起
+      const rectBefore = avatar.getBoundingClientRect()
+      displayAvatarSlot.appendChild(avatar) // DOM 真实搬迁到展示板
+      const rectAfter = avatar.getBoundingClientRect()
+
+      // 填充右侧元信息
+      displayName.textContent = item.dataset.name || ''
+      displayName.href = item.dataset.link || 'javascript:void(0)'
+      displayDesc.textContent = item.dataset.descr || ''
+      displayEmpty && displayEmpty.classList.add('is-hidden')
+      display.classList.add('is-active')
+
+      playFlip(avatar, rectBefore, rectAfter, () => {
+        st.inFlight = null
+      })
+    }
+  }
+
+  // 空白区域点击收起
+  document.addEventListener('click', (e) => {
+    // 命中 flink 内部（列表/展示板）就不收起
+    if (e.target.closest && (e.target.closest('.flink-list-item') || e.target.closest('.flink-display'))) return
+    document.querySelectorAll('.flink').forEach(flinkEl => {
+      const st = state.get(flinkEl)
+      if (!st || !st.activeItem || st.inFlight) return
+      const display = flinkEl.querySelector('.flink-display')
+      const displayAvatarSlot = display.querySelector('.flink-display-avatar')
+      const displayName = display.querySelector('.flink-display-name')
+      const displayDesc = display.querySelector('.flink-display-desc')
+      const displayEmpty = display.querySelector('.flink-display-empty')
+      const activeImg = displayAvatarSlot.querySelector('.flink-avatar-img')
+      const originSlot = st.activeItem.querySelector('.flink-item-avatar')
+      if (activeImg && originSlot) {
+        st.inFlight = 'collapse-blur'
+        const before = activeImg.getBoundingClientRect()
+        originSlot.appendChild(activeImg)
+        const after = activeImg.getBoundingClientRect()
+        playFlip(activeImg, before, after, () => {
+          displayName.textContent = ''
+          displayName.removeAttribute('href')
+          displayDesc.textContent = ''
+          display.classList.remove('is-active')
+          displayEmpty && displayEmpty.classList.remove('is-hidden')
+          st.activeItem = null
+          st.inFlight = null
+        })
+      }
+    })
+  })
+
+  // 挂载所有当前存在的 + 懒新增的 .flink
+  const mountAll = () => document.querySelectorAll('.flink').forEach(mount)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', mountAll, { once: true })
+  } else {
+    mountAll()
+  }
+  if (window.MutationObserver) {
+    new MutationObserver(mountAll).observe(document.body, { childList: true, subtree: true })
+  }
+})();</script></div>
+
+<style>
+/* ================ 友链分组：展示板 + 紧凑头像列表 + FLIP 平移 ================ */
+
+/* 重置旧 flink-list 样式（改插件结构后不再使用 3 列 90px 卡片）*/
+.container .flink .flink-list.compact,
+.container .flink .flink-list {
+  overflow: visible;
+  padding: 14px 0 6px;
+  margin: 8px 0 20px;
+  text-align: left;
+}
+
+/* 下方紧凑圆形头像列表 */
+.container .flink .flink-list.compact > .flink-list-item,
+.container .flink .flink-list > .flink-list-item {
+  position: relative;
+  float: none;
+  display: inline-block;
+  margin: 4px 10px 4px 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  line-height: 0;
+  overflow: visible;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transform: none;
+  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+  vertical-align: top;
+}
+.container .flink .flink-list.compact > .flink-list-item:hover,
+.container .flink .flink-list > .flink-list-item:hover {
+  border-color: #b8a08d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(120,90,60,.18);
+}
+.container .flink .flink-list.compact > .flink-list-item::before,
+.container .flink .flink-list > .flink-list-item::before {
+  display: none !important;
+}
+
+/* 列表里的圆形头像 */
+.container .flink .flink-list.compact > .flink-list-item .flink-item-avatar,
+.container .flink .flink-list > .flink-list-item .flink-item-avatar {
+  width: 56px;
+  height: 56px;
+  line-height: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 0 3px #fff inset;
+}
+.container .flink .flink-list.compact > .flink-list-item .flink-item-avatar img,
+.container .flink .flink-list > .flink-list-item .flink-item-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  line-height: 0;
+  /* FLIP 动画只允许 transform 改动，避免其他属性干扰 */
+  transition: none;
+}
+
+/* ================ 展示板（.flink-name 与列表之间插入的新板块） ================ */
+.container .flink .flink-display {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 0;
+  margin: 6px 0 4px;
+  padding: 0;
+  border: 2px dashed #d8cdbe;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fbf6f0 0%, #f1e9dd 100%);
+  overflow: hidden;
+  transition: min-height .35s ease, padding .35s ease, margin .35s ease, opacity .35s ease;
+  opacity: .85;
+}
+.container .flink .flink-display.is-active {
+  min-height: 110px;
+  padding: 14px 18px;
+  margin: 6px 0 14px;
+  opacity: 1;
+  border-style: solid;
+  border-color: #c8b8a5;
+}
+
+/* 展示板：头像槽 — 圆形，左栏 */
+.container .flink .flink-display .flink-display-avatar {
+  flex: 0 0 auto;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 4px #fff, 0 6px 16px rgba(120,90,60,.18);
+  overflow: visible;
+}
+.container .flink .flink-display .flink-display-avatar:empty {
+  width: 0;
+  height: 0;
+  box-shadow: none;
+  background: transparent;
+}
+/* 头像搬进来后，把 img 撑满圆形槽 */
+.container .flink .flink-display .flink-display-avatar .flink-avatar-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+/* 展示板头像可点击收起 */
+.container .flink .flink-display.is-active .flink-display-avatar {
+  cursor: pointer;
+}
+.container .flink .flink-display.is-active .flink-display-avatar:hover {
+  transform: scale(0.92);
+  transition: transform .2s ease;
+}
+
+/* 展示板：右侧元信息 */
+.container .flink .flink-display .flink-display-meta {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container .flink .flink-display .flink-display-name {
+  font-size: 1.15em;
+  font-weight: 700;
+  color: #40332b;
+  margin-bottom: 6px;
+  text-decoration: none;
+  word-break: break-all;
+}
+.container .flink .flink-display .flink-display-name:hover {
+  color: #8f6e57;
+  text-decoration: underline;
+}
+.container .flink .flink-display .flink-display-desc {
+  font-size: .93em;
+  color: #5c4d43;
+  line-height: 1.6;
+  /* 两行省略 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.container .flink .flink-display:not(.is-active) .flink-display-name,
+.container .flink .flink-display:not(.is-active) .flink-display-desc {
+  opacity: 0;
+  max-height: 0;
+}
+
+/* 空状态占位提示 */
+.container .flink .flink-display .flink-display-empty {
+  width: 100%;
+  text-align: center;
+  color: #a08e7c;
+  font-size: .9em;
+  padding: 14px 12px;
+  transition: opacity .3s ease;
+}
+.container .flink .flink-display .flink-display-empty.is-hidden {
+  display: none;
+}
+
+/* 响应式：窄屏下列表头像缩小一行排得更多 */
+@media (max-width: 600px) {
+  .container .flink .flink-list.compact > .flink-list-item .flink-item-avatar,
+  .container .flink .flink-list > .flink-list-item .flink-item-avatar {
+    width: 46px;
+    height: 46px;
+  }
+  .container .flink .flink-display .flink-display-avatar {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+/* 彻底禁用旧插件 flink-item-icon/name/desc 相关类（如果模板里还有残留结构不生效） */
+.container .flink .flink-item-icon { display: none; }
+.container .flink .flink-item-name { display: none; }
+.container .flink .flink-item-desc { display: none; }
+</style>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/xunzhen-basket.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><a class="author-info-name" href="/about/">Zabwerk</a><div class="author-info-description">Hi! 你好！👋</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags-page/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a class="wechat-btn" id="card-info-btn" href="javascript:void(0);" onclick="toggleWechatQR()"><i class="fab fa-weixin"></i><span>关注公众号</span></a><div class="wechat-qr-container"><img class="wechat-qr-img" src="/img/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E6%A0%87%E5%87%86%E8%89%B2%E7%89%88.png" alt="公众号二维码"/></div><a class="email-btn" id="card-info-btn" href="mailto:zabwerk@yeah.net"><i class="fas fa-envelope"></i><span>Zabwerk的邮箱</span></a></div><div class="sticky_layout"><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/"><span class="card-category-list-name">技术</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">阅读笔记</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87/"><span class="card-category-list-name">论文</span><span class="card-category-list-count">1</span></a></li></ul></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%9C%B0%E7%89%A9%E6%8F%90%E5%8F%96/" style="font-size: 1.1em; color: #999">地物提取</a> <a href="/tags/%E6%B5%8B%E7%BB%98/" style="font-size: 1.1em; color: #999">测绘</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/02/">
+            <span class="card-archive-list-date">
+              二月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/09/">
+            <span class="card-archive-list-date">
+              九月 2024
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">2</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-09T13:02:27.576Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background: linear-gradient(to right,;"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By Zabwerk</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/post-poll.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        loader: {
+          load: ['[tex]/mhchem'],
+          paths: {
+            'mathjax-mhchem-font-extension': '/pluginsSrc/@mathjax/mathjax-mhchem-font-extension'
+          }
+        },
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+          packages: {'[+]': ['mhchem']}
+        },
+        chtml: {
+          scale: 1.1,
+          fontURL: '/pluginsSrc/@mathjax/mathjax-newcm-font/chtml/woff2'
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = '/pluginsSrc/mathjax/es5/tex-mml-chtml.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
