@@ -6,7 +6,7 @@
   <link href="https://zabwerk.github.io/atom.xml" rel="self"/>
   
   <link href="https://zabwerk.github.io/"/>
-  <updated>2026-02-14T03:21:37.378Z</updated>
+  <updated>2026-02-13T03:30:04.410Z</updated>
   <id>https://zabwerk.github.io/</id>
   
   <author>
@@ -15,33 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>文献阅读笔记 | 1.基于可见光波段无人机遥感的植被信息提取</title>
-    <link href="https://zabwerk.github.io/2026/02/13/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-1-%E5%9F%BA%E4%BA%8E%E5%8F%AF%E8%A7%81%E5%85%89%E6%B3%A2%E6%AE%B5%E6%97%A0%E4%BA%BA%E6%9C%BA%E9%81%A5%E6%84%9F%E7%9A%84%E6%A4%8D%E8%A2%AB%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/"/>
-    <id>https://zabwerk.github.io/2026/02/13/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-1-%E5%9F%BA%E4%BA%8E%E5%8F%AF%E8%A7%81%E5%85%89%E6%B3%A2%E6%AE%B5%E6%97%A0%E4%BA%BA%E6%9C%BA%E9%81%A5%E6%84%9F%E7%9A%84%E6%A4%8D%E8%A2%AB%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/</id>
-    <published>2026-02-13T02:45:16.000Z</published>
-    <updated>2026-02-14T03:21:37.378Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;note flat&quot;&gt;&lt;p&gt;  &lt;strong&gt;引用&lt;/strong&gt;&lt;br&gt;&lt;br&gt;汪小钦, 王苗苗, 王绍强, 等. 基于可见光波段无人机遥感的植被信息提取[J]. 农业工程学报, 2015, 31(5): 152-157, 159,</summary>
-        
-      
-    
-    
-    
-    <category term="阅读笔记" scheme="https://zabwerk.github.io/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="论文" scheme="https://zabwerk.github.io/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E8%AE%BA%E6%96%87/"/>
-    
-    
-    <category term="地物提取" scheme="https://zabwerk.github.io/tags/%E5%9C%B0%E7%89%A9%E6%8F%90%E5%8F%96/"/>
-    
-  </entry>
   
   <entry>
     <title>虚拟数字测图竞赛个人经验总结</title>

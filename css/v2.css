@@ -1,0 +1,197 @@
+/* ============================================================
+   v2 编辑式视觉层
+   只做叠加，不改主题结构与模板。
+   还原方式：删除本文件，并移除 _config.yml 中 inject.head 的引用。
+   ============================================================ */
+
+:root {
+  --v2-accent: #8f7d74;
+  --v2-accent-soft: rgba(143, 125, 116, .14);
+  --v2-line: rgba(31, 26, 23, .09);
+  --v2-ink: #241f1c;
+  --v2-muted: rgba(36, 31, 28, .55);
+}
+
+[data-theme='dark'] {
+  --v2-accent: #b8a08d;
+  --v2-accent-soft: rgba(184, 160, 141, .16);
+  --v2-line: rgba(255, 255, 255, .12);
+  --v2-ink: rgba(255, 255, 255, .92);
+  --v2-muted: rgba(255, 255, 255, .5);
+}
+
+::selection {
+  background: var(--v2-accent-soft);
+}
+
+/* ---------- 首屏 ---------- */
+
+#page-header.full_page {
+  isolation: isolate;
+}
+
+#page-header.full_page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(140% 100% at 50% 120%, rgba(0, 0, 0, .42), transparent 58%),
+    radial-gradient(80% 60% at 50% -10%, rgba(255, 255, 255, .16), transparent 70%);
+}
+
+#page-header.full_page #site-info {
+  position: relative;
+  z-index: 1;
+}
+
+#site-info #site-title {
+  font-size: clamp(2rem, 4.4vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, .32);
+}
+
+#site-info #site-title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin: 20px auto 0;
+  background: rgba(255, 255, 255, .8);
+}
+
+/* ---------- 首页文章列表：编号式编辑排版 ---------- */
+
+#recent-posts .recent-post-items {
+  counter-reset: v2-post;
+}
+
+#recent-posts .recent-post-item {
+  counter-increment: v2-post;
+  position: relative;
+  margin: 0 !important;
+  padding: 28px 0 24px 18px;
+  background: transparent !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--v2-line);
+}
+
+#recent-posts .recent-post-item:last-child {
+  border-bottom: none;
+}
+
+#recent-posts .recent-post-item::before {
+  content: counter(v2-post, decimal-leading-zero);
+  position: absolute;
+  top: 14px;
+  right: 2px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 2.1rem;
+  line-height: 1;
+  color: var(--v2-accent);
+  opacity: .26;
+  pointer-events: none;
+}
+
+#recent-posts .recent-post-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 26px;
+  bottom: 26px;
+  width: 2px;
+  background: var(--v2-accent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .35s cubic-bezier(.2, .7, .3, 1);
+}
+
+#recent-posts .recent-post-item:hover::after {
+  transform: scaleY(1);
+}
+
+#recent-posts .recent-post-info {
+  padding: 0 56px 0 0 !important;
+  width: 100% !important;
+}
+
+#recent-posts .article-title {
+  font-size: clamp(1.15rem, 1.5vw, 1.42rem) !important;
+  font-weight: 600;
+  line-height: 1.45 !important;
+  letter-spacing: .01em;
+  color: var(--v2-ink) !important;
+  transition: color .25s ease, transform .25s ease;
+}
+
+#recent-posts .recent-post-item:hover .article-title {
+  color: var(--v2-accent) !important;
+  transform: translateX(2px);
+}
+
+#recent-posts .article-meta-wrap {
+  margin-top: 10px;
+  font-size: .78rem;
+  letter-spacing: .06em;
+  color: var(--v2-muted);
+}
+
+#recent-posts .article-meta-wrap i {
+  display: none;
+}
+
+#recent-posts .recent-post-info .content {
+  margin-top: 12px;
+  color: var(--v2-muted) !important;
+  line-height: 1.85;
+}
+
+/* ---------- 文章页排版 ---------- */
+
+#article-container {
+  line-height: 1.95;
+  letter-spacing: .01em;
+}
+
+#article-container h2 {
+  position: relative;
+  padding-left: 14px;
+}
+
+#article-container h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .5em;
+  width: 3px;
+  height: .95em;
+  border-radius: 2px;
+  background: var(--v2-accent);
+}
+
+#article-container img {
+  border-radius: 10px;
+}
+
+#article-container blockquote {
+  border-left: 3px solid var(--v2-accent);
+  background: var(--v2-accent-soft);
+}
+
+@media (max-width: 768px) {
+  #recent-posts .recent-post-item {
+    padding: 22px 0 20px 14px;
+  }
+
+  #recent-posts .recent-post-item::before {
+    font-size: 1.6rem;
+    top: 12px;
+  }
+
+  #recent-posts .recent-post-info {
+    padding-right: 40px !important;
+  }
+}
