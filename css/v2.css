@@ -62,6 +62,14 @@
   background: rgba(255, 255, 255, .8);
 }
 
+#page-header.full_page #site-subtitle {
+  margin-top: 12px;
+  font-family: FangSong, STFangsong, 'FangSong_GB2312', serif;
+  font-size: 1.014em;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
 /* ---------- 首页文章列表：编号式编辑排版 ---------- */
 
 #recent-posts .recent-post-items {
