@@ -1,0 +1,1067 @@
+/* ============================================================
+   极简杂志风 · 全站页面外壳
+   与首页 journal-home.css 同一套纸张 / 油墨 / 细线语言
+   仅作用于非首页（首页由 layout/index.pug 独立渲染）
+   ============================================================ */
+
+:root {
+  --paper: #f6f4ee;
+  --ink: #232a25;
+  --muted: #73776e;
+  --line: #d2d4c8;
+  --accent: #737d43;
+  --soft: #e9ebdf;
+
+  /* 兼容页面内联样式使用的 Butterfly 变量 */
+  --card-bg: #fbf9f3;
+  --font-color: #232a25;
+  --theme-color: #737d43;
+  --global-font-size: 16px;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Times New Roman", SimHei, "黑体", sans-serif;
+  font-size: 15px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
+/* 隐藏 Butterfly 原生骨架（仅保留给主题脚本使用） */
+.journal-chrome {
+  display: none !important;
+}
+
+/* ---------- 页头 ---------- */
+
+.journal-header,
+.journal-main,
+.journal-footer {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 56px;
+}
+
+.journal-header {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  color: var(--ink);
+}
+
+.brand span {
+  font-family: serif;
+  font-size: 13px;
+  margin-left: 12px;
+  letter-spacing: 1px;
+}
+
+.journal-nav {
+  display: flex;
+  gap: 38px;
+  font-size: 14px;
+}
+
+.journal-nav a {
+  color: var(--ink);
+  padding-bottom: 4px;
+}
+
+.journal-nav a.is-active {
+  color: var(--accent);
+  box-shadow: 0 2px var(--accent);
+}
+
+.edition {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+/* ---------- 页头标题区 ---------- */
+
+.journal-main {
+  padding-bottom: 72px;
+}
+
+.journal-masthead {
+  padding: 58px 0 30px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin: 0 0 20px;
+  text-transform: uppercase;
+}
+
+.journal-masthead h1 {
+  font-family: "Times New Roman", "Songti SC", SimSun, serif;
+  font-weight: 500;
+  font-size: clamp(34px, 4.2vw, 56px);
+  letter-spacing: 2px;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.journal-masthead .dek {
+  margin: 20px 0 0;
+  max-width: 620px;
+  font-size: 14px;
+  line-height: 2;
+  color: var(--muted);
+}
+
+.journal-body {
+  padding-top: 36px;
+}
+
+/* ---------- 通用正文 ---------- */
+
+#article-container {
+  max-width: none;
+  padding: 0;
+  line-height: 2;
+  letter-spacing: .01em;
+  text-align: left;
+  color: var(--ink);
+}
+
+.type-page #article-container,
+.type-friends #article-container {
+  max-width: 860px;
+}
+
+#article-container p {
+  margin: 0 0 18px;
+  font-size: 15px;
+  line-height: 2;
+}
+
+#article-container h2,
+#article-container h3,
+#article-container h4 {
+  font-family: "Times New Roman", "Songti SC", SimSun, serif;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+#article-container h2 {
+  font-size: 26px;
+  margin: 44px 0 16px;
+  padding: 0 0 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+#article-container h2::before {
+  display: none;
+}
+
+#article-container h3 {
+  font-size: 20px;
+  margin: 30px 0 10px;
+}
+
+#article-container blockquote {
+  margin: 26px 0;
+  padding: 16px 22px;
+  border-left: 2px solid var(--accent);
+  background: var(--soft);
+  border-radius: 0;
+  color: var(--muted);
+}
+
+#article-container blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+#article-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+#article-container figure {
+  margin: 28px 0;
+}
+
+#article-container figcaption {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+#article-container table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 24px 0;
+  font-size: 13px;
+}
+
+#article-container th,
+#article-container td {
+  border-bottom: 1px solid var(--line);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+#article-container code {
+  background: var(--soft);
+  padding: 1px 5px;
+  border-radius: 0;
+  font-size: .9em;
+}
+
+#article-container pre {
+  border-radius: 0;
+  border: 1px solid var(--line);
+}
+
+#article-container a {
+  color: var(--accent);
+  border-bottom: 1px solid rgba(115, 125, 67, .35);
+}
+
+/* ---------- 文章页 ---------- */
+
+.journal-post {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.journal-post-head {
+  padding: 60px 0 28px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.journal-post-head h1 {
+  font-family: "Times New Roman", "Songti SC", SimSun, serif;
+  font-size: clamp(30px, 3.9vw, 48px);
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 22px;
+  margin-top: 24px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.post-meta .post-meta-tags a {
+  color: var(--accent);
+}
+
+.post-meta .post-meta-tags a + a::before {
+  content: ' · ';
+  color: var(--muted);
+}
+
+.journal-post-head .dek {
+  margin: 18px 0 0;
+  font-size: 14px;
+  line-height: 2;
+  color: var(--muted);
+  max-width: 620px;
+}
+
+.journal-post-head .journal-pub {
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 2;
+  color: var(--muted);
+  text-align: right;
+}
+
+.journal-post-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 210px;
+  gap: 64px;
+  padding-top: 38px;
+}
+
+.journal-post-grid.no-toc {
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
+}
+
+.journal-toc {
+  align-self: start;
+  position: sticky;
+  top: 28px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.journal-toc h2 {
+  font: 11px/1 Arial, "Microsoft YaHei", sans-serif;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin: 0 0 14px;
+  border: 0;
+  padding: 0;
+}
+
+.journal-toc ol.toc {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.journal-toc .toc-item {
+  margin: 0 0 9px;
+}
+
+.journal-toc .toc-link {
+  display: block;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+  border: 0;
+}
+
+.journal-toc .toc-link:hover {
+  color: var(--accent);
+}
+
+.journal-toc .toc-child {
+  list-style: none;
+  padding-left: 12px;
+  margin-top: 8px;
+}
+
+.journal-toc .toc-number {
+  color: var(--accent);
+  margin-right: 2px;
+}
+
+.journal-post-foot {
+  margin-top: 56px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.journal-post-foot .post-tags a {
+  color: var(--muted);
+  font-size: 11px;
+  margin-right: 12px;
+}
+
+.journal-post-foot .post-tags a:hover {
+  color: var(--accent);
+}
+
+/* 上/下一篇文章 */
+#pagination.pagination-post {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 26px;
+}
+
+#pagination.pagination-post a.pagination-related {
+  display: block;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+}
+
+#pagination.pagination-post .info-item-1 {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+#pagination.pagination-post .info-item-2 {
+  font-family: "Times New Roman", "Songti SC", SimSun, serif;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+#pagination.pagination-post .cover,
+#pagination.pagination-post .info-2 {
+  display: none;
+}
+
+/* ---------- 评论区 ---------- */
+
+.journal-comments {
+  margin-top: 64px;
+  padding-top: 26px;
+  border-top: 1px solid var(--ink);
+}
+
+.journal-comments .custom-hr,
+hr.custom-hr {
+  display: none;
+}
+
+#post-comment .comment-head {
+  border: 0;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+#post-comment .comment-headline {
+  font-family: "Times New Roman", "Songti SC", SimSun, serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+#post-comment .comment-headline i {
+  display: none;
+}
+
+#post-comment .comment-wrap {
+  margin: 0;
+}
+
+#giscus-wrap {
+  margin-top: 8px;
+}
+
+#giscus-wrap iframe {
+  border-radius: 0 !important;
+}
+
+/* ---------- 列表 / 归档 ---------- */
+
+.article-sort {
+  margin-left: 0;
+  padding-left: 0;
+  border-left: 0;
+}
+
+.article-sort-item.year {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  margin: 40px 0 6px;
+  padding: 0;
+}
+
+.article-sort-item {
+  display: block;
+  height: auto;
+  margin: 0;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.article-sort-item::before,
+.article-sort-item.year::before,
+.article-sort-title::before,
+.article-sort-title::after {
+  display: none !important;
+}
+
+.article-sort-item-img {
+  display: none;
+}
+
+.article-sort-item-info {
+  display: flex;
+  align-items: baseline;
+  gap: 22px;
+  padding: 0;
+}
+
+.article-sort-item-time {
+  flex: 0 0 96px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.article-sort-item .journal-iss {
+  flex: 0 0 52px;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.article-sort-item-time i {
+  display: none;
+}
+
+.article-sort-item-title {
+  font-family: "Times New Roman", "Songti SC", SimSun, serif;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.article-sort-item-title:hover {
+  color: var(--accent);
+}
+
+/* 分类页 */
+.category-lists {
+  max-width: 860px;
+}
+
+.category-lists ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-lists ul ul {
+  padding-left: 22px;
+}
+
+.category-lists li {
+  border-bottom: 1px solid var(--line);
+  padding: 11px 0;
+  font-size: 14px;
+}
+
+.category-lists a {
+  color: var(--ink);
+  font-family: "Times New Roman", "Songti SC", SimSun, serif;
+  font-size: 16px;
+}
+
+.category-lists a:hover {
+  color: var(--accent);
+}
+
+.category-lists .category-count,
+.category-lists .category-list-count {
+  color: var(--muted);
+  font-size: 11px;
+  margin-left: 8px;
+}
+
+/* 标签页 */
+.tag-cloud-list {
+  max-width: 860px;
+  text-align: left !important;
+  line-height: 2.6;
+}
+
+.tag-cloud-list a {
+  display: inline-block;
+  font-size: 13px !important;
+  padding: 4px 12px;
+  margin: 0 8px 8px 0;
+  border: 1px solid var(--line);
+  color: var(--ink) !important;
+}
+
+.tag-cloud-list a span {
+  color: var(--muted) !important;
+}
+
+.tag-cloud-list a:hover {
+  border-color: var(--accent);
+  color: var(--accent) !important;
+}
+
+/* 分页 */
+#pagination .pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 34px 0 0;
+}
+
+#pagination .pagination a,
+#pagination .pagination span {
+  min-width: 34px;
+  height: 34px;
+  line-height: 32px;
+  text-align: center;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+#pagination .pagination .current {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: transparent;
+}
+
+#pagination .pagination a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+
+/* 404 */
+.error-content {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.error-img img {
+  max-width: 420px;
+}
+
+.error_title {
+  font-family: "Times New Roman", "Songti SC", SimSun, serif;
+  font-size: 64px;
+  margin: 20px 0 0;
+}
+
+.error_subtitle {
+  color: var(--muted);
+}
+
+/* ---------- 组件适配 ---------- */
+
+/* 城市足迹地图 */
+body #article-container #vc-root {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+body #article-container #vc-title {
+  display: none;
+}
+
+body #article-container #vc-legend {
+  margin: 0 0 18px !important;
+  border-radius: 0 !important;
+  border-color: var(--line) !important;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+body #article-container #vc-map {
+  border-radius: 0 !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: none !important;
+  background: #fff !important;
+}
+
+body #article-container #vc-backBtn {
+  border-radius: 0 !important;
+  background: var(--ink) !important;
+  box-shadow: none !important;
+}
+
+body #article-container #vc-backBtn:hover {
+  background: var(--accent) !important;
+  transform: none;
+  box-shadow: none !important;
+}
+
+/* 小工具入口 */
+body #article-container .tool-entry {
+  border: 1px solid var(--line) !important;
+  border-radius: 0 !important;
+  background: #fbf9f3 !important;
+  box-shadow: none !important;
+  padding: 30px 20px !important;
+}
+
+body #article-container .tool-entry:hover {
+  border-color: var(--accent) !important;
+  transform: none;
+  background: var(--soft) !important;
+}
+
+body #article-container .tool-entry-icon {
+  color: var(--accent) !important;
+}
+
+body #article-container .tool-entry-action {
+  color: var(--accent) !important;
+  border-bottom: 1px solid rgba(115, 125, 67, .35);
+  padding-bottom: 2px;
+}
+
+/* 友链展示板 */
+body #article-container .flink-display {
+  border: 1px solid var(--line) !important;
+  border-radius: 0 !important;
+  background: #fbf9f3 !important;
+}
+
+body #article-container .flink-display.is-active {
+  border-color: var(--accent) !important;
+  border-style: solid !important;
+}
+
+body #article-container .flink-display .flink-display-avatar {
+  border-radius: 0 !important;
+  box-shadow: 0 0 0 1px var(--line) !important;
+}
+
+body #article-container .flink-display .flink-avatar-img {
+  border-radius: 0 !important;
+}
+
+body #article-container .flink-display .flink-display-name {
+  color: var(--ink) !important;
+  font-family: "Times New Roman", "Songti SC", SimSun, serif;
+  font-weight: 500 !important;
+}
+
+body #article-container .flink-display .flink-display-name:hover {
+  color: var(--accent) !important;
+  text-decoration: none;
+}
+
+body #article-container .flink-display .flink-display-desc,
+body #article-container .flink-display .flink-display-empty {
+  color: var(--muted) !important;
+}
+
+body #article-container .flink-name {
+  font-family: "Times New Roman", "Songti SC", SimSun, serif;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+  margin: 34px 0 6px;
+  border-bottom: 1px solid var(--line);
+}
+
+body #article-container .flink-list.compact > .flink-list-item,
+body #article-container .flink-list > .flink-list-item {
+  border-radius: 0;
+}
+
+body #article-container .flink-list.compact > .flink-list-item:hover,
+body #article-container .flink-list > .flink-list-item:hover {
+  border-color: var(--accent);
+  box-shadow: none;
+  transform: none;
+}
+
+body #article-container .flink-list.compact > .flink-list-item .flink-item-avatar,
+body #article-container .flink-list > .flink-list-item .flink-item-avatar {
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px var(--line) inset;
+}
+
+body #article-container .flink-item-avatar img {
+  border-radius: 2px;
+}
+
+/* 关于页 */
+body #article-container .about-page {
+  max-width: 900px;
+}
+
+body #article-container .profile-section,
+body #article-container .section {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 26px 0 !important;
+  margin-bottom: 0 !important;
+  border-top: 1px solid var(--line) !important;
+}
+
+body #article-container .profile-section {
+  border-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body #article-container .profile-avatar img {
+  border-radius: 2px !important;
+  border: 0 !important;
+  filter: grayscale(1);
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+body #article-container .profile-name {
+  font-family: "Times New Roman", "Songti SC", SimSun, serif;
+  font-weight: 500 !important;
+  font-size: 34px !important;
+  color: var(--ink) !important;
+}
+
+body #article-container .profile-title {
+  color: var(--accent) !important;
+  font-size: 13px !important;
+  letter-spacing: 1px;
+}
+
+body #article-container .stat-number {
+  font-family: Georgia, serif;
+  color: var(--ink) !important;
+}
+
+body #article-container .stat-label,
+body #article-container .profile-desc,
+body #article-container .timeline-content p,
+body #article-container .timeline-content li {
+  color: var(--muted) !important;
+}
+
+body #article-container .section-title {
+  font-family: "Times New Roman", "Songti SC", SimSun, serif;
+  font-size: 22px !important;
+  font-weight: 500;
+  border-bottom: 1px solid var(--line) !important;
+  padding-bottom: 10px;
+  color: var(--ink) !important;
+}
+
+body #article-container .section-title i,
+body #article-container .award-section h4 i,
+body #article-container .skill-section h4 i,
+body #article-container .cert-section h4 i {
+  color: var(--accent);
+}
+
+body #article-container .timeline-item {
+  border-left: 1px solid var(--line) !important;
+}
+
+body #article-container .timeline-date {
+  color: var(--accent) !important;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+body #article-container .timeline-content h3 {
+  color: var(--ink) !important;
+}
+
+body #article-container .skill-tag,
+body #article-container .cert-tag,
+body #article-container .contact-item {
+  background: transparent !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 0 !important;
+  color: var(--ink) !important;
+  font-size: 12px !important;
+}
+
+body #article-container .skill-tag i,
+body #article-container .cert-tag i,
+body #article-container .contact-item i,
+body #article-container .contact-item span {
+  color: var(--accent) !important;
+}
+
+body #article-container .skill-tag:hover,
+body #article-container .cert-tag:hover,
+body #article-container .contact-item:hover {
+  background: var(--soft) !important;
+  transform: none;
+}
+
+body #article-container .award-level {
+  background: transparent !important;
+  color: var(--accent) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 0 !important;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* 字母计算器：统一纸张配色 */
+body #article-container .tool-detail {
+  max-width: 900px;
+}
+
+body #article-container .tool-detail > a {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 3px;
+}
+
+/* 文章内嵌阅读统计 */
+#article-container .article-reading-stats {
+  margin-bottom: 28px;
+  padding: 12px 0 12px 16px;
+  border-left: 2px solid var(--accent);
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 1.8;
+}
+
+/* ---------- 页脚 ---------- */
+
+.journal-footer {
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+}
+
+.journal-footer > span {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.journal-footer > a:last-child {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* ---------- 响应式 ---------- */
+
+@media (max-width: 1024px) {
+  .edition {
+    display: none;
+  }
+
+  .journal-nav {
+    gap: 22px;
+  }
+
+  .journal-post-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .journal-toc {
+    order: -1;
+    position: static;
+    margin-bottom: 30px;
+    padding-top: 0;
+    border-top: 0;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 16px;
+  }
+}
+
+@media (max-width: 760px) {
+  .journal-header,
+  .journal-main,
+  .journal-footer {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .journal-header {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 18px;
+    padding-bottom: 14px;
+  }
+
+  .brand {
+    font-size: 23px;
+  }
+
+  .brand span {
+    display: none;
+  }
+
+  .journal-nav {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    font-size: 12px;
+  }
+
+  body #article-container .flink-display {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body #article-container .flink-display img {
+    max-width: 100%;
+  }
+
+  .journal-masthead {
+    padding-top: 40px;
+  }
+
+  .journal-masthead h1 {
+    font-size: 34px;
+    letter-spacing: 1px;
+  }
+
+  .journal-post-head h1 {
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+
+  .post-meta {
+    gap: 8px 14px;
+  }
+
+  #article-container .article-sort-item-info {
+    display: block;
+  }
+
+  .article-sort-item-time {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .journal-footer > span {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
