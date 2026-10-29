@@ -151,6 +151,17 @@
 
 /* ---------- 文章页排版 ---------- */
 
+#article-container .article-reading-stats {
+  margin-bottom: 24px;
+  padding: 12px 16px;
+  border-left: 3px solid var(--v2-accent);
+  border-radius: 6px;
+  background: var(--v2-accent-soft);
+  color: var(--font-color);
+  font-size: .9em;
+  line-height: 1.8;
+}
+
 #article-container {
   line-height: 1.95;
   letter-spacing: .01em;
@@ -195,3 +206,13 @@
     padding-right: 40px !important;
   }
 }
+
+/* Word article: responsive figures and native equations. */
+#article-container .poi-paper img { display: block; max-width: 100%; width: auto; height: auto; max-height: 850px; margin: 24px auto 10px; }
+#article-container .poi-paper .poi-journal-logo { max-width: 160px; margin: 0 0 20px; background: #fff; padding: 12px; }
+#article-container .poi-paper figure { margin: 28px 0; }
+#article-container .poi-paper figcaption { text-align: center; font-size: .9em; }
+#article-container .poi-paper math[display="block"] { display: block; overflow-x: auto; padding: 18px 0; }
+#article-container .poi-publication { font-size: .85em; opacity: .7; }
+#article-container .poi-author-info { margin: 0 0 20px; }
+#article-container .poi-author-info p { margin: 0 0 6px; line-height: 1.7; }
