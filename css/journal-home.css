@@ -2,6 +2,32 @@
 :root { color-scheme: light; }
 .about img { filter: none !important; mix-blend-mode: normal; }
 .journal-motto { margin-top: 28px !important; padding-top: 20px; border-top: 1px solid var(--line); font-family: FangSong, STFangsong, 'FangSong_GB2312', serif; font-weight: 700; font-size: 14px !important; }
+
+/* VOL.0 · 冷灰蓝技术卷：沿用同一杂志结构，切换为制图纸配色。 */
+body.journal-volume-0 {
+  --paper: #edf1f3;
+  --ink: #24313a;
+  --muted: #6f7c83;
+  --line: #c8d0d4;
+  --accent: #607987;
+}
+
+body.journal-volume-0 .feature-image {
+  background-color: #dce5e9;
+  background-image:
+    linear-gradient(rgba(96, 121, 135, .12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 121, 135, .12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+body.journal-volume-0 .feature-image img {
+  filter: saturate(.72) contrast(1.04);
+  mix-blend-mode: multiply;
+}
+
+body.journal-volume-0 .explore {
+  background: #e1e8eb;
+}
 .article[hidden], [hidden] { display: none !important; }
 .filters { flex-wrap: wrap; }
 .pagination { justify-content: center; gap: 20px; padding: 24px 0; }
