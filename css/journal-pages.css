@@ -20,6 +20,19 @@
   color-scheme: light;
 }
 
+/* 每一卷拥有独立纸张配色；未标注卷号的索引页沿用 VOL.1。 */
+body.journal-volume-0 {
+  --paper: #edf1f3;
+  --ink: #24313a;
+  --muted: #6f7c83;
+  --line: #c8d0d4;
+  --accent: #607987;
+  --soft: #e1e8eb;
+  --card-bg: #f4f7f8;
+  --font-color: #24313a;
+  --theme-color: #607987;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -703,6 +716,15 @@ hr.custom-hr {
 
 .volume-card:hover {
   border-color: var(--accent);
+}
+
+.volume-card.volume-1 {
+  background: #e9ebdf;
+}
+
+.volume-card.volume-0 {
+  background: #e1e8eb;
+  border-color: #c8d0d4;
 }
 
 .volume-no {
