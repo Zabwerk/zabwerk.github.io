@@ -728,6 +728,27 @@ hr.custom-hr {
   font-size: 24px;
 }
 
+.volume-home-note {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 26px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.volume-home-note span {
+  font: italic 24px Georgia, serif;
+  color: var(--accent);
+}
+
+.volume-home-note p {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
 /* 分类页 */
 .category-lists {
   max-width: 860px;
