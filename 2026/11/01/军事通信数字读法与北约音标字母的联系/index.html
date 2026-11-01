@@ -1,0 +1,578 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>军事通信数字读法与北约音标字母的联系 | Zabwerk的元空间</title><meta name="author" content="Zabwerk"><meta name="copyright" content="Zabwerk"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="抗噪、冗余与易发音——两套语音编码系统为何走向同一条设计轨道。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="军事通信数字读法与北约音标字母的联系">
+<meta property="og:url" content="https://zabwerk.github.io/2026/11/01/%E5%86%9B%E4%BA%8B%E9%80%9A%E4%BF%A1%E6%95%B0%E5%AD%97%E8%AF%BB%E6%B3%95%E4%B8%8E%E5%8C%97%E7%BA%A6%E9%9F%B3%E6%A0%87%E5%AD%97%E6%AF%8D%E7%9A%84%E8%81%94%E7%B3%BB/index.html">
+<meta property="og:site_name" content="Zabwerk的元空间">
+<meta property="og:description" content="抗噪、冗余与易发音——两套语音编码系统为何走向同一条设计轨道。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zabwerk.github.io/img/xunzhen-basket.jpg">
+<meta property="article:published_time" content="2026-10-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-11-01T15:28:41.335Z">
+<meta property="article:author" content="Zabwerk">
+<meta property="article:tag" content="语音通信">
+<meta property="article:tag" content="数字军语">
+<meta property="article:tag" content="北约音标字母">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zabwerk.github.io/img/xunzhen-basket.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "军事通信数字读法与北约音标字母的联系",
+  "url": "https://zabwerk.github.io/2026/11/01/%E5%86%9B%E4%BA%8B%E9%80%9A%E4%BF%A1%E6%95%B0%E5%AD%97%E8%AF%BB%E6%B3%95%E4%B8%8E%E5%8C%97%E7%BA%A6%E9%9F%B3%E6%A0%87%E5%AD%97%E6%AF%8D%E7%9A%84%E8%81%94%E7%B3%BB/",
+  "image": "https://zabwerk.github.io/img/xunzhen-basket.jpg",
+  "datePublished": "2026-10-31T16:00:00.000Z",
+  "dateModified": "2026-11-01T15:28:41.335Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Zabwerk",
+      "url": "https://github.com/Zabwerk"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/xunzhen-basket.jpg"><link rel="canonical" href="https://zabwerk.github.io/2026/11/01/%E5%86%9B%E4%BA%8B%E9%80%9A%E4%BF%A1%E6%95%B0%E5%AD%97%E8%AF%BB%E6%B3%95%E4%B8%8E%E5%8C%97%E7%BA%A6%E9%9F%B3%E6%A0%87%E5%AD%97%E6%AF%8D%E7%9A%84%E8%81%94%E7%B3%BB/index.html"><link rel="preconnect"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '军事通信数字读法与北约音标字母的联系',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/morandi.css"><link rel="stylesheet" href="/css/v2.css"><link rel="stylesheet" href="/css/journal-pages.css"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Zabwerk的元空间" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body class="journal-volume-1"><header class="journal-header"><a class="brand" href="/">Zabwerk<span>的元空间</span></a><nav class="journal-nav" aria-label="主导航"><a class="is-active" href="/archives/">全部文章</a><a href="/visited-cities/">城市足迹</a><a href="/links/">友链</a><a href="/tools/">小工具</a><a href="/guestbook/">留言板</a></nav><a class="edition" href="/volumes/" aria-label="查看并切换卷刊">独立个人志/JOURNAL VOL.1</a></header><main class="journal-main"><article class="journal-post"><header class="journal-post-head"><p class="eyebrow">百科知识</p><h1>军事通信数字读法与北约音标字母的联系</h1><div class="post-meta"><time datetime="2026-10-31T16:00:00.000Z" title="2026-11-01">2026.11.01</time><span>共计 2963 字</span><span>预计阅读 10 分钟</span><div class="post-meta-tags"><a href="/tags/%E8%AF%AD%E9%9F%B3%E9%80%9A%E4%BF%A1/">语音通信</a><a href="/tags/%E6%95%B0%E5%AD%97%E5%86%9B%E8%AF%AD/">数字军语</a><a href="/tags/%E5%8C%97%E7%BA%A6%E9%9F%B3%E6%A0%87%E5%AD%97%E6%AF%8D/">北约音标字母</a></div></div><p class="dek">抗噪、冗余与易发音——两套语音编码系统为何走向同一条设计轨道。</p></header><div class="journal-post-grid"><div class="journal-content post-content" id="article-container"><p>在军事通信、航空管制及应急调度等高风险场景中，语音指令的准确传递直接关系到任务成败与生命安全。然而，无线电信道中普遍存在背景噪声、信号衰减以及使用者口音差异等问题，使得日常语言中的数字与字母极易被误听。为解决这一难题，军队发展出一套特殊的数字读法（如“洞、幺、两、拐”），北约组织则制定了一套国际通用的音标字母系统（如“Alpha、Bravo、Charlie”）。尽管两者分属不同的语言体系和军事传统，但在功能目标、设计原理与文化适应性上存在着深层的逻辑联系。</p>
+<h2 id="共同的抗噪目标与冗余编码策略"><a href="#共同的抗噪目标与冗余编码策略" class="headerlink" title="共同的抗噪目标与冗余编码策略"></a>共同的抗噪目标与冗余编码策略</h2><p>大量实践证实，在炮火、引擎或静电干扰环境中，普通数字读音的误听率显著上升。例如汉语中的“1”与“7”，英语中的“B”与“P”，其发音部位相近，在信噪比低的条件下极易混淆。为此，中西方军队不约而同地采用了<strong>冗余编码</strong>的思路：用长度更长、听觉特征更独特的发音替代原有读音。</p>
+<p>军队将“1”改为开口更大、声能更集中的“幺”（yāo），将“7”改为具有爆破感和拐折特征的“拐”（guǎi），将“0”改为低频浑厚的“洞”（dòng）。北约则将每个字母对应一个多音节词，如“A”读作“Alpha”（双音节），“B”读作“Bravo”（双音节），“F”读作“Foxtrot”（两音节），“N”读作“November”（三音节）。这些代码词通过独特的元音-辅音组合，形成了可唯一识别的“听觉指纹”。有实验表明，在模拟战场噪声环境下，使用“幺、两、拐”比使用普通数字读音的识别准确率提高约40%；而北约音标字母的误听率也远低于直接读字母。</p>
+<h2 id="相同的设计原则：最大可区分性与易发音性"><a href="#相同的设计原则：最大可区分性与易发音性" class="headerlink" title="相同的设计原则：最大可区分性与易发音性"></a>相同的设计原则：最大可区分性与易发音性</h2><p>关于两种系统的设计原则，不同研究者的分析趋于一致。普遍共识是，有效的通信编码必须遵循<strong>最大可区分性</strong>。在军队系统中，“幺”（舌面高元音→后低元音）与“两”（舌边音+后低元音）的声学特征差异显著，“拐”（舌根塞音+双元音）与“勾”（舌根塞音+后高元音）也各有不同共振峰模式。在北约系统中，“Whiskey”起始于清圆唇擦音，“Tango”起始于舌尖爆破音，“X-ray”包含复辅音&#x2F;ks&#x2F;——这些特征确保了即使在部分频率被噪声掩盖时，剩余信息仍能唯一锁定目标字母。</p>
+<p>另一方面，两者都高度重视<strong>易发音性</strong>。军队考虑到士兵来自不同方言区，特意选用声母在全国大多数方言中发音稳定的汉字，如“洞”（d）、“幺”（y）、“拐”（g）等，避免了某些方言中容易混淆的舌尖元音或鼻音韵尾。北约则考虑到其系统需供多国军人使用，所有代码词均避免采用某些语言中罕见的音素（如英语的&#x2F;θ&#x2F;、&#x2F;ð&#x2F;），并尽量使用国际通用的音节组合。有研究指出，经过标准化训练后，不同母语背景的操作员对北约音标字母的发音一致性可达95%以上。</p>
+<h2 id="不同的文化嵌入路径"><a href="#不同的文化嵌入路径" class="headerlink" title="不同的文化嵌入路径"></a>不同的文化嵌入路径</h2><p>尽管功能逻辑高度相似，两种系统在具体的编码方式上却体现了不同的文化传统。军队的数字读法大量借助<strong>汉字象形联想</strong>：“0”形似一个“洞”，“7”像一根“拐杖”，“9”像一个“钩子”。这种直观映射便于快速记忆，也反映了汉语文化中以形表意的深层思维习惯。与之不同，北约音标字母采用<strong>单词首字母</strong>的联想逻辑，例如“Bravo”代表“B”，“Delta”代表“D”，这契合拼音文字文化中对“首音素”的敏感。</p>
+<p>此外，中国读法多为单音节，简洁有力，符合汉语语音结构及快速下达指令的需求；而北约代码词大多为双音节或三音节，虽略长，但增强了冗余度，更适合多国、多语种的通讯环境。不过，也有学者认为，这种长度差异并非本质区别——两种系统都通过牺牲一定的时间效率换取了更高的识别可靠性。</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>综合来看，军队数字读法与北约音标字母在功能目标（抗噪声、防误听）和核心设计原理（增加冗余、最大化听觉差异、适配信道特性）上表现出显著的跨文化趋同性。它们是人类面对语音通信天然缺陷时，在不同语言与军事背景下独立演化出的“最优近似解”。二者的联系，不是简单的模仿或借鉴，而是理性工程逻辑与语音生态共同作用的必然结果。这也说明：无论东方还是西方，当信息保真度成为首要目标时，通信编码的设计总是会回归到相似的科学轨道之上。</p>
+<h2 id="附表一：军队数字读法表"><a href="#附表一：军队数字读法表" class="headerlink" title="附表一：军队数字读法表"></a>附表一：军队数字读法表</h2><p>军队在语音通信中，将 0—9 十个数字采用了一套特殊的读法，称为数字军语。这套读法主要将易混淆的 1、2、7、9、0 分别读为“幺、两、拐、勾、洞”，其余数字保持不变。中国军网、新华网均有明确介绍，完整对应关系如下：</p>
+<table>
+<thead>
+<tr>
+<th>数字</th>
+<th>军队读法</th>
+<th>发音（汉语拼音）</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>洞</td>
+<td>dòng</td>
+<td>形状像洞口，故称“洞”</td>
+</tr>
+<tr>
+<td>1</td>
+<td>幺</td>
+<td>yāo</td>
+<td>避免与“7”（qī）混淆</td>
+</tr>
+<tr>
+<td>2</td>
+<td>两</td>
+<td>liǎng</td>
+<td>避免与“8”（bā）混淆</td>
+</tr>
+<tr>
+<td>3</td>
+<td>三</td>
+<td>sān</td>
+<td>不变</td>
+</tr>
+<tr>
+<td>4</td>
+<td>四</td>
+<td>sì</td>
+<td>不变</td>
+</tr>
+<tr>
+<td>5</td>
+<td>五</td>
+<td>wǔ</td>
+<td>不变</td>
+</tr>
+<tr>
+<td>6</td>
+<td>六</td>
+<td>liù</td>
+<td>不变</td>
+</tr>
+<tr>
+<td>7</td>
+<td>拐</td>
+<td>guǎi</td>
+<td>形状像拐杖，故称“拐”</td>
+</tr>
+<tr>
+<td>8</td>
+<td>八</td>
+<td>bā</td>
+<td>不变</td>
+</tr>
+<tr>
+<td>9</td>
+<td>勾</td>
+<td>gōu</td>
+<td>形状像钩子，故称“勾”</td>
+</tr>
+</tbody></table>
+<p>在无线通话中，比如“01”会被读作“洞幺”，“72”为“拐两”，“109”为“幺洞勾”。这种读法的根本目的在于保证嘈杂环境下（尤其是战场）信息传递的准确性，同时也兼顾了我国方言区士兵口音差异较大的实际情况。</p>
+<h2 id="附表二：北约音标字母表（26-个字母）"><a href="#附表二：北约音标字母表（26-个字母）" class="headerlink" title="附表二：北约音标字母表（26 个字母）"></a>附表二：北约音标字母表（26 个字母）</h2><p>北约音标字母的正式名称为“国际无线电通话拼写字母”（International Radiotelephony Spelling Alphabet），是 20 世纪 50 年代形成的标准化语音通讯系统，主要应用于军事、航空及无线电通信领域。国际民航组织（ICAO）和国际电信联盟（ITU）均在其专业领域推广使用这一标准，现已成为全球最常用的拼写字母系统。</p>
+<p>北约音标字母为每个拉丁字母分配了唯一的代码词，选择标准为在不同语言环境下易于辨识。其中，A 和 D 的读音取自相应的希腊字母。下表据赛普勒斯救援协调中心（Cyprus JRCC）官方文件、百度百科整理：</p>
+<table>
+<thead>
+<tr>
+<th>字母</th>
+<th>代码词</th>
+<th>发音（英文近似）</th>
+<th>字母</th>
+<th>代码词</th>
+<th>发音（英文近似）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>Alfa</td>
+<td>AL-fah</td>
+<td>N</td>
+<td>November</td>
+<td>no-VEM-ber</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Bravo</td>
+<td>BRAH-voh</td>
+<td>O</td>
+<td>Oscar</td>
+<td>OSS-cah</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Charlie</td>
+<td>CHAR-lee</td>
+<td>P</td>
+<td>Papa</td>
+<td>pah-PAH</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Delta</td>
+<td>DEL-tah</td>
+<td>Q</td>
+<td>Quebec</td>
+<td>keh-BECK</td>
+</tr>
+<tr>
+<td>E</td>
+<td>Echo</td>
+<td>ECK-oh</td>
+<td>R</td>
+<td>Romeo</td>
+<td>ROW-me-oh</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Foxtrot</td>
+<td>FOKS-trot</td>
+<td>S</td>
+<td>Sierra</td>
+<td>see-AIR-rah</td>
+</tr>
+<tr>
+<td>G</td>
+<td>Golf</td>
+<td>GOLF</td>
+<td>T</td>
+<td>Tango</td>
+<td>TANG-go</td>
+</tr>
+<tr>
+<td>H</td>
+<td>Hotel</td>
+<td>hoh-TELL</td>
+<td>U</td>
+<td>Uniform</td>
+<td>YOU-nee-form</td>
+</tr>
+<tr>
+<td>I</td>
+<td>India</td>
+<td>IN-dee-ah</td>
+<td>V</td>
+<td>Victor</td>
+<td>VIK-tah</td>
+</tr>
+<tr>
+<td>J</td>
+<td>Juliett</td>
+<td>JEW-lee-ETT</td>
+<td>W</td>
+<td>Whiskey</td>
+<td>WISS-key</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kilo</td>
+<td>KEY-loh</td>
+<td>X</td>
+<td>X-ray</td>
+<td>ECKS-ray</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Lima</td>
+<td>LEE-mah</td>
+<td>Y</td>
+<td>Yankee</td>
+<td>YANG-key</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Mike</td>
+<td>MIKE</td>
+<td>Z</td>
+<td>Zulu</td>
+<td>ZOO-loo</td>
+</tr>
+</tbody></table>
+<p>注：一些资料中也写作“Alpha”，但在 ICAO&#x2F;ITU 标准中“Alfa”拼写为首选，以避免“ph”的跨语言发音歧义。</p>
+<h2 id="附表三：北约数字读法表（0–9）"><a href="#附表三：北约数字读法表（0–9）" class="headerlink" title="附表三：北约数字读法表（0–9）"></a>附表三：北约数字读法表（0–9）</h2><p>北约音标字母在数字读音上与普通英文读音基本一致，但对“3”“4”“9”三个数字做了特殊处理，以确保不易与其它数字混淆。具体发音由国际民航组织统一规定，下表据赛普勒斯救援协调中心官方文件整理：</p>
+<table>
+<thead>
+<tr>
+<th>数字</th>
+<th>代码词</th>
+<th>发音（英文近似）</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>Zero</td>
+<td>ZE-ro 或 ZEE-ro</td>
+<td>不变</td>
+</tr>
+<tr>
+<td>1</td>
+<td>One</td>
+<td>WUN</td>
+<td>“one”可连读</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Two</td>
+<td>TOO</td>
+<td>不变</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Three</td>
+<td>TREE</td>
+<td>读作“树”，避免“three”的摩擦音混淆</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Four</td>
+<td>FOW-er</td>
+<td>末尾加“-er”拖长</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Five</td>
+<td>FIFE</td>
+<td>不变</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Six</td>
+<td>SIX</td>
+<td>不变</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Seven</td>
+<td>SEV-en</td>
+<td>不变</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Eight</td>
+<td>AIT</td>
+<td>不变</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Niner</td>
+<td>NIN-er</td>
+<td>末尾加“-er”，以与“five”区分</td>
+</tr>
+</tbody></table>
+<p>其中，“9”被读作“Niner”，以避免与德语“Nein”（意为“否”）相混淆，同时也使“9”与“5”的音色差异更大；“3”读作“Tree”（而非“Three”），是为了避免摩擦音“th”在某些语言中无法清晰发出，同时在电气通信中“t”“r”的传音效果更为稳定。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><strong>军队数字读法（数字军语）</strong></p>
+<ol>
+<li><a target="_blank" rel="noopener" href="http://www.xinhuanet.com/mil/2016-03/21/c_128818839.htm">新华网《“军语”里的那些秘密》</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.81.cn/">中国军网（www.81.cn）同题文章</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.chinanews.com.cn/">中国新闻网《部队中为什么将0念“洞”，7读作“拐”？》</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.163.com/dy/article/HNOIEQCC0543GX5X.html">网易《为什么部队要把7念成“拐”，0念成“洞”？》</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.thepaper.cn/">澎湃新闻《解放军为什么把1到0，读作“幺两三四五六拐怕勾洞”》</a></li>
+</ol>
+<p><strong>北约音标字母（NATO Phonetic Alphabet）</strong></p>
+<ol start="6">
+<li><a target="_blank" rel="noopener" href="https://wapbaike.baidu.com/item/%E5%8C%97%E7%BA%A6%E9%9F%B3%E6%A0%87%E5%AD%97%E6%AF%8D">百度百科“北约音标字母”词条</a></li>
+<li><a target="_blank" rel="noopener" href="https://jrcc-cyprus.mod.gov.cy/">赛普勒斯救援协调中心（Cyprus JRCC）官方文件《SAR phraseology》</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/NATO_phonetic_alphabet">维基百科“NATO phonetic alphabet”词条（英文）</a></li>
+<li><a target="_blank" rel="noopener" href="https://securityjournalamericas.com/nato-phonetic-alphabet">Security Journal Americas《NATO Phonetic Alphabet》专题</a></li>
+</ol>
+</div><aside class="journal-toc" aria-label="本页目录"><h2>本页目录</h2><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B1%E5%90%8C%E7%9A%84%E6%8A%97%E5%99%AA%E7%9B%AE%E6%A0%87%E4%B8%8E%E5%86%97%E4%BD%99%E7%BC%96%E7%A0%81%E7%AD%96%E7%95%A5"><span class="toc-number">1.</span> <span class="toc-text">共同的抗噪目标与冗余编码策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%90%8C%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%8F%AF%E5%8C%BA%E5%88%86%E6%80%A7%E4%B8%8E%E6%98%93%E5%8F%91%E9%9F%B3%E6%80%A7"><span class="toc-number">2.</span> <span class="toc-text">相同的设计原则：最大可区分性与易发音性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E7%9A%84%E6%96%87%E5%8C%96%E5%B5%8C%E5%85%A5%E8%B7%AF%E5%BE%84"><span class="toc-number">3.</span> <span class="toc-text">不同的文化嵌入路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">4.</span> <span class="toc-text">结论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E8%A1%A8%E4%B8%80%EF%BC%9A%E5%86%9B%E9%98%9F%E6%95%B0%E5%AD%97%E8%AF%BB%E6%B3%95%E8%A1%A8"><span class="toc-number">5.</span> <span class="toc-text">附表一：军队数字读法表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E8%A1%A8%E4%BA%8C%EF%BC%9A%E5%8C%97%E7%BA%A6%E9%9F%B3%E6%A0%87%E5%AD%97%E6%AF%8D%E8%A1%A8%EF%BC%8826-%E4%B8%AA%E5%AD%97%E6%AF%8D%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">附表二：北约音标字母表（26 个字母）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E8%A1%A8%E4%B8%89%EF%BC%9A%E5%8C%97%E7%BA%A6%E6%95%B0%E5%AD%97%E8%AF%BB%E6%B3%95%E8%A1%A8%EF%BC%880%E2%80%939%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">附表三：北约数字读法表（0–9）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">8.</span> <span class="toc-text">参考资料</span></a></li></ol></aside></div><div class="journal-post-foot"><span>最后更新于 2026.11.01</span></div><nav class="pagination-post" id="pagination"></nav><div class="journal-comments"><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div></article></main><footer class="journal-footer"><a class="brand" href="/">Zabwerk<span>的元空间</span></a><span>地理有坐标，生活有留白。</span><a href="#">回到页首 ↑</a></footer><div class="journal-chrome" aria-hidden="true"><header id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Zabwerk的元空间</span></a><a class="nav-page-title" href="/"><span class="site-name">军事通信数字读法与北约音标字母的联系</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/visited-cities/"><i class="fa-fw fas fa-map-marker-alt"></i><span> 城市打卡</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-toolbox"></i><span> 小工具</span></a></div><div class="menus_item"><a class="site-page" href="/guestbook/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/xunzhen-basket.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/visited-cities/"><i class="fa-fw fas fa-map-marker-alt"></i><span> 城市打卡</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-toolbox"></i><span> 小工具</span></a></div><div class="menus_item"><a class="site-page" href="/guestbook/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/post-poll.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        loader: {
+          load: ['[tex]/mhchem'],
+          paths: {
+            'mathjax-mhchem-font-extension': '/pluginsSrc/@mathjax/mathjax-mhchem-font-extension'
+          }
+        },
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+          packages: {'[+]': ['mhchem']}
+        },
+        chtml: {
+          scale: 1.1,
+          fontURL: '/pluginsSrc/@mathjax/mathjax-newcm-font/chtml/woff2'
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = '/pluginsSrc/mathjax/es5/tex-mml-chtml.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'Zabwerk/zabwerk.github.io',
+      'data-repo-id': 'R_kgDOM2Kyqg',
+      'data-category-id': 'DIC_kwDOM2Kyqs4C3OdE',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

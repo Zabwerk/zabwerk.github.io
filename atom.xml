@@ -6,7 +6,7 @@
   <link href="https://zabwerk.github.io/atom.xml" rel="self"/>
   
   <link href="https://zabwerk.github.io/"/>
-  <updated>2026-10-29T07:24:15.426Z</updated>
+  <updated>2026-11-01T15:28:41.335Z</updated>
   <id>https://zabwerk.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>军事通信数字读法与北约音标字母的联系</title>
+    <link href="https://zabwerk.github.io/2026/11/01/%E5%86%9B%E4%BA%8B%E9%80%9A%E4%BF%A1%E6%95%B0%E5%AD%97%E8%AF%BB%E6%B3%95%E4%B8%8E%E5%8C%97%E7%BA%A6%E9%9F%B3%E6%A0%87%E5%AD%97%E6%AF%8D%E7%9A%84%E8%81%94%E7%B3%BB/"/>
+    <id>https://zabwerk.github.io/2026/11/01/%E5%86%9B%E4%BA%8B%E9%80%9A%E4%BF%A1%E6%95%B0%E5%AD%97%E8%AF%BB%E6%B3%95%E4%B8%8E%E5%8C%97%E7%BA%A6%E9%9F%B3%E6%A0%87%E5%AD%97%E6%AF%8D%E7%9A%84%E8%81%94%E7%B3%BB/</id>
+    <published>2026-10-31T16:00:00.000Z</published>
+    <updated>2026-11-01T15:28:41.335Z</updated>
+    
+    
+    <summary type="html">抗噪、冗余与易发音——两套语音编码系统为何走向同一条设计轨道。</summary>
+    
+    
+    
+    <category term="百科知识" scheme="https://zabwerk.github.io/categories/%E7%99%BE%E7%A7%91%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="语音通信" scheme="https://zabwerk.github.io/tags/%E8%AF%AD%E9%9F%B3%E9%80%9A%E4%BF%A1/"/>
+    
+    <category term="数字军语" scheme="https://zabwerk.github.io/tags/%E6%95%B0%E5%AD%97%E5%86%9B%E8%AF%AD/"/>
+    
+    <category term="北约音标字母" scheme="https://zabwerk.github.io/tags/%E5%8C%97%E7%BA%A6%E9%9F%B3%E6%A0%87%E5%AD%97%E6%AF%8D/"/>
+    
+  </entry>
   
   <entry>
     <title>原来我的不正经小论文也能上Nature！</title>
