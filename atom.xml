@@ -6,7 +6,7 @@
   <link href="https://zabwerk.github.io/atom.xml" rel="self"/>
   
   <link href="https://zabwerk.github.io/"/>
-  <updated>2026-11-01T15:28:41.335Z</updated>
+  <updated>2026-11-11T14:09:41.143Z</updated>
   <id>https://zabwerk.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Zotero 论文汉化 Skill：从文献库到中文 PDF</title>
+    <link href="https://zabwerk.github.io/2026/11/10/Zotero%E8%AE%BA%E6%96%87%E6%B1%89%E5%8C%96Skill%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>https://zabwerk.github.io/2026/11/10/Zotero%E8%AE%BA%E6%96%87%E6%B1%89%E5%8C%96Skill%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
+    <published>2026-11-10T12:40:00.000Z</published>
+    <updated>2026-11-11T14:09:41.143Z</updated>
+    
+    
+    <summary type="html">安装并调用 zotero-paper-localization，将 Zotero 中的英文论文译成中文 PDF，保留图表、引文与可编辑源文件。</summary>
+    
+    
+    
+    <category term="AI Skills" scheme="https://zabwerk.github.io/categories/AI-Skills/"/>
+    
+    
+    <category term="Zotero" scheme="https://zabwerk.github.io/tags/Zotero/"/>
+    
+    <category term="DSH" scheme="https://zabwerk.github.io/tags/DSH/"/>
+    
+  </entry>
   
   <entry>
     <title>军事通信数字读法与北约音标字母的联系</title>

@@ -1,0 +1,346 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Zotero 论文汉化 Skill：从文献库到中文 PDF | Zabwerk的元空间</title><meta name="author" content="Zabwerk"><meta name="copyright" content="Zabwerk"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="安装并调用 zotero-paper-localization，将 Zotero 中的英文论文译成中文 PDF，保留图表、引文与可编辑源文件。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zotero 论文汉化 Skill：从文献库到中文 PDF">
+<meta property="og:url" content="https://zabwerk.github.io/2026/11/10/Zotero%E8%AE%BA%E6%96%87%E6%B1%89%E5%8C%96Skill%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="Zabwerk的元空间">
+<meta property="og:description" content="安装并调用 zotero-paper-localization，将 Zotero 中的英文论文译成中文 PDF，保留图表、引文与可编辑源文件。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zabwerk.github.io/img/xunzhen-basket.jpg">
+<meta property="article:published_time" content="2026-11-10T12:40:00.000Z">
+<meta property="article:modified_time" content="2026-11-11T14:09:41.143Z">
+<meta property="article:author" content="Zabwerk">
+<meta property="article:tag" content="Zotero">
+<meta property="article:tag" content="DSH">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zabwerk.github.io/img/xunzhen-basket.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Zotero 论文汉化 Skill：从文献库到中文 PDF",
+  "url": "https://zabwerk.github.io/2026/11/10/Zotero%E8%AE%BA%E6%96%87%E6%B1%89%E5%8C%96Skill%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/",
+  "image": "https://zabwerk.github.io/img/xunzhen-basket.jpg",
+  "datePublished": "2026-11-10T12:40:00.000Z",
+  "dateModified": "2026-11-11T14:09:41.143Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Zabwerk",
+      "url": "https://github.com/Zabwerk"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/xunzhen-basket.jpg"><link rel="canonical" href="https://zabwerk.github.io/2026/11/10/Zotero%E8%AE%BA%E6%96%87%E6%B1%89%E5%8C%96Skill%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index.html"><link rel="preconnect"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Zotero 论文汉化 Skill：从文献库到中文 PDF',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/morandi.css"><link rel="stylesheet" href="/css/v2.css"><link rel="stylesheet" href="/css/journal-pages.css"><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Zabwerk的元空间" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body class="journal-volume-1"><header class="journal-header"><a class="brand" href="/">Zabwerk<span>的元空间</span></a><nav class="journal-nav" aria-label="主导航"><a class="is-active" href="/archives/">全部文章</a><a href="/visited-cities/">城市足迹</a><a href="/links/">友链</a><a href="/tools/">小工具</a><a href="/guestbook/">留言板</a></nav><a class="edition" href="/volumes/" aria-label="查看并切换卷刊">独立个人志/JOURNAL VOL.1</a></header><main class="journal-main"><article class="journal-post"><header class="journal-post-head"><p class="eyebrow">AI Skills</p><h1>Zotero 论文汉化 Skill：从文献库到中文 PDF</h1><div class="post-meta"><time datetime="2026-11-10T12:40:00.000Z" title="2026-11-10">2026.11.10</time><span>共计 1230 字</span><span>预计阅读 5 分钟</span><div class="post-meta-tags"><a href="/tags/Zotero/">Zotero</a><a href="/tags/DSH/">DSH</a></div></div><p class="dek">zotero-paper-localization 将 Zotero 取文、全文翻译、期刊样式排版和检查串成一套流程，输出中文 PDF 与可编辑源包。本文介绍安装方法和调用示例。</p></header><div class="journal-post-grid"><div class="journal-content post-content" id="article-container"><p><code>zotero-paper-localization</code> 是一个供 AI 助手调用的论文汉化 Skill：从 Zotero 读取论文 PDF，完整翻译，参照原刊样式排版，最后输出<strong>中文 PDF 和可编辑源包</strong>。</p>
+<p>它保留图表、公式和引文编号，完整翻译图注，并在文末附上原文信息。中文按实际长度重新分页，不保证与英文逐页对应。</p>
+<h2 id="实际效果"><a href="#实际效果" class="headerlink" title="实际效果"></a>实际效果</h2><p><img src="/images/posts/zotero-paper-localization/translation-comparison.png" alt="英文原文与中文译稿对照"></p>
+<p>左侧为英文原文，右侧为 Skill 生成的中文译稿：保留原图，翻译正文、表格和图注，并附图内英文标签的中文释义。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><a class="download-link" href="/downloads/zotero-paper-localization-v1.0.0.zip" download>下载 zotero-paper-localization v1.0.0（26.9 KB）</a></p>
+<p>以 DSH 为例，将压缩包解压到实际使用的 skills 目录。默认路径下的命令如下。</p>
+<p>Windows PowerShell：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre class="line-numbers language-hljs powershell"><span class="hljs-built_in">Expand-Archive</span> .\zotero<span class="hljs-literal">-paper-localization-v1</span>.<span class="hljs-number">0.0</span>.zip <span class="hljs-literal">-DestinationPath</span> <span class="hljs-string">&quot;<span class="hljs-variable"><code class="language-hljs powershell"><span class="hljs-built_in">Expand-Archive</span> .\zotero<span class="hljs-literal">-paper-localization-v1</span>.<span class="hljs-number">0.0</span>.zip <span class="hljs-literal">-DestinationPath</span> <span class="hljs-string">&quot;<span class="hljs-variable">$env:USERPROFILE</span>\.dsh\skills"</span><br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
+
+<p>macOS &#x2F; Linux：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre class="line-numbers language-hljs bash"><code class="language-hljs bash">unzip zotero-paper-localization-v1.0.0.zip -d ~/.dsh/skills/<br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
+
+<p>确认解压后存在 <code>skills/zotero-paper-localization/SKILL.md</code>，然后新开一个对话。</p>
+<p>运行还需要以下环境：</p>
+<table>
+<thead>
+<tr>
+<th>依赖</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Zotero 连接工具</td>
+<td>能搜索条目并读取本地 PDF 附件；仅安装 Zotero 不够</td>
+</tr>
+<tr>
+<td>Python 3.10+、PyMuPDF</td>
+<td>执行 <code>python -m pip install pymupdf</code> 安装 Python 依赖</td>
+</tr>
+<tr>
+<td>XeLaTeX</td>
+<td>用于编译 PDF，技能包列出的环境为 TeX Live 2023+</td>
+</tr>
+<tr>
+<td>中文字体</td>
+<td>IEEE 模板使用 SimSun、SimHei、KaiTi；缺少时需修改模板字体配置</td>
+</tr>
+</tbody></table>
+<p>包内自带 IEEE 模板；Nature、Science、NEJM 等期刊样板需要另行准备 <code>cns-paper-translation</code>。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>将下面的标题和输出目录替换成自己的，发给助手：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre class="line-numbers language-hljs text"><code class="language-hljs text">使用 $zotero-paper-localization，把 Zotero 中标题为<br>「论文完整英文标题」的论文完整译成中文。<br><br>参照原刊版式，输出中文 PDF 和可编辑源包，保存到「输出目录」。<br>保留公式、数值、图表和引文编号，完整翻译图注；<br>图内英文可保留，但请附中文对照。文末列出原文信息和处理限制。<br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
+
+<p>也可以用 DOI 指定论文。先确保 PDF 附件已下载到本机；如果直接提供本地 PDF，也可以使用 <code>cns-paper-translation</code> 处理。</p>
+<p>助手会依次完成：<strong>定位文献 → 提取内容 → 全文翻译 → 排版编译 → 检查交付</strong>。遇到缺少附件、连接失败或编译环境不全，需要先解决对应问题。</p>
+<p>需要修改译稿时，直接说明位置和范围：</p>
+<blockquote>
+<p>将全文的「术语 A」改为「术语 B」，补全图 3 的图注，其余内容保持不变，重新输出 PDF 和源包。</p>
+</blockquote>
+<h2 id="使用时注意"><a href="#使用时注意" class="headerlink" title="使用时注意"></a>使用时注意</h2><ul>
+<li><strong>只读文献库</strong>：不修改 Zotero 条目，也不自动写回译稿。</li>
+<li><strong>明确处理范围</strong>：未提供的补充材料不包含在译稿中；扫描件需先 OCR 并核对。</li>
+<li><strong>检查最终结果</strong>：自动检查不能证明翻译准确。重点核对关键数值、否定与比较方向，以及图表、公式和缺字问题。</li>
+<li><strong>保留出处</strong>：成品应标明非官方中文译稿；引用研究结论请回查原文，分享时遵守原文许可。</li>
+</ul>
+<p>脚本参数和详细验收规则见包内 <code>SKILL.md</code>。</p>
+</div><aside class="journal-toc" aria-label="本页目录"><h2>本页目录</h2><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%99%85%E6%95%88%E6%9E%9C"><span class="toc-number">1.</span> <span class="toc-text">实际效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%97%B6%E6%B3%A8%E6%84%8F"><span class="toc-number">4.</span> <span class="toc-text">使用时注意</span></a></li></ol></aside></div><div class="journal-post-foot"><span>最后更新于 2026.11.11</span></div><nav class="pagination-post" id="pagination"></nav><div class="journal-comments"><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div></article></main><footer class="journal-footer"><a class="brand" href="/">Zabwerk<span>的元空间</span></a><span>地理有坐标，生活有留白。</span><a href="#">回到页首 ↑</a></footer><div class="journal-chrome" aria-hidden="true"><header id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Zabwerk的元空间</span></a><a class="nav-page-title" href="/"><span class="site-name">Zotero 论文汉化 Skill：从文献库到中文 PDF</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/visited-cities/"><i class="fa-fw fas fa-map-marker-alt"></i><span> 城市打卡</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-toolbox"></i><span> 小工具</span></a></div><div class="menus_item"><a class="site-page" href="/guestbook/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/xunzhen-basket.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/visited-cities/"><i class="fa-fw fas fa-map-marker-alt"></i><span> 城市打卡</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/tools/"><i class="fa-fw fas fa-toolbox"></i><span> 小工具</span></a></div><div class="menus_item"><a class="site-page" href="/guestbook/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/post-poll.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        loader: {
+          load: ['[tex]/mhchem'],
+          paths: {
+            'mathjax-mhchem-font-extension': '/pluginsSrc/@mathjax/mathjax-mhchem-font-extension'
+          }
+        },
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+          packages: {'[+]': ['mhchem']}
+        },
+        chtml: {
+          scale: 1.1,
+          fontURL: '/pluginsSrc/@mathjax/mathjax-newcm-font/chtml/woff2'
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = '/pluginsSrc/mathjax/es5/tex-mml-chtml.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'Zabwerk/zabwerk.github.io',
+      'data-repo-id': 'R_kgDOM2Kyqg',
+      'data-category-id': 'DIC_kwDOM2Kyqs4C3OdE',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
