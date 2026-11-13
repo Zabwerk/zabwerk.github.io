@@ -1,0 +1,236 @@
+/* Field notebook: atmospheric observations and chemistry. */
+:root{--paper:#faf8f1;--paper-deep:#e8e8df;--paper-edge:#d8d8cc;--ink:#273d3c;--ink-soft:#52625e;--ink-faint:#75817a;--line:rgba(39,61,60,.2);--line-soft:rgba(39,61,60,.09);--accent:#ad5739;--accent-dim:#ad573915}
+body{background-color:var(--paper-deep);background-image:linear-gradient(#344c3f06 1px,transparent 1px),linear-gradient(90deg,#344c3f06 1px,transparent 1px);background-size:48px 48px}
+body::after{opacity:.12}
+.sheet{max-width:1120px;isolation:isolate;overflow:hidden;border:1px solid var(--paper-edge);box-shadow:0 28px 80px -50px #243c36}
+.sheet::before{height:4px;opacity:.35}
+.sheet::after{display:none}
+.weather-art{position:absolute;width:500px;right:-70px;top:10px;color:#476d76;opacity:.17;z-index:-1;pointer-events:none}
+.chemistry-art{position:absolute;width:250px;right:12px;bottom:160px;color:#926347;opacity:.13;z-index:-1;pointer-events:none}
+.masthead__top{border-bottom:1px solid var(--ink);padding-bottom:14px;font-size:9px;letter-spacing:.13em}
+.masthead__top .mark{font:bold 24px/1 Georgia,serif;color:var(--accent)}
+.masthead__top .rule{background:none}
+.masthead__main{align-items:center;margin-top:34px;gap:40px}
+.folio-label{font:11px/1.2 var(--sans);letter-spacing:.3em;color:var(--accent);margin:0 0 17px}
+.name{font:normal clamp(40px,6vw,66px)/1.2 Georgia,serif;letter-spacing:-.04em}
+.name__en{font:9px/1.2 var(--mono);letter-spacing:.14em;text-indent:0;margin-top:16px}
+.role{font-size:13px;letter-spacing:.02em;margin-top:24px}
+.affil{font-size:10px;max-width:470px;letter-spacing:.02em;margin-top:10px}
+.portrait{width:114px;transform:rotate(2deg)}
+.portrait__frame{padding:5px;background:#fff;border:1px solid var(--paper-edge);box-shadow:3px 5px 0 #273d3c0a}
+.portrait img{filter:none;border:0;aspect-ratio:4/5}
+.portrait__frame::before,.portrait__frame::after{display:none}
+.portrait figcaption{font-size:8px;letter-spacing:.05em}
+.discipline-strip{display:flex;gap:26px;flex-wrap:wrap;margin-top:32px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font:10px/1.2 var(--mono);color:var(--ink-soft);letter-spacing:.08em}
+.ledger{display:flex;flex-wrap:wrap;gap:20px 28px;background:transparent;border:0;margin-top:20px}
+.ledger>div,.ledger>div:first-child{padding:0;background:transparent}
+.ledger dt{font-size:9px;letter-spacing:.08em}
+.ledger dd{font-size:12px}
+.body{grid-template-columns:minmax(0,1fr) 240px;gap:42px;margin-top:44px}
+.sec{margin-bottom:38px}
+.sec__head{grid-template-columns:auto 1fr auto;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:20px;gap:10px}
+.sec__idx{font:italic 17px/1.2 Georgia,serif;color:var(--accent)}
+.sec__zh{font:600 21px/1.2 var(--serif);letter-spacing:.08em}
+.sec__en{font:italic 10px/1.2 Georgia,serif;letter-spacing:0;text-transform:none}
+.entry{grid-template-columns:minmax(0,1fr);gap:9px;padding:0 0 22px;margin-bottom:20px;border-bottom:1px dashed var(--line)}
+.entry__when{font-size:10px;letter-spacing:.05em;color:var(--ink-faint)}
+.entry__title{font-size:14px;font-family:var(--sans)}
+.entry__body p,.points li{font-size:13px;line-height:1.2}
+.points{margin-top:14px}
+.points li{margin-bottom:11px}
+.rail{border-left:1px solid var(--line);padding-left:24px}
+.rail__inner{position:static;gap:30px}
+.field-note{border-top:3px solid var(--accent);padding:15px 0 10px}
+.field-note>span{font:8px/1.2 var(--mono);letter-spacing:.1em;color:var(--ink-faint)}
+.field-note p{font:16px/1.5 var(--serif);margin:16px 0 0}
+.rail h3 em{font-size:14px}
+.resume-skills p{margin:0 0 18px;font-size:12px}
+.resume-skills p>strong:first-child{display:block;margin-bottom:7px;color:var(--ink)}
+.chips li{font-size:11px;background:transparent}
+.facts li{flex-direction:column;gap:5px}
+.rail details{font-size:11px;margin-top:15px}
+.rail details img{max-width:100%}
+.foot{border-top:1px solid var(--ink);margin-top:38px;font-size:9px;letter-spacing:.04em}
+.sheet :is(p,li,h1,h2,h3,dd,dt,span){line-height:1.2}
+@media(max-width:900px){.body{grid-template-columns:1fr}.rail{padding:24px 0 0;border-left:0;border-top:1px solid var(--line)}.rail__inner{display:grid;grid-template-columns:1fr 1fr;gap:28px}.weather-art{width:420px;right:-110px}.chemistry-art{bottom:80px}}
+@media(max-width:620px){.masthead__main{grid-template-columns:minmax(0,1fr) 80px;gap:14px}.masthead__main>div{padding:0}.portrait{position:static;width:80px}.name{font-size:36px}.name__en{font-size:8px;letter-spacing:.03em}.role{font-size:12px}.folio-label{font-size:9px;letter-spacing:.15em}.discipline-strip{gap:12px;font-size:9px}.sec__zh{font-size:20px}.sec__en{display:inline}.rail__inner{display:flex}.weather-art{opacity:.11}.chemistry-art{opacity:.08}.ledger{gap:16px 24px}}
+@media print{body{background:white}.weather-art,.chemistry-art{display:none}.sheet{overflow:visible;box-shadow:none;border:0}.body{grid-template-columns:minmax(0,1fr) 48mm;gap:7mm}.rail{border-left:1px solid var(--line);border-top:0;padding:0 0 0 4mm}.rail__inner{display:flex}.portrait{width:25mm;transform:none}.portrait img{filter:none}.name{font-size:30pt}.ledger{display:flex}.entry{break-inside:avoid}.sec{margin-bottom:6mm}.reveal{opacity:1!important;animation:none!important}}
+
+/* Personal dossier edition: archival typography, index tabs and annotations. */
+:root{--paper:#f6f3eb;--paper-deep:#d9d8d2;--paper-edge:#bcbab1;--ink:#292a29;--ink-soft:#53534f;--ink-faint:#77766f;--line:#292a2938;--line-soft:#292a2915;--accent:#963a35;--accent-dim:#963a3510}
+body{background-color:var(--paper-deep);background-image:linear-gradient(110deg,#00000004,transparent);background-size:auto}
+body::after{opacity:.16}
+.sheet{border:1px solid var(--paper-edge);border-top:7px solid var(--ink);box-shadow:7px 8px 0 -2px #e7e4dc,7px 8px 0 -1px #bcbab1,0 24px 55px -35px #24242455}
+.sheet::before{inset:80px auto 80px 17px;width:12px;height:auto;opacity:.45;background:radial-gradient(circle at 6px 6px,#aaa89e 0 3px,#d4d1c8 3px 5px,transparent 5px) 0 0/12px 150px repeat-y}
+.masthead__top{border-bottom:2px solid var(--ink);padding-bottom:13px;color:var(--ink);letter-spacing:.12em}
+.masthead__top .mark{font:bold 15px/1.2 var(--mono);background:var(--ink);color:var(--paper);padding:7px 10px}
+.masthead__top>a{font-size:10px}
+.folio-label{font:10px/1.2 var(--mono);letter-spacing:.12em;color:var(--accent)}
+.name{font:bold clamp(38px,5.8vw,62px)/1.2 var(--mono);letter-spacing:-.055em}
+.name__en{color:var(--ink-faint);letter-spacing:.08em;margin-top:14px}
+.role{font-family:var(--sans);font-size:13px}
+.portrait{transform:none;width:116px}
+.portrait__frame{background:#fff;border:1px solid #8c8b83;padding:5px;box-shadow:2px 3px 0 #292a2910}
+.portrait img{filter:none}
+.portrait figcaption{color:var(--ink-faint);font-size:8px}
+.discipline-strip{gap:14px 28px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);background:#292a2904;padding:12px 10px;font-size:9px}
+.ledger{gap:20px 32px;margin-top:22px}
+.ledger dt{color:var(--ink-faint);letter-spacing:.03em}
+.ledger dd{font-family:var(--mono);font-size:12px}
+.body{margin-top:38px}
+.sec__head{display:flex;flex-wrap:wrap;align-items:center;gap:10px;border-bottom:1px solid var(--ink);padding:0 0 8px;margin-bottom:20px}
+.sec__idx{align-self:stretch;display:flex;align-items:center;background:var(--ink);color:var(--paper);padding:7px 9px;font:12px/1.2 var(--mono)}
+.sec__zh{font:600 19px/1.2 var(--sans);letter-spacing:.06em}
+.sec__en{margin-left:auto;font:9px/1.2 var(--mono);letter-spacing:.04em;color:var(--ink-faint);text-transform:uppercase}
+.entry{display:grid;grid-template-columns:90px minmax(0,1fr);gap:18px;border-bottom:1px dashed var(--line);padding-bottom:22px;margin-bottom:22px}
+.entry__when{font:10px/1.2 var(--mono);white-space:normal;overflow-wrap:anywhere;border-left:2px solid var(--line);padding-left:8px}
+.entry__title{font-size:14px}
+.entry__body>ul>li:first-child>strong:first-child{color:var(--accent)}
+.points li::before{background:var(--ink-faint)}
+.awards .lv{color:var(--accent)}
+.awards .lv::before{content:""}
+.awards li:first-child .lv{border:1px solid var(--accent);padding:3px 5px;width:max-content}
+.rail{border-left:1px solid var(--line);padding-left:22px}
+.field-note{border:1px solid var(--line);border-top:3px solid var(--accent);padding:15px;background:#ffffff24}
+.field-note>span{font-size:8px;color:var(--accent);letter-spacing:.02em}
+.field-note p{font:14px/1.2 var(--sans);margin:14px 0}
+.field-note small{font-size:9px;color:var(--ink-faint)}
+.rail h3 em{font-family:var(--sans);font-weight:600;font-size:13px}
+.rail h3{font-size:8px;letter-spacing:.05em}
+.chips li{border:1px solid var(--line);background:transparent;font-size:10px}
+.weather-art{width:400px;right:80px;top:55px;opacity:.09;color:#383d3d}
+.chemistry-art{width:220px;right:22px;bottom:150px;opacity:.13;color:#4b4844}
+.figure-label{position:absolute;font:8px/1.2 var(--mono);color:#6a675c;opacity:.5;z-index:-1;pointer-events:none;letter-spacing:.08em}
+.weather-label{right:155px;top:325px}
+.chemistry-label{right:54px;bottom:130px}
+.foot{border-top:2px solid var(--ink);font-family:var(--mono);font-size:8px}
+.tool button{background:var(--paper);border:1px solid var(--ink);box-shadow:none}
+.tool button:hover{background:var(--ink);color:var(--paper)}
+@media(max-width:900px){.rail{border-left:0;border-top:1px solid var(--ink);padding:24px 0 0}.weather-art{right:10px}.weather-label{right:110px}}
+@media(max-width:620px){.sheet::before{display:none}.sheet{box-shadow:none}.masthead__main{grid-template-columns:minmax(0,1fr) 78px}.portrait{width:78px}.name{font-size:34px}.sec__zh{font-size:18px}.sec__en{font-size:8px}.entry{grid-template-columns:1fr;gap:9px}.entry__when{padding-left:7px}.weather-art{right:-140px;top:80px;opacity:.06}.weather-label{display:none}.discipline-strip{gap:10px;font-size:8px}.figure-label{font-size:7px}}
+@media print{.sheet{border:0;box-shadow:none}.sheet::before,.figure-label{display:none}.name{font-size:29pt}.portrait{width:25mm}.portrait img{filter:none}.entry{grid-template-columns:22mm minmax(0,1fr);gap:4mm}.rail{border-left:1px solid var(--line);border-top:0;padding:0 0 0 4mm}.sec__zh{font-size:14pt}.sec__idx{padding:3px 6px}.sec__en{font-size:7pt}}
+
+/* Aged stock: warm fibres, uneven oxidation and faint handling marks. */
+:root{--paper:#eee5ce;--paper-deep:#c9c4b5;--paper-edge:#b6a78b}
+.sheet{
+ background-color:var(--paper);
+ background-image:
+  radial-gradient(ellipse at 0% 0%,#98682726,transparent 38%),
+  radial-gradient(ellipse at 100% 100%,#95652b30,transparent 34%),
+  radial-gradient(ellipse at 100% 25%,#a77e3920,transparent 23%),
+  radial-gradient(ellipse at 4% 72%,#8b642618,transparent 18%),
+  linear-gradient(90deg,#8c622619,transparent 4%,transparent 96%,#8c62261c),
+  repeating-linear-gradient(0deg,#6e532604 0 1px,transparent 1px 4px);
+ box-shadow:inset 0 0 55px #805a2520,7px 8px 0 -2px #ded4bd,7px 8px 0 -1px #ab9c80,0 24px 55px -35px #24242455;
+}
+body::after{opacity:.24}
+.sheet::after{
+ content:"";display:block;position:absolute;inset:0;width:auto;height:auto;pointer-events:none;z-index:-1;
+ background-image:
+  radial-gradient(ellipse at 84% 56%,transparent 0 41px,#8c62260b 42px 44px,transparent 46px),
+  linear-gradient(178deg,transparent 49.8%,#715d3910 49.95%,#fff9e522 50.03%,transparent 50.2%),
+  radial-gradient(ellipse at 12% 96%,#8b642613,transparent 13%);
+ opacity:1;
+}
+.ledger>div,.ledger>div:first-child{background:transparent}
+@media(max-width:620px){.sheet{box-shadow:inset 0 0 35px #805a251c}}
+@media print{.sheet{background:#fff!important;box-shadow:none}.sheet::after{display:none!important}}
+
+/* Empty dossier slots preserve the page composition without invented content. */
+.empty-record{min-height:110px;padding:10px 0 20px;display:flex;flex-direction:column;gap:22px}
+.empty-record span{display:block;width:100%;border-bottom:1px dotted var(--line)}
+.empty-record span:last-child{width:68%}
+.resume-skills .empty-record{min-height:150px}
+
+/* Annotation refinements: header tools and a single-column blank dossier. */
+.masthead__top #btn-print{
+ appearance:none;background:none;border:0;border-bottom:1px solid var(--line);
+ border-radius:0;padding:0;color:inherit;font:inherit;font-size:10px;
+ letter-spacing:inherit;text-transform:inherit;cursor:pointer;box-shadow:none;
+}
+.masthead__top #btn-print:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.masthead__top #btn-print:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.rail[hidden]{display:none!important}
+.body{grid-template-columns:minmax(0,1fr)}
+.tool #btn-top{width:36px;height:36px;padding:0;font-size:20px;letter-spacing:0;display:grid;place-items:center}
+@media print{.masthead__top #btn-print{display:none}.body{grid-template-columns:minmax(0,1fr)}}
+
+/* Restore the information rail; the reading-notes module remains removed. */
+.body{grid-template-columns:minmax(0,1fr) 240px}
+@media(max-width:900px){.body{grid-template-columns:minmax(0,1fr)}}
+@media print{.body{grid-template-columns:minmax(0,1fr) 48mm}}
+
+/* Written entries sit directly on the dossier's ruled lines. */
+.filled-record{padding:0 0 20px}
+.filled-record p{margin:0;padding:10px 0 9px;border-bottom:1px dotted var(--line);font-size:13px;color:var(--ink);line-height:1.2}
+
+/* Consistent education dates and current study annotation. */
+.education-date{font-variant-numeric:tabular-nums;white-space:nowrap}
+.filled-record .study-status{display:inline-block;color:#963a35;border:1px solid #963a35;border-radius:0;padding:2px 6px;margin-left:6px;font-size:11px;line-height:1.2;vertical-align:baseline;white-space:nowrap}
+
+/* Archival stamp for current graduate study. */
+.filled-record .study-status{
+ position:relative;
+ color:#9b3933;
+ border:2px solid currentColor;
+ border-radius:2px;
+ padding:5px 9px;
+ margin:3px 0 3px 10px;
+ font-family:"SimSun","Songti SC",serif;
+ font-size:11px;
+ font-weight:700;
+ letter-spacing:.12em;
+ line-height:1.2;
+ transform:none;
+ background:repeating-linear-gradient(115deg,transparent 0 5px,#9b393309 5px 6px);
+ box-shadow:inset 0 0 0 1px var(--paper,#eee5ce),inset 0 0 0 2px #9b393380;
+}
+.filled-record .study-status::after{
+ content:"";
+ position:absolute;
+ inset:-2px;
+ pointer-events:none;
+ border-radius:2px;
+ background:radial-gradient(circle at 12% 15%,var(--paper,#eee5ce) 0 .7px,transparent 1px),radial-gradient(circle at 80% 75%,var(--paper,#eee5ce) 0 .6px,transparent .9px);
+ background-size:11px 9px,17px 13px;
+ opacity:.55;
+}
+@media print{.filled-record .study-status{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+
+/* Education dates align with the right edge of each ruled record. */
+#education .filled-record p{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px}
+#education .education-date{text-align:right;font-size:11px}
+#education .education-details{min-width:0}
+@media(max-width:620px){#education .filled-record p{grid-template-columns:minmax(0,1fr);gap:7px}#education .education-date{justify-self:end}}
+
+/* Language control is isolated from the document layout. */
+.language-control{position:relative;align-self:center}
+.tool #btn-language{height:36px;padding:0 10px;font-size:10px;letter-spacing:.04em}
+#language-options{position:absolute;bottom:44px;right:0;min-width:128px;padding:5px;background:var(--paper);border:1px solid var(--ink);box-shadow:0 5px 15px #00000012}
+#language-options[hidden]{display:none}
+.tool #language-options button{display:block;width:100%;border:0;box-shadow:none;text-align:left;padding:9px;font-size:12px;letter-spacing:0;text-transform:none}
+#language-options button[aria-pressed="true"]{color:var(--accent);font-weight:bold}
+@media print{.language-control{display:none!important}}
+
+/* English headings already carry the meaning of the bilingual captions. */
+html[lang="en"] .sec__en,html[lang="en"] .secondary-heading{display:none}
+
+/* Resume body copy uses Times New Roman; section headings keep their identity. */
+.filled-record,
+.filled-record p,
+.filled-record .study-status,
+.education-date,
+.entry__when,
+.entry__body,
+.entry__body p,
+.entry__body li,
+.entry__title,
+.points,
+.awards,
+.awards li,
+.resume-skills,
+.resume-skills p,
+.chips,
+.chips li{
+ font-family:"Times New Roman","Songti SC","SimSun","Yu Mincho",serif;
+}
